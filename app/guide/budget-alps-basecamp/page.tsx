@@ -9,11 +9,11 @@ export default function BudgetAlpsBasecampGuide() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      <div className="pt-24 pb-16">
+      <div className="pt-32 pb-24">
         {/* Hero Section */}
-        <section className="px-4 sm:px-6 lg:px-8 mb-16">
+        <section className="px-4 sm:px-6 lg:px-8 mb-24">
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
                 <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">Digital PDF Guide</Badge>
                 <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-foreground">
@@ -58,10 +58,10 @@ export default function BudgetAlpsBasecampGuide() {
         </section>
 
         {/* What's Inside */}
-        <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+        <section className="bg-gray-50 py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">What's Inside This 47-Page PDF Guide</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <h2 className="text-3xl font-bold text-center mb-16">What's Inside This 47-Page PDF Guide</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-8 h-8 bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm">
@@ -160,10 +160,10 @@ export default function BudgetAlpsBasecampGuide() {
         </section>
 
         {/* Testimonials */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <section className="py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">What Adventurers Are Saying</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <h2 className="text-3xl font-bold text-center mb-16">What Adventurers Are Saying</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="bg-card p-6 shadow-lg">
                 <div className="flex items-center mb-4">
                   <img src="/author-sarah-chen.png" alt="Sarah M." className="w-12 h-12 object-cover mr-4" />
@@ -195,10 +195,10 @@ export default function BudgetAlpsBasecampGuide() {
         </section>
 
         {/* CTA Section */}
-        <section className="bg-primary text-primary-foreground py-16 px-4 sm:px-6 lg:px-8">
+        <section className="bg-primary text-primary-foreground py-24 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Download Your Alpine Adventure Guide</h2>
-            <p className="text-xl mb-8 text-primary-foreground/90">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Download Your Alpine Adventure Guide</h2>
+            <p className="text-xl mb-12 text-primary-foreground/90">
               Join thousands of budget-conscious adventurers who've discovered the Alps without the premium prices.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

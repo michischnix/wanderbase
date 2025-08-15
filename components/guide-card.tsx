@@ -6,8 +6,6 @@ interface GuideCardProps {
   title: string
   description: string
   category: string
-  price: string
-  originalPrice?: string
   rating: number
   reviewCount: number
   downloadCount: string
@@ -21,8 +19,6 @@ export function GuideCard({
   title,
   description,
   category,
-  price,
-  originalPrice,
   rating,
   reviewCount,
   downloadCount,
@@ -33,20 +29,18 @@ export function GuideCard({
 }: GuideCardProps) {
   return (
     <div
-      className={`bg-card rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden ${featured ? "ring-2 ring-primary" : ""}`}
+      className={`bg-card shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden ${featured ? "ring-2 ring-primary" : ""}`}
     >
       {/* Image */}
       <div className="aspect-[4/3] relative overflow-hidden">
         <img src={image || "/placeholder.svg"} alt={title} className="w-full h-full object-cover" />
         {featured && (
           <div className="absolute top-4 left-4">
-            <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
-              Best Seller
-            </span>
+            <span className="bg-primary text-primary-foreground px-3 py-1 text-sm font-medium">Best Seller</span>
           </div>
         )}
         <div className="absolute top-4 right-4">
-          <span className="bg-black/70 text-white px-2 py-1 rounded text-sm">{category}</span>
+          <span className="bg-black/70 text-white px-2 py-1 text-sm">{category}</span>
         </div>
       </div>
 
@@ -72,12 +66,7 @@ export function GuideCard({
           </div>
         </div>
 
-        {/* Price and CTA */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-primary">{price}</span>
-            {originalPrice && <span className="text-lg text-muted-foreground line-through">{originalPrice}</span>}
-          </div>
+        <div className="flex justify-end">
           <Button asChild className="bg-primary hover:bg-primary/90">
             <Link href={`/guides/${slug}`}>Get Guide</Link>
           </Button>

@@ -2,43 +2,42 @@ import { Navigation } from "@/components/navigation"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
-const adventures = [
+const blogPosts = [
   {
-    title: "Budget Alps Basecamp Guide: 7 Affordable Towns in Germany & Austria",
-    category: "Mountain Adventures",
-    description:
-      "Discover 7 charming alpine towns where you can base yourself for incredible hiking adventures without the premium prices. Complete with accommodation, food costs, and trail access.",
-    image: "/budget-alpine-guide-cover.png",
-    href: "/guide/budget-alps-basecamp",
-    featured: true,
-    price: "$15",
+    title: "Essential Gear for Alpine Adventures on a Budget",
+    excerpt:
+      "Discover the must-have equipment that won't break the bank, from tested budget alternatives to smart buying strategies.",
+    image: "/alpine-gear-mountain-backdrop.png",
+    date: "March 15, 2024",
+    category: "Gear",
+    slug: "essential-gear-alpine-adventures-budget",
   },
   {
-    title: "Wild Camping Essentials",
-    category: "Camping",
-    description:
-      "Master the art of legal wild camping with our comprehensive location guide and essential gear checklist.",
-    image: "/desert-camping-starry-night.png",
-    href: "/guide/wild-camping",
-    price: "$8",
+    title: "7 Hidden Alpine Towns Perfect for Budget Travelers",
+    excerpt:
+      "Explore charming mountain villages where you can experience authentic alpine culture without the premium prices.",
+    image: "/pristine-wilderness-landscape.png",
+    date: "March 12, 2024",
+    category: "Destinations",
+    slug: "hidden-alpine-towns-budget-travelers",
   },
   {
-    title: "Budget Trekking Routes",
-    category: "Trekking",
-    description:
-      "Discover 15 incredible multi-day treks that won't break the bank. Complete with logistics and cost breakdowns.",
-    image: "/misty-forest-dramatic-lighting.png",
-    href: "/guide/budget-trekking",
-    price: "$15",
+    title: "Winter Camping: A Complete Beginner's Guide",
+    excerpt:
+      "Master the art of cold-weather camping with our comprehensive guide to gear, techniques, and safety tips.",
+    image: "/winter-camping-tent-snow.png",
+    date: "March 8, 2024",
+    category: "Skills",
+    slug: "winter-camping-beginners-guide",
   },
   {
-    title: "Gear on a Budget",
-    category: "Equipment",
-    description:
-      "Essential vs. nice-to-have gear guide. Save hundreds with our tested budget alternatives and buying strategies.",
-    image: "/rock-climbing-cliff.png",
-    href: "/guide/budget-gear",
-    price: "$10",
+    title: "Trail Running in the Alps: Best Routes for Every Level",
+    excerpt:
+      "From gentle valley paths to challenging mountain trails, discover the best alpine running routes across Europe.",
+    image: "/trail-running-forest-path.png",
+    date: "March 5, 2024",
+    category: "Running",
+    slug: "trail-running-alps-best-routes",
   },
 ]
 
@@ -47,56 +46,55 @@ export default function HomePage() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+      <section className="px-6 py-32 bg-[#f0eee7]">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-foreground">
-            Budget Adventures Await
+          <div className="text-primary mb-6 tracking-wide uppercase text-sm font-medium">The Wanderbase</div>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-foreground">
+            Your journey starts here
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-            Discover Europe's most stunning alpine destinations without breaking the bank. Expert guides, proven routes,
-            and insider tips for the budget-conscious adventurer.
+          <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl mx-auto">
+            Discover the most stunning alpine destinations without breaking the bank. Expert guides, proven routes, and
+            insider tips for the budget-conscious adventurer.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/guide/budget-alps-basecamp">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8">
-                Get Started - $15
-              </Button>
-            </Link>
-            <Link href="/guide/budget-alps-basecamp">
-              <Button variant="outline" size="lg" className="text-lg px-8 bg-transparent">
-                View Guide Preview
-              </Button>
-            </Link>
-          </div>
+          <a
+            href="https://outdoorblueprint.gumroad.com/l/ob_jotr"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Get started with our alpine adventure guide (opens in new tab)"
+          >
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-12 py-4">
+              Get Started
+            </Button>
+          </a>
         </div>
       </section>
 
-      <section className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Featured Adventure Guides</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Latest Adventures</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Budget-friendly guides to help you explore Europe's most beautiful trails without breaking the bank.
+              Stories, tips, and insights from the trail to inspire your next outdoor adventure.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {adventures.map((adventure, index) => (
-              <div key={index} className={`group cursor-pointer ${adventure.featured ? "md:row-span-2" : ""}`}>
-                <Link href={adventure.href}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.map((post, index) => (
+              <div key={index} className="group cursor-pointer">
+                <Link href={`/blog/${post.slug}`} aria-label={`Read article: ${post.title}`}>
                   <div className="relative overflow-hidden bg-card h-80">
                     <img
-                      src={adventure.image || "/placeholder.svg"}
-                      alt={adventure.title}
+                      src={post.image || "/placeholder.svg"}
+                      alt={post.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="text-sm font-medium text-white/80">{adventure.category}</span>
-                        <span className="text-lg font-bold text-primary">{adventure.price}</span>
+                    <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-sm font-medium text-white/80">{post.category}</span>
+                        <span className="text-sm text-white/60">{post.date}</span>
                       </div>
-                      <h3 className="text-xl font-bold mb-2">{adventure.title}</h3>
-                      <p className="text-white/90 text-sm leading-relaxed">{adventure.description}</p>
+                      <h3 className="text-xl font-bold mb-3">{post.title}</h3>
+                      <p className="text-white/90 text-sm leading-relaxed">{post.excerpt}</p>
                     </div>
                   </div>
                 </Link>
@@ -106,81 +104,70 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-primary text-primary-foreground py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-primary text-primary-foreground py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Start Your Alpine Adventure Today</h2>
-          <p className="text-xl mb-8 text-primary-foreground/90">
-            Get instant access to our most popular guide and start planning your budget-friendly alpine adventure.
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">Start Your Alpine Adventure Today</h2>
+          <p className="text-xl mb-12 text-primary-foreground/90 max-w-2xl mx-auto">
+            Get instant access to our comprehensive alpine guide and start planning your budget-friendly adventure.
           </p>
-          <Link href="/guide/budget-alps-basecamp">
-            <Button variant="secondary" size="lg" className="bg-secondary hover:bg-secondary/90 text-lg px-8">
-              Buy Now - $15
+          <a
+            href="https://outdoorblueprint.gumroad.com/l/ob_jotr"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Get alpine adventure guide now (opens in new tab)"
+          >
+            <Button variant="secondary" size="lg" className="bg-secondary hover:bg-secondary/90 text-lg px-12 py-4">
+              Get Guide Now
             </Button>
-          </Link>
+          </a>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-foreground text-background py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <footer className="bg-foreground text-background py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="md:col-span-2">
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-                  <span className="text-primary-foreground font-bold text-sm">W</span>
+              <div className="flex items-center space-x-3 mb-6">
+                <div className="w-10 h-10 bg-background text-foreground flex items-center justify-center font-bold">
+                  W
                 </div>
-                <span className="font-bold text-xl">Wanderbase</span>
+                <span className="font-bold text-2xl">Wanderbase</span>
               </div>
-              <p className="text-background/80 mb-4 max-w-md">
-                Your trusted companion for outdoor adventures. Expert guides, proven techniques, and inspiring stories
-                to fuel your next expedition.
+              <p className="text-background/80 text-lg max-w-md leading-relaxed">
+                Your trusted companion for outdoor adventures. Expert guides and inspiring stories to fuel your next
+                expedition.
               </p>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Features</h4>
-              <ul className="space-y-2 text-background/80">
-                <li>
-                  <Link href="/guides" className="hover:text-background transition-colors">
-                    Digital Guides
-                  </Link>
-                </li>
+              <h3 className="font-semibold mb-6 text-lg">Explore</h3>
+              <ul className="space-y-3 text-background/80">
                 <li>
                   <Link href="/blog" className="hover:text-background transition-colors">
                     Adventure Blog
                   </Link>
                 </li>
                 <li>
-                  <Link href="/guides" className="hover:text-background transition-colors">
-                    Expert Tips
+                  <Link href="/about" className="hover:text-background transition-colors">
+                    About Us
                   </Link>
                 </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Connect</h4>
-              <ul className="space-y-2 text-background/80">
                 <li>
-                  <a href="#" className="hover:text-background transition-colors">
-                    Instagram
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-background transition-colors">
-                    YouTube
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-background transition-colors">
-                    Newsletter
+                  <a
+                    href="https://outdoorblueprint.gumroad.com/l/ob_jotr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-background transition-colors"
+                    aria-label="Get alpine adventure guide (opens in new tab)"
+                  >
+                    Get Guide
                   </a>
                 </li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-background/20 mt-8 pt-8 text-center text-background/60">
+          <div className="border-t border-background/20 mt-12 pt-8 text-center text-background/60">
             <p>&copy; 2025 Wanderbase. All rights reserved.</p>
           </div>
         </div>

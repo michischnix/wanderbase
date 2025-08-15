@@ -3,21 +3,21 @@
 import Link from "next/link"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Search } from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">W</span>
+          <Link href="/" className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-primary flex items-center justify-center">
+              <span className="text-primary-foreground font-bold">W</span>
             </div>
-            <span className="font-bold text-xl text-foreground">Wanderbase</span>
+            <span className="text-xl text-foreground font-bold">Wanderbase</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -25,19 +25,24 @@ export function Navigation() {
             <Link href="/blog" className="text-foreground hover:text-primary transition-colors">
               Blog
             </Link>
-            <Link href="/guides" className="text-foreground hover:text-primary transition-colors">
-              Guides
+            <Link href="/about" className="text-foreground hover:text-primary transition-colors">
+              About
             </Link>
-            <Button variant="ghost" size="sm">
-              <Search className="w-4 h-4" />
-            </Button>
             <Button asChild className="bg-primary hover:bg-primary/90">
-              <Link href="/guides">Get Started</Link>
+              <a href="https://outdoorblueprint.gumroad.com/l/ob_jotr" target="_blank" rel="noopener noreferrer">
+                Get Guide
+              </a>
             </Button>
           </div>
 
           {/* Mobile menu button */}
-          <Button variant="ghost" size="sm" className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <Button
+            variant="ghost"
+            size="sm"
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+          >
             {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </Button>
         </div>
@@ -49,11 +54,13 @@ export function Navigation() {
               <Link href="/blog" className="text-foreground hover:text-primary transition-colors">
                 Blog
               </Link>
-              <Link href="/guides" className="text-foreground hover:text-primary transition-colors">
-                Guides
+              <Link href="/about" className="text-foreground hover:text-primary transition-colors">
+                About
               </Link>
               <Button asChild className="bg-primary hover:bg-primary/90 w-fit">
-                <Link href="/guides">Get Started</Link>
+                <a href="https://outdoorblueprint.gumroad.com/l/ob_jotr" target="_blank" rel="noopener noreferrer">
+                  Get Guide
+                </a>
               </Button>
             </div>
           </div>

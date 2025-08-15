@@ -240,22 +240,15 @@ export default function GuidesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-primary text-primary-foreground py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-primary text-primary-foreground py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Start Your Next Adventure Today</h2>
-          <p className="text-xl mb-8 text-primary-foreground/90">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Start Your Next Adventure Today</h2>
+          <p className="text-xl mb-12 text-primary-foreground/90">
             Get instant access to expert guides and transform your outdoor experiences.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="lg" className="bg-secondary hover:bg-secondary/90 text-lg px-8">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button variant="secondary" size="lg" className="bg-secondary hover:bg-secondary/90 text-lg px-12 py-4">
               Browse All Guides
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="text-lg px-8 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 bg-transparent"
-            >
-              View Bundle Deals
             </Button>
           </div>
         </div>

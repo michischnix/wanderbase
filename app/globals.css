@@ -5,19 +5,19 @@
 
 :root {
   --background: #faf9f7;
-  --foreground: #2f5d50;
+  --foreground: #1a1a1a; /* Improved contrast from #2f5d50 to #1a1a1a */
   --card: #ffffff;
-  --card-foreground: #2f5d50;
+  --card-foreground: #1a1a1a; /* Improved contrast */
   --popover: #ffffff;
-  --popover-foreground: #2f5d50;
+  --popover-foreground: #1a1a1a; /* Improved contrast */
   --primary: #2f5d50;
-  --primary-foreground: #e2dcc8;
+  --primary-foreground: #ffffff; /* Improved contrast from #e2dcc8 to #ffffff */
   --secondary: #e2dcc8;
-  --secondary-foreground: #2f5d50;
+  --secondary-foreground: #1a1a1a; /* Improved contrast */
   --muted: #f5f3f0;
-  --muted-foreground: #6b7280;
+  --muted-foreground: #4a5568; /* Improved contrast from #6b7280 to #4a5568 */
   --accent: #e2dcc8;
-  --accent-foreground: #2f5d50;
+  --accent-foreground: #1a1a1a; /* Improved contrast */
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: #e5e7eb;
