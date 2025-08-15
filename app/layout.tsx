@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   description: "Discover extraordinary outdoor adventures with expert digital guides",
   generator: "v0.app",
   robots: "index, follow",
+  icons: {
+    icon: "/favicon.ico",
+  },
 }
 
 export default function RootLayout({

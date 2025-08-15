@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/navigation"
 import { BlogHero } from "@/components/blog-hero"
 import { TableOfContents } from "@/components/table-of-contents"
+import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -363,6 +364,8 @@ export default function FreeTrailsBlogPage() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   )
 }
