@@ -6,72 +6,59 @@ export default function AboutPage() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
+      <section className="px-6 py-32 bg-[#f0eee7]">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="text-primary mb-6 tracking-wide uppercase text-sm font-medium">The Wanderbase</div>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-foreground">
+            About Wanderbase
+          </h1>
+          <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl mx-auto">
+            We believe that incredible outdoor adventures shouldn't be reserved for those with unlimited budgets.
+          </p>
+        </div>
+      </section>
+
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-8">About Wanderbase</h1>
-            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              We believe that incredible outdoor adventures shouldn't be reserved for those with unlimited budgets.
-            </p>
-          </div>
-
           <div className="prose prose-lg max-w-none text-foreground">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-16">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Wanderbase was born from a simple belief: everyone deserves to experience the transformative power of
-                  the outdoors, regardless of their budget. We're here to prove that you don't need expensive gear or
-                  luxury accommodations to have life-changing adventures.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Through carefully researched guides, tested routes, and insider knowledge, we help budget-conscious
-                  adventurers discover Europe's most stunning alpine destinations without breaking the bank.
-                </p>
-              </div>
-              <div className="relative">
-                <img
-                  src="/alpine-mountain-vista.png"
-                  alt="Stunning alpine mountain vista showcasing the natural beauty accessible to budget travelers"
-                  className="w-full h-80 object-cover"
-                />
-              </div>
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Wanderbase was born from a simple belief: everyone deserves to experience the transformative power of
+                the outdoors, regardless of their budget. We're here to prove that you don't need expensive gear or
+                luxury accommodations to have life-changing adventures.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Through carefully researched guides, tested routes, and insider knowledge, we help budget-conscious
+                adventurers discover Europe's most stunning alpine destinations without breaking the bank.
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-              <div className="order-2 md:order-1 relative">
-                <img
-                  src="/budget-alpine-guide-cover.png"
-                  alt="Cover of our comprehensive budget alpine adventure guide"
-                  className="w-full h-80 object-cover"
-                />
-              </div>
-              <div className="order-1 md:order-2">
-                <h2 className="text-3xl font-bold mb-6">What We Offer</h2>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  Our comprehensive guides combine practical information with inspiring storytelling. From detailed cost
-                  breakdowns to hidden gem accommodations, we provide everything you need to plan your perfect alpine
-                  adventure.
-                </p>
-                <ul className="space-y-3 text-muted-foreground">
-                  <li className="flex items-start">
-                    <span className="text-primary mr-3">•</span>
-                    Detailed budget breakdowns and cost-saving tips
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-3">•</span>
-                    Tested routes and accommodation recommendations
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-3">•</span>
-                    Insider knowledge from local experts
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-3">•</span>
-                    Practical gear advice and budget alternatives
-                  </li>
-                </ul>
-              </div>
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold mb-6">What We Offer</h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Our comprehensive guides combine practical information with inspiring storytelling. From detailed cost
+                breakdowns to hidden gem accommodations, we provide everything you need to plan your perfect alpine
+                adventure.
+              </p>
+              <ul className="space-y-3 text-muted-foreground">
+                <li className="flex items-start">
+                  <span className="text-primary mr-3">•</span>
+                  Detailed budget breakdowns and cost-saving tips
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary mr-3">•</span>
+                  Tested routes and accommodation recommendations
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary mr-3">•</span>
+                  Insider knowledge from local experts
+                </li>
+                <li className="flex items-start">
+                  <span className="text-primary mr-3">•</span>
+                  Practical gear advice and budget alternatives
+                </li>
+              </ul>
             </div>
           </div>
 

@@ -14,7 +14,7 @@ export function BlogCard({ title, excerpt, category, date, image, slug, featured
   return (
     <Link href={`/blog/${slug}`} className="group block">
       <article className="relative overflow-hidden bg-card shadow-sm hover:shadow-lg transition-all duration-300 h-full">
-        <div className="aspect-[4/3] relative overflow-hidden">
+        <div className="aspect-[5/3] relative overflow-hidden">
           <img
             src={image || "/placeholder.svg"}
             alt={title}
@@ -28,8 +28,7 @@ export function BlogCard({ title, excerpt, category, date, image, slug, featured
               <span className="bg-primary text-primary-foreground px-3 py-1 text-sm font-medium">{category}</span>
               <span className="text-white/80 text-sm">{date}</span>
             </div>
-            <h3 className="font-bold leading-tight mb-2 text-xl">{title}</h3>
-            <p className="text-white/90 text-sm leading-relaxed line-clamp-2">{excerpt}</p>
+            <h3 className="font-bold leading-tight text-xl">{title}</h3>
           </div>
         </div>
       </article>

@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Wanderbase - Outdoor Adventure Guides",
   description: "Discover extraordinary outdoor adventures with expert digital guides",
   generator: "v0.app",
+  robots: "index, follow",
 }
 
 export default function RootLayout({

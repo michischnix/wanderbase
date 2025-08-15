@@ -4,40 +4,33 @@ import Link from "next/link"
 
 const blogPosts = [
   {
-    title: "Essential Gear for Alpine Adventures on a Budget",
+    title: "7 Hidden Costs That Destroy Your Alpine Hiking Budget (And How to Avoid Them)",
     excerpt:
-      "Discover the must-have equipment that won't break the bank, from tested budget alternatives to smart buying strategies.",
-    image: "/alpine-gear-mountain-backdrop.png",
-    date: "March 15, 2024",
-    category: "Gear",
-    slug: "essential-gear-alpine-adventures-budget",
+      "Don't let surprise expenses ruin your Alps adventure. Discover the 7 hidden costs every budget hiker faces and proven strategies to avoid them.",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-sanmane-1365425.jpg-diWFGnCJ1uivMo0MNrtCVVFlz4NFcG.jpeg",
+    date: "Mar 15, 2024",
+    category: "Budget Tips",
+    slug: "hidden-costs",
   },
   {
-    title: "7 Hidden Alpine Towns Perfect for Budget Travelers",
+    title: "Public Transport vs. Car: The Ultimate Alps Budget Showdown",
     excerpt:
-      "Explore charming mountain villages where you can experience authentic alpine culture without the premium prices.",
-    image: "/pristine-wilderness-landscape.png",
-    date: "March 12, 2024",
-    category: "Destinations",
-    slug: "hidden-alpine-towns-budget-travelers",
+      "Discover whether public transport or driving saves more money for Alpine hiking. Complete cost breakdown with real examples from Germany and Austria.",
+    image: "/alpine-railway-transport.jpg",
+    date: "Mar 12, 2024",
+    category: "Transport",
+    slug: "transport-vs-car",
   },
   {
-    title: "Winter Camping: A Complete Beginner's Guide",
+    title: "Free Alpine Hikes: 12 Stunning Trails That Cost Nothing",
     excerpt:
-      "Master the art of cold-weather camping with our comprehensive guide to gear, techniques, and safety tips.",
-    image: "/winter-camping-tent-snow.png",
-    date: "March 8, 2024",
-    category: "Skills",
-    slug: "winter-camping-beginners-guide",
-  },
-  {
-    title: "Trail Running in the Alps: Best Routes for Every Level",
-    excerpt:
-      "From gentle valley paths to challenging mountain trails, discover the best alpine running routes across Europe.",
-    image: "/trail-running-forest-path.png",
-    date: "March 5, 2024",
-    category: "Running",
-    slug: "trail-running-alps-best-routes",
+      "Discover 12 breathtaking Alpine hikes in Germany and Austria that are completely free. No cable cars, no parking fees—just pure mountain adventure on a zero budget.",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-fmaderebner-238622.jpg-9OhMz6CFerNpjuymbhQHBeTJJovNjM.jpeg",
+    date: "Mar 8, 2024",
+    category: "Free Trails",
+    slug: "free-trails",
   },
 ]
 
@@ -77,25 +70,30 @@ export default function HomePage() {
               Stories, tips, and insights from the trail to inspire your next outdoor adventure.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {blogPosts.map((post, index) => (
-              <div key={index} className="group cursor-pointer">
+              <div
+                key={index}
+                className="group cursor-pointer bg-white shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
+              >
                 <Link href={`/blog/${post.slug}`} aria-label={`Read article: ${post.title}`}>
-                  <div className="relative overflow-hidden bg-card h-80">
+                  <div className="overflow-hidden">
                     <img
                       src={post.image || "/placeholder.svg"}
                       alt={post.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="text-sm font-medium text-white/80">{post.category}</span>
-                        <span className="text-sm text-white/60">{post.date}</span>
-                      </div>
-                      <h3 className="text-xl font-bold mb-3">{post.title}</h3>
-                      <p className="text-white/90 text-sm leading-relaxed">{post.excerpt}</p>
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center space-x-2 mb-4 text-sm text-muted-foreground">
+                      <span>{post.date}</span>
+                      <span>•</span>
+                      <span className="font-medium">{post.category}</span>
                     </div>
+                    <h3 className="text-xl font-bold leading-tight text-foreground mb-4 group-hover:text-primary transition-colors">
+                      {post.title}
+                    </h3>
+                    <Button className="bg-primary hover:bg-primary/90 w-full">Read Article</Button>
                   </div>
                 </Link>
               </div>

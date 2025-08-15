@@ -1,60 +1,30 @@
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
-import { BlogCard } from "@/components/blog-card"
+import { Button } from "@/components/ui/button"
 
 const blogPosts = [
   {
-    title: "Essential Gear for Alpine Adventures on a Budget",
-    excerpt:
-      "Discover the must-have equipment that won't break the bank, from tested budget alternatives to smart buying strategies.",
-    category: "Gear",
-    date: "March 15, 2024",
-    image: "/alpine-gear-mountain-backdrop.png",
-    slug: "essential-gear-alpine-adventures-budget",
+    title: "7 Hidden Costs That Destroy Your Alpine Hiking Budget (And How to Avoid Them)",
+    category: "Budget Tips",
+    date: "Mar 15, 2024",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-sanmane-1365425.jpg-diWFGnCJ1uivMo0MNrtCVVFlz4NFcG.jpeg",
+    slug: "hidden-costs",
   },
   {
-    title: "7 Hidden Alpine Towns Perfect for Budget Travelers",
-    excerpt:
-      "Explore charming mountain villages where you can experience authentic alpine culture without the premium prices.",
-    category: "Destinations",
-    date: "March 12, 2024",
-    image: "/pristine-wilderness-landscape.png",
-    slug: "hidden-alpine-towns-budget-travelers",
+    title: "Public Transport vs. Car: The Ultimate Alps Budget Showdown",
+    category: "Transport",
+    date: "Mar 12, 2024",
+    image: "/alpine-railway-transport.jpg",
+    slug: "transport-vs-car",
   },
   {
-    title: "Winter Camping: A Complete Beginner's Guide",
-    excerpt:
-      "Master the art of cold-weather camping with our comprehensive guide to gear, techniques, and safety tips.",
-    category: "Skills",
-    date: "March 8, 2024",
-    image: "/winter-camping-tent-snow.png",
-    slug: "winter-camping-beginners-guide",
-  },
-  {
-    title: "Trail Running in the Alps: Best Routes for Every Level",
-    excerpt:
-      "From gentle valley paths to challenging mountain trails, discover the best alpine running routes across Europe.",
-    category: "Running",
-    date: "March 5, 2024",
-    image: "/trail-running-forest-path.png",
-    slug: "trail-running-alps-best-routes",
-  },
-  {
-    title: "Photography in the Wild: Capturing Alpine Beauty",
-    excerpt:
-      "Tips for capturing stunning nature photography during your outdoor adventures without expensive equipment.",
-    category: "Photography",
-    date: "March 2, 2024",
-    image: "/wildlife-photography-setup.png",
-    slug: "wild-photography-tips",
-  },
-  {
-    title: "Leave No Trace: Responsible Alpine Adventures",
-    excerpt: "How to minimize your environmental impact while exploring Europe's most pristine mountain regions.",
-    category: "Conservation",
-    date: "February 28, 2024",
-    image: "/pristine-wilderness-landscape.png",
-    slug: "leave-no-trace-alps",
+    title: "Free Alpine Hikes: 12 Stunning Trails That Cost Nothing",
+    category: "Free Trails",
+    date: "Mar 8, 2024",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-fmaderebner-238622.jpg-9OhMz6CFerNpjuymbhQHBeTJJovNjM.jpeg",
+    slug: "free-trails",
   },
 ]
 
@@ -74,17 +44,33 @@ export default function BlogPage() {
 
       <section className="pb-24 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {blogPosts.map((post, index) => (
-              <BlogCard
+              <div
                 key={index}
-                title={post.title}
-                excerpt={post.excerpt}
-                category={post.category}
-                date={post.date}
-                image={post.image}
-                slug={post.slug}
-              />
+                className="group cursor-pointer bg-white shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                <Link href={`/blog/${post.slug}`} aria-label={`Read article: ${post.title}`}>
+                  <div className="overflow-hidden">
+                    <img
+                      src={post.image || "/placeholder.svg"}
+                      alt={post.title}
+                      className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center space-x-2 mb-4 text-sm text-muted-foreground">
+                      <span>{post.date}</span>
+                      <span>•</span>
+                      <span className="font-medium">{post.category}</span>
+                    </div>
+                    <h3 className="text-xl font-bold leading-tight text-foreground mb-4 group-hover:text-primary transition-colors">
+                      {post.title}
+                    </h3>
+                    <Button className="bg-primary hover:bg-primary/90 w-full">Read Article</Button>
+                  </div>
+                </Link>
+              </div>
             ))}
           </div>
         </div>
