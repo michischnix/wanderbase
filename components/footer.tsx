@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -7,8 +8,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-background text-foreground flex items-center justify-center font-bold">
-                W
+              <div className="w-10 h-10 relative">
+                <Image src="/wb-logo2-white.png" alt="Wanderbase Logo" fill className="object-contain" />
               </div>
               <span className="font-bold text-2xl">Wanderbase</span>
             </div>
