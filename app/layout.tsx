@@ -26,7 +26,7 @@ export const metadata: Metadata = {
       "The Wanderbase: Your trusted guide to outdoor adventures. Find expert guides and inspiring stories to fuel your next expedition.",
     images: [
       {
-        url: "/wb-meta-2.jpg",
+        url: "/wb-meta2.png",
         width: 1200,
         height: 630,
         alt: "Wanderbase - Outdoor Adventure Guides",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Wanderbase - Outdoor Adventure Guides",
     description:
       "The Wanderbase: Your trusted guide to outdoor adventures. Find expert guides and inspiring stories to fuel your next expedition.",
-    images: ["/wb-meta-2.jpg"],
+    images: ["/wb-meta2.png"],
   },
 }
 
