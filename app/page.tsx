@@ -1,7 +1,10 @@
+"use client"
+
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
 const blogPosts = [
   {
@@ -36,17 +39,37 @@ const blogPosts = [
 ]
 
 export default function HomePage() {
+  const [scrollY, setScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      <section className="px-6 py-32 bg-[#f0eee7]">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="text-primary mb-6 tracking-wide uppercase text-sm font-medium">The Wanderbase</div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-foreground">
+      <section className="px-6 py-32 relative overflow-hidden">
+        {/* Parallax background */}
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/mountains-bg.jpg')",
+            transform: `translateY(${scrollY * 0.5}px)`,
+          }}
+        />
+
+        {/* Beige overlay with 50% opacity */}
+        <div className="absolute inset-0" style={{ backgroundColor: "#e2dcc8", opacity: 0.5 }}></div>
+
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <div className="text-gray-800 mb-6 tracking-wide uppercase text-sm font-medium">The Wanderbase</div>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-gray-900 drop-shadow-sm">
             Your journey starts here
           </h1>
-          <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xl text-gray-800 mb-12 leading-relaxed max-w-2xl mx-auto drop-shadow-sm">
             Discover the most stunning alpine destinations without breaking the bank. Expert guides, proven routes, and
             insider tips for the budget-conscious adventurer.
           </p>
@@ -56,7 +79,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
             aria-label="Get started with our alpine adventure guide (opens in new tab)"
           >
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-12 py-4">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-12 py-4 shadow-lg">
               Get Started
             </Button>
           </a>
