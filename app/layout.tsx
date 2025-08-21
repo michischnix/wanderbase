@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   generator: "v0.app",
   robots: "index, follow",
   icons: {
-    icon: "/wb-favicon2.jpg",
+    icon: "/wb-favicon3.png",
   },
 }
 
