@@ -13,11 +13,33 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: "Wanderbase - Outdoor Adventure Guides",
-  description: "Discover extraordinary outdoor adventures with expert digital guides",
+  description:
+    "The Wanderbase: Your trusted guide to outdoor adventures. Find expert guides and inspiring stories to fuel your next expedition.",
   generator: "v0.app",
   robots: "index, follow",
   icons: {
     icon: "/wb-favicon3.png",
+  },
+  openGraph: {
+    title: "Wanderbase - Outdoor Adventure Guides",
+    description:
+      "The Wanderbase: Your trusted guide to outdoor adventures. Find expert guides and inspiring stories to fuel your next expedition.",
+    images: [
+      {
+        url: "/wb-meta.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Wanderbase - Outdoor Adventure Guides",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Wanderbase - Outdoor Adventure Guides",
+    description:
+      "The Wanderbase: Your trusted guide to outdoor adventures. Find expert guides and inspiring stories to fuel your next expedition.",
+    images: ["/wb-meta.jpg"],
   },
 }
 
