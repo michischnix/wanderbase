@@ -11,7 +11,7 @@ export function Footer() {
               <div className="w-10 h-10 relative">
                 <Image src="/wb-logo2-white.png" alt="Wanderbase Logo" fill className="object-contain" />
               </div>
-              <span className="font-bold text-2xl">Wanderbase</span>
+              <span className="font-bold text-2xl">The Wanderbase</span>
             </div>
             <p className="text-background/80 text-lg max-w-md leading-relaxed">
               Your trusted companion for outdoor adventures. Expert guides and inspiring stories to fuel your next

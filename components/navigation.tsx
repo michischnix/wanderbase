@@ -31,7 +31,7 @@ export function Navigation() {
             <div className="w-10 h-10 relative">
               <Image src="/wb-logo2.png" alt="Wanderbase Logo" fill className="object-contain" />
             </div>
-            <span className="text-xl text-foreground font-bold">Wanderbase</span>
+            <span className="text-xl text-foreground font-bold">The Wanderbase</span>
           </Link>
 
           {/* Desktop Navigation */}
