@@ -64,14 +64,13 @@ export default function HomePage() {
         {/* Beige overlay with 50% opacity */}
         <div className="absolute inset-0" style={{ backgroundColor: "#e2dcc8", opacity: 0.5 }}></div>
 
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <div className="text-gray-800 mb-6 tracking-wide uppercase text-sm font-medium">The Wanderbase</div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-gray-900 drop-shadow-sm">
+        <div className="max-w-4xl mx-auto text-center relative z-10 shadow-none">
+          
+          <h1 className="text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight text-gray-900 drop-shadow-sm font-bold shadow-none">
             Your journey starts here
           </h1>
-          <p className="text-xl text-gray-800 mb-12 leading-relaxed max-w-2xl mx-auto drop-shadow-sm">
-            Discover the most stunning alpine destinations without breaking the bank. Expert guides, proven routes, and
-            insider tips for the budget-conscious adventurer.
+          <p className="text-xl text-gray-800 leading-relaxed max-w-2xl mx-auto drop-shadow-sm mb-8 font-medium px-0 shadow-none">
+            Discover the most stunning alpine destinations without breaking the bank. Expert guides, proven routes, and insider tips for the budget-conscious adventurer.
           </p>
           <a
             href="https://outdoorblueprint.gumroad.com/l/ob_jotr"
@@ -79,7 +78,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
             aria-label="Get started with our alpine adventure guide (opens in new tab)"
           >
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-12 py-4 shadow-lg">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 shadow-lg px-5 text-base py-4 my-0 font-medium">
               Get Started
             </Button>
           </a>
@@ -88,7 +87,7 @@ export default function HomePage() {
 
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 shadow-none">
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Latest Adventures</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Stories, tips, and insights from the trail to inspire your next outdoor adventure.
@@ -110,14 +109,14 @@ export default function HomePage() {
                   </div>
                   <div className="p-6">
                     <div className="flex items-center space-x-2 mb-4 text-sm text-muted-foreground">
-                      <span>{post.date}</span>
+                      <span className="shadow-none">{post.date}</span>
                       <span>•</span>
-                      <span className="font-medium">{post.category}</span>
+                      <span className="font-medium shadow-none">{post.category}</span>
                     </div>
-                    <h3 className="text-xl font-bold leading-tight text-foreground mb-4 group-hover:text-primary transition-colors">
+                    <h3 className="text-xl font-bold leading-tight text-foreground mb-4 group-hover:text-primary transition-colors shadow-none">
                       {post.title}
                     </h3>
-                    <Button className="bg-primary hover:bg-primary/90 w-full">Read Article</Button>
+                    <Button className="bg-primary hover:bg-primary/90 w-min shadow-none">Read Article</Button>
                   </div>
                 </Link>
               </div>
@@ -127,9 +126,9 @@ export default function HomePage() {
       </section>
 
       <section className="bg-primary text-primary-foreground py-24 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center shadow-none">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">Start Your Alpine Adventure Today</h2>
-          <p className="text-xl mb-12 text-primary-foreground/90 max-w-2xl mx-auto">
+          <p className="text-xl mb-12 text-primary-foreground/90 max-w-2xl mx-auto font-medium">
             Get instant access to our comprehensive alpine guide and start planning your budget-friendly adventure.
           </p>
           <a
@@ -138,7 +137,7 @@ export default function HomePage() {
             rel="noopener noreferrer"
             aria-label="Get alpine adventure guide now (opens in new tab)"
           >
-            <Button variant="secondary" size="lg" className="bg-secondary hover:bg-secondary/90 text-lg px-12 py-4">
+            <Button variant="secondary" size="lg" className="bg-secondary hover:bg-secondary/90 py-4 px-6 text-base">
               Get Guide Now
             </Button>
           </a>

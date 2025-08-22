@@ -31,18 +31,18 @@ export function Navigation() {
             <div className="w-10 h-10 relative">
               <Image src="/wb-logo2.png" alt="Wanderbase Logo" fill className="object-contain" />
             </div>
-            <span className="text-foreground font-black text-2xl">The Wanderbase</span>
+            <span className="text-foreground font-black text-2xl tracking-tighter">The Wanderbase</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/blog" className="text-foreground hover:text-primary transition-colors">
+          <div className="hidden md:flex items-center space-x-8 px-0">
+            <Link href="/blog" className="text-foreground hover:text-primary transition-colors font-medium shadow-none px-3.5 text-base">
               Blog
             </Link>
-            <Link href="/about" className="text-foreground hover:text-primary transition-colors">
+            <Link href="/about" className="text-foreground hover:text-primary transition-colors font-medium shadow-none px-3.5 text-base">
               About
             </Link>
-            <Button asChild className="bg-primary hover:bg-primary/90">
+            <Button asChild className="bg-primary hover:bg-primary/90 font-semibold shadow-none text-base">
               <a href="https://outdoorblueprint.gumroad.com/l/ob_jotr" target="_blank" rel="noopener noreferrer">
                 Get Guide
               </a>
