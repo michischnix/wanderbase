@@ -66,7 +66,7 @@ export default function HomePage() {
 
         <div className="max-w-4xl mx-auto text-center relative z-10 shadow-none">
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight text-gray-900 drop-shadow-sm font-bold shadow-none">
+          <h1 className="text-5xl md:text-6xl mb-8 leading-tight text-gray-900 drop-shadow-sm font-bold shadow-none lg:text-6xl">
             Your journey starts here
           </h1>
           <p className="text-xl text-gray-800 leading-relaxed max-w-2xl mx-auto drop-shadow-sm mb-8 font-medium px-0 shadow-none">

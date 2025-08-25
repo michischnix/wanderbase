@@ -10,7 +10,7 @@ export default function AboutPage() {
       <section className="px-6 bg-[#f0eee7] py-28 pt-32 pb-16">
         <div className="max-w-4xl mx-auto text-center">
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-foreground shadow-none">
+          <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight text-foreground shadow-none lg:text-6xl">
             About Wanderbase
           </h1>
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl mx-auto shadow-none">

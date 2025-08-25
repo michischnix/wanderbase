@@ -1,52 +1,13 @@
+import type { ReactNode } from "react"
+
 interface ArticleContentProps {
-  content: string
-  hasTableOfContents: boolean
+  children: ReactNode
+  hasTableOfContents?: boolean
 }
 
-function enhanceContentWithCallouts(content: string): string {
-  let enhancedContent = content
-
-  enhancedContent = enhancedContent.replace(
-    /<p>The solution is surprisingly simple\.(.*?)<\/p>/g,
-    '<div class="callout callout-blue"><strong>💡 Pro Tip:</strong> The solution is surprisingly simple.$1</div>',
-  )
-
-  enhancedContent = enhancedContent.replace(
-    /<p>Mountain rescue operations can cost upwards of €10,000(.*?)<\/p>/g,
-    '<div class="callout callout-red"><strong>⚠️ Warning:</strong> Mountain rescue operations can cost upwards of €10,000$1</div>',
-  )
-
-  enhancedContent = enhancedContent.replace(
-    /<p>Smart hikers adapt their eating strategy accordingly\.(.*?)<\/p>/g,
-    '<div class="callout callout-green"><strong>💰 Money Saver:</strong> Smart hikers adapt their eating strategy accordingly.$1</div>',
-  )
-
-  enhancedContent = enhancedContent.replace(
-    /<p>Maintain a 20% contingency fund specifically for weather-related expenses\.(.*?)<\/p>/g,
-    '<div class="callout callout-yellow"><strong>📋 Planning Tip:</strong> Maintain a 20% contingency fund specifically for weather-related expenses.$1</div>',
-  )
-
-  enhancedContent = enhancedContent.replace(
-    /<p>The Alps reward prepared hikers with unforgettable experiences—and punish the unprepared with expensive surprises\.<\/p>/g,
-    "<blockquote>The Alps reward prepared hikers with unforgettable experiences—and punish the unprepared with expensive surprises.</blockquote>",
-  )
-
-  return enhancedContent
-}
-
-export function ArticleContent({ content, hasTableOfContents }: ArticleContentProps) {
-  const firstParagraph = content.split("</p>")[0].replace("<p>", "")
-  const remainingContent = content.split("</p>").slice(1).join("</p>")
-
+export function ArticleContent({ children, hasTableOfContents = true }: ArticleContentProps) {
   return (
     <div className={hasTableOfContents ? "lg:col-span-3" : "lg:col-span-4 max-w-3xl mx-auto"}>
-      {/* Drop cap for first paragraph */}
-      <div className="mb-12">
-        <p className="leading-relaxed text-foreground first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 font-medium text-xl">
-          {firstParagraph}
-        </p>
-      </div>
-
       <div
         className="prose prose-lg max-w-none 
           prose-headings:text-foreground prose-headings:font-bold prose-headings:scroll-mt-24
@@ -65,10 +26,9 @@ export function ArticleContent({ content, hasTableOfContents }: ArticleContentPr
           [&_.callout-yellow]:bg-yellow-50 [&_.callout-yellow]:border-yellow-400 [&_.callout-yellow]:text-yellow-900
           [&_.callout-red]:bg-red-50 [&_.callout-red]:border-red-400 [&_.callout-red]:text-red-900
           [&_blockquote]:my-12 [&_blockquote]:pl-8 [&_blockquote]:border-l-4 [&_blockquote]:border-primary [&_blockquote]:italic [&_blockquote]:text-xl [&_blockquote]:font-medium"
-        dangerouslySetInnerHTML={{
-          __html: enhanceContentWithCallouts(remainingContent),
-        }}
-      />
+      >
+        {children}
+      </div>
     </div>
   )
 }
