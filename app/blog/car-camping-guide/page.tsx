@@ -55,19 +55,7 @@ export default function CarCampingGuidePage() {
 
       <BlogHero post={post} />
 
-      <div className="max-w-6xl mx-auto px-6 pt-8 pb-4">
-        <div className="flex flex-wrap gap-2">
-          {post.tags.map((tag) => (
-            <Link
-              key={tag}
-              href={`/blog?tag=${encodeURIComponent(tag)}`}
-              className="px-3 py-1 bg-muted text-muted-foreground text-sm rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
-            >
-              {tag}
-            </Link>
-          ))}
-        </div>
-      </div>
+      
 
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
