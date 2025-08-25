@@ -59,12 +59,12 @@ export default function WildCampingGuidePage() {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
           <TableOfContents items={tableOfContents} />
 
           <div className="lg:col-span-3">
-            <div className="mb-12">
-              <p className="leading-relaxed text-foreground first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 font-medium text-xl">
+            <div className="mb-8 lg:mb-12">
+              <p className="leading-relaxed text-foreground first-letter:text-4xl sm:first-letter:text-5xl lg:first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-2 sm:first-letter:mr-3 first-letter:mt-1 font-medium text-lg sm:text-xl">
                 There's something magical about waking up to nothing but the sounds of nature, with no neighbors, no
                 facilities, and no rules except those you set for yourself. Wild camping offers the ultimate outdoor
                 freedom, but it requires preparation, respect for the environment, and a willingness to be truly
@@ -73,13 +73,13 @@ export default function WildCampingGuidePage() {
             </div>
 
             <div
-              className="prose prose-lg max-w-none 
+              className="prose prose-base sm:prose-lg max-w-none 
               prose-headings:text-foreground prose-headings:font-bold prose-headings:scroll-mt-24
-              prose-h2:text-2xl prose-h2:mt-20 prose-h2:mb-8 prose-h2:leading-tight prose-h2:border-b prose-h2:border-muted prose-h2:pb-4
-              prose-h3:text-xl prose-h3:mt-12 prose-h3:mb-6 prose-h3:leading-tight prose-h3:text-primary
-              prose-p:text-foreground prose-p:text-lg prose-p:leading-relaxed prose-p:mb-8
-              prose-li:text-foreground prose-li:text-lg prose-li:leading-relaxed
-              prose-ul:mb-8 prose-li:mb-3
+              prose-h2:text-xl sm:prose-h2:text-2xl prose-h2:mt-12 sm:prose-h2:mt-20 prose-h2:mb-6 sm:prose-h2:mb-8 prose-h2:leading-tight prose-h2:border-b prose-h2:border-muted prose-h2:pb-3 sm:prose-h2:pb-4
+              prose-h3:text-lg sm:prose-h3:text-xl prose-h3:mt-8 sm:prose-h3:mt-12 prose-h3:mb-4 sm:prose-h3:mb-6 prose-h3:leading-tight prose-h3:text-primary
+              prose-p:text-foreground prose-p:text-base sm:prose-p:text-lg prose-p:leading-relaxed prose-p:mb-6 sm:prose-p:mb-8
+              prose-li:text-foreground prose-li:text-base sm:prose-li:text-lg prose-li:leading-relaxed
+              prose-ul:mb-6 sm:prose-ul:mb-8 prose-li:mb-2 sm:prose-li:mb-3
               prose-strong:text-foreground prose-strong:font-semibold"
             >
               <p>
@@ -88,7 +88,7 @@ export default function WildCampingGuidePage() {
                 the ethical responsibilities that come with this privilege.
               </p>
 
-              <h2 className="text-2xl my-6" id="what-is-wild-camping">
+              <h2 className="text-xl sm:text-2xl my-4 sm:my-6" id="what-is-wild-camping">
                 What is Wild Camping?
               </h2>
 
@@ -105,13 +105,13 @@ export default function WildCampingGuidePage() {
                 to pristine locations that developed campgrounds simply can't match.
               </p>
 
-              <div className="callout callout-blue my-8 p-6 border-l-4 bg-blue-50 border-blue-400 text-blue-900">
+              <div className="callout callout-blue my-6 sm:my-8 p-4 sm:p-6 border-l-4 bg-blue-50 border-blue-400 text-blue-900 rounded-r-lg">
                 <strong>💡 Pro Tip:</strong> Start with car camping in dispersed areas before attempting backpacking
                 wild camps. This allows you to bring more gear and have an easier exit strategy while you learn the
                 basics of self-sufficient camping.
               </div>
 
-              <h2 className="text-2xl my-6" id="essential-gear">
+              <h2 className="text-xl sm:text-2xl my-4 sm:my-6" id="essential-gear">
                 Essential Gear for Wild Camping
               </h2>
 
@@ -136,13 +136,13 @@ export default function WildCampingGuidePage() {
                 entire trip plus one extra day.
               </p>
 
-              <div className="callout callout-green my-8 p-6 border-l-4 bg-green-50 border-green-400 text-green-900">
+              <div className="callout callout-green my-6 sm:my-8 p-4 sm:p-6 border-l-4 bg-green-50 border-green-400 text-green-900 rounded-r-lg">
                 <strong>💰 Money Saver:</strong> Wild camping can save significant money on accommodation costs. A $200
                 investment in basic gear can provide hundreds of nights of free camping over the years, making it one of
                 the most cost-effective ways to explore the outdoors.
               </div>
 
-              <h2 className="text-2xl my-6" id="choosing-location">
+              <h2 className="text-xl sm:text-2xl my-4 sm:my-6" id="choosing-location">
                 Choosing the Perfect Location
               </h2>
 
@@ -158,13 +158,13 @@ export default function WildCampingGuidePage() {
                 permission from landowners.
               </p>
 
-              <div className="callout callout-yellow my-8 p-6 border-l-4 bg-yellow-50 border-yellow-400 text-yellow-900">
+              <div className="callout callout-yellow my-6 sm:my-8 p-4 sm:p-6 border-l-4 bg-yellow-50 border-yellow-400 text-yellow-900 rounded-r-lg">
                 <strong>📋 Planning Tip:</strong> Use apps like FreeRoam, Campendium, or iOverlander to find legal wild
                 camping spots. Always verify current regulations, as rules can change seasonally or due to fire
                 restrictions.
               </div>
 
-              <h2 className="my-6 text-2xl" id="safety-considerations">
+              <h2 className="my-4 sm:my-6 text-xl sm:text-2xl" id="safety-considerations">
                 Safety Considerations
               </h2>
 
@@ -173,7 +173,7 @@ export default function WildCampingGuidePage() {
                 can mitigate most dangers, but you must be prepared for emergencies when help may be hours or days away.
               </p>
 
-              <div className="callout callout-red my-8 p-6 border-l-4 bg-red-50 border-red-400 text-red-900">
+              <div className="callout callout-red my-6 sm:my-8 p-4 sm:p-6 border-l-4 bg-red-50 border-red-400 text-red-900 rounded-r-lg">
                 <strong>⚠️ Warning:</strong> Always inform someone of your planned route and expected return. Carry
                 emergency communication devices like a satellite messenger or personal locator beacon for remote areas
                 where cell service is unavailable.
@@ -185,7 +185,7 @@ export default function WildCampingGuidePage() {
                 batteries, emergency whistle, and basic repair materials including duct tape and tent patches.
               </p>
 
-              <h2 className="text-2xl my-6" id="leave-no-trace">
+              <h2 className="text-xl sm:text-2xl my-4 sm:my-6" id="leave-no-trace">
                 Leave No Trace Principles
               </h2>
 
@@ -200,12 +200,12 @@ export default function WildCampingGuidePage() {
                 burying human waste 6-8 inches deep, at least 200 feet from water sources.
               </p>
 
-              <blockquote className="my-12 pl-8 border-l-4 border-primary italic text-xl font-medium">
+              <blockquote className="my-8 sm:my-12 pl-4 sm:pl-8 border-l-4 border-primary italic text-lg sm:text-xl font-medium">
                 "Take only pictures, leave only footprints" becomes even more critical when you're camping in untouched
                 wilderness areas where your impact could affect the experience of future visitors.
               </blockquote>
 
-              <h2 className="text-2xl my-6" id="getting-started">
+              <h2 className="text-xl sm:text-2xl my-4 sm:my-6" id="getting-started">
                 Getting Started: Your First Trip
               </h2>
 

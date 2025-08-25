@@ -31,7 +31,7 @@ export function BlogHero({ title, excerpt, date, category, image, imageAlt, read
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 px-6 pb-6">
+      <section className="pt-32 px-6 pb-4">
         <div className="max-w-4xl mx-auto">
           {/* Back Button */}
           <Button variant="ghost" asChild className="mb-8 -ml-4">
@@ -61,7 +61,7 @@ export function BlogHero({ title, excerpt, date, category, image, imageAlt, read
       </section>
 
       {/* Hero Image */}
-      <section className="mb-16 px-6">
+      <section className="mb-4 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="aspect-[18/10] overflow-hidden">
             <img

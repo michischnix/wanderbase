@@ -1,6 +1,7 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import { ChevronDown, ChevronUp } from "lucide-react"
 
 interface TocItem {
   id: string
@@ -13,6 +14,8 @@ interface TableOfContentsProps {
 }
 
 export function TableOfContents({ items }: TableOfContentsProps) {
+  const [isOpen, setIsOpen] = useState(false)
+
   useEffect(() => {
     const tocLinks = document.querySelectorAll(".toc-link")
     const headings = document.querySelectorAll("h2[id], h3[id], h4[id], h5[id], h6[id]")
@@ -61,8 +64,20 @@ export function TableOfContents({ items }: TableOfContentsProps) {
     <div className="lg:col-span-1">
       <div className="sticky top-24">
         <div className="bg-muted/30 rounded-lg p-6">
-          <h2 className="text-lg font-bold text-foreground mb-4">Table of Contents</h2>
-          <nav className="space-y-2 mx-[-30px] my-3.5 py-2.5" id="table-of-contents">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="flex items-center justify-between w-full text-lg font-bold text-foreground mb-4 lg:cursor-default lg:pointer-events-none"
+          >
+            <span>Table of Contents</span>
+            <span className="lg:hidden">{isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}</span>
+          </button>
+
+          <nav
+            className={`space-y-2 mx-[-30px] my-3.5 py-2.5 transition-all duration-200 ${
+              isOpen ? "block" : "hidden lg:block"
+            }`}
+            id="table-of-contents"
+          >
             {items.map((item, index) => (
               <a
                 key={index}
@@ -77,6 +92,7 @@ export function TableOfContents({ items }: TableOfContentsProps) {
                         : "ml-8 text-muted-foreground text-xs"
                 }`}
                 data-target={item.id}
+                onClick={() => setIsOpen(false)} // Close dropdown when link is clicked on mobile
               >
                 {item.title}
               </a>
