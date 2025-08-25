@@ -7,13 +7,13 @@ export default function AboutPage() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      <section className="px-6 py-32 bg-[#f0eee7]">
+      <section className="px-6 bg-[#f0eee7] py-28 pt-32 pb-16">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="text-primary mb-6 tracking-wide uppercase text-sm font-medium">The Wanderbase</div>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-foreground">
+          
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight text-foreground shadow-none">
             About Wanderbase
           </h1>
-          <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-12 leading-relaxed max-w-2xl mx-auto shadow-none">
             We believe that incredible outdoor adventures shouldn't be reserved for those with unlimited budgets.
           </p>
         </div>
@@ -22,9 +22,9 @@ export default function AboutPage() {
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="prose prose-lg max-w-none text-foreground">
-            <div className="mb-16">
+            <div className="mb-16 mr-0">
               <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
+              <p className="text-muted-foreground leading-relaxed mb-6 mr-0">
                 Wanderbase was born from a simple belief: everyone deserves to experience the transformative power of
                 the outdoors, regardless of their budget. We're here to prove that you don't need expensive gear or
                 luxury accommodations to have life-changing adventures.
@@ -63,7 +63,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="text-center mt-16">
+          <div className="text-center mt-16 pt-16">
             <h3 className="text-3xl font-bold mb-6">Ready to Start Your Adventure?</h3>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Join thousands of budget-conscious adventurers who have discovered the Alps without breaking the bank.
