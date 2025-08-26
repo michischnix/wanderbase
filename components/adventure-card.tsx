@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 interface AdventureCardProps {
   title: string
@@ -17,10 +18,13 @@ export function AdventureCard({ title, category, image, href, featured = false }
         }`}
       >
         <div className={`aspect-square ${featured ? "md:aspect-[4/5]" : ""} relative overflow-hidden`}>
-          <img
+          <Image
             src={image || "/placeholder.svg"}
             alt={title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            sizes={featured ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 100vw, 33vw"}
+            priority={featured}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 

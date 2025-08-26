@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import Image from "next/image"
 
 const blogPosts = [
   {
@@ -52,25 +53,30 @@ export default function HomePage() {
       <Navigation />
 
       <section className="px-6 py-32 relative overflow-hidden">
-        {/* Parallax background */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/mountains-bg.jpg')",
-            transform: `translateY(${scrollY * 0.5}px)`,
-          }}
-        />
+        <div className="absolute inset-0">
+          <Image
+            src="/mountains-bg.jpg"
+            alt="Mountain landscape background"
+            fill
+            className="object-cover"
+            style={{
+              transform: `translateY(${scrollY * 0.5}px)`,
+            }}
+            priority
+            sizes="100vw"
+          />
+        </div>
 
         {/* Beige overlay with 50% opacity */}
         <div className="absolute inset-0" style={{ backgroundColor: "#e2dcc8", opacity: 0.5 }}></div>
 
         <div className="max-w-4xl mx-auto text-center relative z-10 shadow-none">
-          
           <h1 className="text-5xl md:text-6xl mb-8 leading-tight text-gray-900 drop-shadow-sm font-bold shadow-none lg:text-6xl">
             Your journey starts here
           </h1>
           <p className="text-xl text-gray-800 leading-relaxed max-w-2xl mx-auto drop-shadow-sm mb-8 font-medium px-0 shadow-none">
-            Discover the most stunning alpine destinations without breaking the bank. Expert guides, proven routes, and insider tips for the budget-conscious adventurer.
+            Discover the most stunning alpine destinations without breaking the bank. Expert guides, proven routes, and
+            insider tips for the budget-conscious adventurer.
           </p>
           <a
             href="https://outdoorblueprint.gumroad.com/l/ob_jotr"
@@ -100,11 +106,14 @@ export default function HomePage() {
                 className="group cursor-pointer bg-white shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
               >
                 <Link href={`/blog/${post.slug}`} aria-label={`Read article: ${post.title}`}>
-                  <div className="overflow-hidden">
-                    <img
+                  <div className="overflow-hidden relative aspect-[4/3]">
+                    <Image
                       src={post.image || "/placeholder.svg"}
                       alt={post.title}
-                      className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      loading={index === 0 ? "eager" : "lazy"}
                     />
                   </div>
                   <div className="p-6">

@@ -50,6 +50,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${dmSans.variable} antialiased`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="preload" href="/mountains-bg.jpg" as="image" />
+        <link rel="preload" href="/wb-logo2.png" as="image" />
+        <link rel="preload" href="/wb-logo2-white.png" as="image" />
+      </head>
       <body className="font-sans">
         <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
         <Analytics />
