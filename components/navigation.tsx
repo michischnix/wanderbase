@@ -37,13 +37,13 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8 px-0">
             <Link href="/blog" className="text-foreground hover:text-primary transition-colors font-medium shadow-none px-3.5 text-base">
-              Blog
+              Adventure Blog
             </Link>
             <Link href="/about" className="text-foreground hover:text-primary transition-colors font-medium shadow-none px-3.5 text-base">
-              About
+              About Us 
             </Link>
             <Button asChild className="bg-primary hover:bg-primary/90 font-semibold shadow-none text-base">
-              <a href="https://outdoorblueprint.gumroad.com/l/ob_jotr" target="_blank" rel="noopener noreferrer">
+              <a href="https://wanderbase.gumroad.com/l/beginners-guide" target="_blank" rel="noopener noreferrer">
                 Get Guide
               </a>
             </Button>

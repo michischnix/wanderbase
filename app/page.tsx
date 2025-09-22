@@ -71,7 +71,7 @@ export default function HomePage() {
         <div className="absolute inset-0" style={{ backgroundColor: "#e2dcc8", opacity: 0.5 }}></div>
 
         <div className="max-w-4xl mx-auto text-center relative z-10 shadow-none">
-          <h1 className="text-5xl md:text-6xl mb-8 leading-tight text-gray-900 drop-shadow-sm font-bold shadow-none lg:text-6xl">
+          <h1 className="text-5xl md:text-6xl leading-tight text-gray-900 drop-shadow-sm font-bold shadow-none lg:text-6xl mb-8 mt-8">
             Your journey starts here
           </h1>
           <p className="text-xl text-gray-800 leading-relaxed max-w-2xl mx-auto drop-shadow-sm mb-8 font-medium px-0 shadow-none">
@@ -79,13 +79,13 @@ export default function HomePage() {
             insider tips for the budget-conscious adventurer.
           </p>
           <a
-            href="https://outdoorblueprint.gumroad.com/l/ob_jotr"
+            href="https://wanderbase.gumroad.com/l/beginners-guide"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Get started with our alpine adventure guide (opens in new tab)"
           >
-            <Button size="lg" className="bg-primary hover:bg-primary/90 shadow-lg px-5 text-base py-4 my-0 font-medium">
-              Get Started
+            <Button size="lg" className="bg-primary hover:bg-primary/90 px-5 text-base py-4 my-0 font-medium shadow-none">
+              {"Get our Guide"}     
             </Button>
           </a>
         </div>
@@ -138,16 +138,16 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center shadow-none">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">Start Your Alpine Adventure Today</h2>
           <p className="text-xl mb-12 text-primary-foreground/90 max-w-2xl mx-auto font-medium">
-            Get instant access to our comprehensive alpine guide and start planning your budget-friendly adventure.
+            {"Get instant access to our new \"The Beginner’s Hiking Blueprint\" guide and start planning your budget-friendly adventure."}
           </p>
           <a
-            href="https://outdoorblueprint.gumroad.com/l/ob_jotr"
+            href="https://wanderbase.gumroad.com/l/beginners-guide"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Get alpine adventure guide now (opens in new tab)"
           >
-            <Button variant="secondary" size="lg" className="bg-secondary hover:bg-secondary/90 py-4 px-6 text-base">
-              Get Guide Now
+            <Button variant="secondary" size="lg" className="bg-secondary hover:bg-secondary/90 py-4 px-6 text-base shadow-none">
+              Get the Guide now
             </Button>
           </a>
         </div>

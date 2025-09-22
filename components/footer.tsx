@@ -47,7 +47,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://outdoorblueprint.gumroad.com/l/ob_jotr"
+                  href="https://wanderbase.gumroad.com/l/beginners-guide"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-background transition-colors"
