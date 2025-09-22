@@ -115,7 +115,7 @@ export default function BudgetBackpackingEuropePage() {
 
               <div className="my-8">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/pexels-willianjusten-19821199.jpg-zHEVZm6OXiIJhWGWDN7I3uLVRKWcbI.jpeg"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/pexels-willianjusten-19821199.jpg-KZcqPcdBa4oR6oLPWEzJHGhtSLPBAy.jpeg"
                   alt="Two hikers walking along a dramatic mountain lake with towering peaks in the background, showcasing the type of stunning scenery found in Albania's Accursed Mountains"
                   className="w-full h-96 object-cover rounded-lg shadow-lg"
                 />

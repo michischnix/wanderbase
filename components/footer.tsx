@@ -18,16 +18,16 @@ export function Footer() {
               Your trusted companion for outdoor adventures. Expert guides and inspiring stories to fuel your next
               expedition.
             </p>
-            <div className="mt-6">
+            <div className="mt-6 text-4xl">
               <a
-                href="https://www.instagram.com/thewanderbase_/"
+                href="https://www.instagram.com/thewanderbase/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 text-background/80 hover:text-background transition-colors"
                 aria-label="Follow us on Instagram (opens in new tab)"
               >
                 <Instagram size={20} />
-                <span>Follow us on Instagram</span>
+                <span className="font-bold text-lg">Follow us on Instagram</span>
               </a>
             </div>
           </div>
