@@ -43,8 +43,8 @@ export function Navigation() {
               About Us 
             </Link>
             <Button asChild className="bg-primary hover:bg-primary/90 font-semibold shadow-none text-base">
-              <a href="https://wanderbase.gumroad.com/l/beginners-guide" target="_blank" rel="noopener noreferrer">
-                Get Guide
+              <a href="https://wanderbase.gumroad.com/subscribe" target="_blank" rel="noopener noreferrer">
+                Join the Community
               </a>
             </Button>
           </div>

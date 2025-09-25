@@ -47,13 +47,13 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://wanderbase.gumroad.com/l/beginners-guide"
+                  href="https://wanderbase.gumroad.com/subscribe"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-background transition-colors"
                   aria-label="Get alpine adventure guide (opens in new tab)"
                 >
-                  Get Guide
+                  Join the Community
                 </a>
               </li>
             </ul>
