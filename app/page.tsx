@@ -71,12 +71,11 @@ export default function HomePage() {
         <div className="absolute inset-0" style={{ backgroundColor: "#e2dcc8", opacity: 0.5 }}></div>
 
         <div className="max-w-4xl mx-auto text-center relative z-10 shadow-none">
-          <h1 className="text-5xl md:text-6xl leading-tight text-gray-900 drop-shadow-sm font-bold shadow-none lg:text-6xl mb-8 mt-8">
-            Your journey starts here
+          <h1 className="text-5xl md:text-6xl leading-tight text-gray-900 drop-shadow-sm font-bold shadow-none mt-8 px-0 lg:text-5xl tracking-normal mb-8">
+            Hike the Trails, Not Your Budget.	
           </h1>
           <p className="text-xl text-gray-800 leading-relaxed max-w-2xl mx-auto drop-shadow-sm mb-8 font-medium px-0 shadow-none">
-            Discover the most stunning alpine destinations without breaking the bank. Expert guides, proven routes, and
-            insider tips for the budget-conscious adventurer.
+            Ditch the inflated prices and tourist traps. Get expert-vetted guides, budget hacks, and proven routes to stunning alpine destinations—all designed for the cost-conscious explorer.	
           </p>
           <a
             href="https://wanderbase.gumroad.com/subscribe"
@@ -94,7 +93,7 @@ export default function HomePage() {
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 shadow-none">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Latest Adventures</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-6 md:text-4xl">{"We Make Alpine Adventure Affordable."}</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Stories, tips, and insights from the trail to inspire your next outdoor adventure.
             </p>

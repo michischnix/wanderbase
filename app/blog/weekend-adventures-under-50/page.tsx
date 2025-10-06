@@ -121,7 +121,7 @@ export default function WeekendAdventuresPage() {
 
               <div className="my-8">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/pexels-liana-tril-86841229-10418649.jpg%281%29-Za05i72qPHRbfLKZXUR1nOhckKkaHj.jpeg"
+                  src="/images/design-mode/pexels-liana-tril-86841229-10418649.jpg%281%29.jpeg"
                   alt="Car camping setup with rooftop tent in a mountain valley, showing an accessible and affordable way to enjoy weekend wilderness adventures"
                   className="w-full h-96 object-cover rounded-lg shadow-lg"
                 />
