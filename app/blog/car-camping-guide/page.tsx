@@ -257,7 +257,7 @@ export default function CarCampingGuidePage() {
           </blockquote>
         </article>
 
-        <BlogFAQ title="Frequently Asked Questions About Car Camping" faqs={faqData} />
+        <BlogFAQ faqs={faqData} blogTitle="Car Camping" />
       </div>
 
       <Footer />

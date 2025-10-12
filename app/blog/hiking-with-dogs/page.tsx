@@ -211,7 +211,7 @@ export default function HikingWithDogsPage() {
           </blockquote>
         </article>
 
-        <BlogFAQ title="Frequently Asked Questions About Hiking with Dogs" faqs={faqData} />
+        <BlogFAQ faqs={faqData} blogTitle="Hiking with Dogs" />
       </div>
 
       <Footer />
