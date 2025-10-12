@@ -17,6 +17,13 @@ const blogPosts = [
     slug: "hidden-costs",
   },
   {
+    title: "How to Plan a Memorable Alpine Adventure Without Breaking the Bank",
+    category: "Budget Tips",
+    date: "Dec 10, 2024",
+    image: "/alpine-mountain-landscape.jpg",
+    slug: "plan-memorable-alpine-adventure",
+  },
+  {
     title: "Backpacking Europe on the Cheap: Hidden Trails That Won't Break the Bank",
     category: "Budget Tips",
     date: "Mar 18, 2024",
@@ -27,7 +34,8 @@ const blogPosts = [
     title: "Top 10 Free or Ultra-Low-Cost Outdoor Activities You Can Do Anywhere",
     category: "Budget Tips",
     date: "Mar 20, 2024",
-    image: "/free-outdoor-activities.png",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-ivan-samkov-9629911%20%281%29-MpjMqo6MudtcbKFkU1zZlUadrvhc6O.jpg",
     slug: "free-outdoor-activities",
   },
   {
@@ -48,7 +56,8 @@ const blogPosts = [
     title: "Seasonal Guides on a Dime: Affordable Outdoor Adventures Year-Round",
     category: "Budget Tips",
     date: "Mar 28, 2024",
-    image: "/seasonal-budget-adventures.png",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-simonmigaj-748898%20%281%29-MpjMqo6MudtcbKFkU1zZlUadrvhc6O.jpg",
     slug: "seasonal-budget-adventures",
   },
   {

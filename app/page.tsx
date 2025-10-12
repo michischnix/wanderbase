@@ -2,12 +2,31 @@
 
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { NewsletterSignup } from "@/components/newsletter-signup"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import Image from "next/image"
 
 const blogPosts = [
+  {
+    title: "Introduction to Budget-Friendly Alpine Adventures",
+    excerpt:
+      "Discover how to enjoy unforgettable alpine experiences without breaking the bank. Learn essential tips for budget-conscious adventurers.",
+    image: "/budget-alpine-hikers-sunset.jpg",
+    date: "Dec 10, 2024",
+    category: "Budget Tips",
+    slug: "budget-friendly-alpine-adventures",
+  },
+  {
+    title: "How to Plan a Memorable Alpine Adventure Without Breaking the Bank",
+    excerpt:
+      "A comprehensive guide to planning your perfect alpine adventure on a budget, from setting budgets to finding activities.",
+    image: "/alpine-mountain-landscape.jpg",
+    date: "Dec 10, 2024",
+    category: "Budget Tips",
+    slug: "plan-memorable-alpine-adventure",
+  },
   {
     title: "7 Hidden Costs That Destroy Your Alpine Hiking Budget (And How to Avoid Them)",
     excerpt:
@@ -17,6 +36,16 @@ const blogPosts = [
     date: "Mar 15, 2024",
     category: "Budget Tips",
     slug: "hidden-costs",
+  },
+  {
+    title: "Seasonal Guides on a Dime: Affordable Outdoor Adventures Year-Round",
+    excerpt:
+      "Discover budget-friendly outdoor adventures for every season. From spring wildflower hikes to winter snowshoeing, adventure awaits year-round without breaking the bank.",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-simonmigaj-748898%20%281%29-MpjMqo6MudtcbKFkU1zZlUadrvhc6O.jpg",
+    date: "Mar 28, 2024",
+    category: "Budget Tips",
+    slug: "seasonal-budget-adventures",
   },
   {
     title: "Public Transport vs. Car: The Ultimate Alps Budget Showdown",
@@ -72,10 +101,11 @@ export default function HomePage() {
 
         <div className="max-w-4xl mx-auto text-center relative z-10 shadow-none">
           <h1 className="text-5xl md:text-6xl leading-tight text-gray-900 drop-shadow-sm font-bold shadow-none mt-8 px-0 lg:text-5xl tracking-normal mb-8">
-            Hike the Trails, Not Your Budget.	
+            Hike the Trails, Not Your Budget.
           </h1>
           <p className="text-xl text-gray-800 leading-relaxed max-w-2xl mx-auto drop-shadow-sm mb-8 font-medium px-0 shadow-none">
-            Ditch the inflated prices and tourist traps. Get expert-vetted guides, budget hacks, and proven routes to stunning alpine destinations—all designed for the cost-conscious explorer.	
+            Ditch the inflated prices and tourist traps. Get expert-vetted guides, budget hacks, and proven routes to
+            stunning alpine destinations—all designed for the cost-conscious explorer.
           </p>
           <a
             href="https://wanderbase.gumroad.com/subscribe"
@@ -83,8 +113,11 @@ export default function HomePage() {
             rel="noopener noreferrer"
             aria-label="Get started with our alpine adventure guide (opens in new tab)"
           >
-            <Button size="lg" className="bg-primary hover:bg-primary/90 px-5 text-base py-4 my-0 shadow-none font-semibold">
-              {"Join the Community"}     
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 px-5 text-base py-4 my-0 shadow-none font-semibold"
+            >
+              {"Join the Community"}
             </Button>
           </a>
         </div>
@@ -93,7 +126,9 @@ export default function HomePage() {
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 shadow-none">
-            <h2 className="text-4xl font-bold text-foreground mb-6 md:text-4xl">{"We Make Alpine Adventure Affordable."}</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-6 md:text-4xl">
+              {"We Make Alpine Adventure Affordable."}
+            </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Stories, tips, and insights from the trail to inspire your next outdoor adventure.
             </p>
@@ -133,24 +168,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-primary text-primary-foreground py-24 px-6">
-        <div className="max-w-4xl mx-auto text-center shadow-none">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">Start Your Alpine Adventure Today</h2>
-          <p className="text-xl mb-12 text-primary-foreground/90 max-w-2xl mx-auto font-medium">
-            {"Stop overpaying for mountain travel! Subscribe now to get access to our comprehensive, expert-vetted guides, proven budget routes, and exclusive tips you won't find anywhere else."}
-          </p>
-          <a
-            href="https://wanderbase.gumroad.com/subscribe"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Join the Community now (opens in new tab)"
-          >
-            <Button variant="secondary" size="lg" className="bg-secondary hover:bg-secondary/90 py-4 px-6 text-base shadow-none font-semibold">
-              Join the Community now
-            </Button>
-          </a>
-        </div>
-      </section>
+      <NewsletterSignup />
 
       <Footer />
     </div>
