@@ -7,7 +7,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      <section className="px-6 bg-[#f0eee7] py-28 pt-32 pb-16">
+      <section className="px-6 bg-[#f0eee7] py-28 pt-32 pb-6">
         <div className="max-w-4xl mx-auto text-center">
           
           <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight text-foreground shadow-none lg:text-6xl">
@@ -69,7 +69,7 @@ export default function AboutPage() {
               Join thousands of budget-conscious adventurers who have discovered the Alps without breaking the bank.
             </p>
             <a
-              href="https://outdoorblueprint.gumroad.com/l/ob_jotr"
+              href="https://wanderbase.gumroad.com/subscribe"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Get our alpine adventure guide (opens in new tab)"
