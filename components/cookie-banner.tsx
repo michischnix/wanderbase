@@ -163,7 +163,7 @@ export function CookieBanner() {
               >
                 Customize
               </Button>
-              <Button onClick={handleOnlyNecessary} variant="ghost" className="text-muted-foreground flex-1">
+              <Button onClick={handleOnlyNecessary} variant="ghost" className="border-primary text-primary hover:bg-primary/10 flex-1 bg-transparent">
                 Only necessary
               </Button>
             </div>

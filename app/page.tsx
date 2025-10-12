@@ -100,7 +100,7 @@ export default function HomePage() {
         <div className="absolute inset-0" style={{ backgroundColor: "#e2dcc8", opacity: 0.5 }}></div>
 
         <div className="max-w-4xl mx-auto text-center relative z-10 shadow-none">
-          <h1 className="text-5xl md:text-6xl leading-tight text-gray-900 drop-shadow-sm font-bold shadow-none mt-8 px-0 lg:text-5xl tracking-normal mb-8">
+          <h1 className="md:text-6xl leading-tight text-gray-900 drop-shadow-sm font-bold shadow-none mt-8 px-0 lg:text-5xl tracking-normal mb-8 text-4xl">
             Hike the Trails, Not Your Budget.
           </h1>
           <p className="text-xl text-gray-800 leading-relaxed max-w-2xl mx-auto drop-shadow-sm mb-8 font-medium px-0 shadow-none">
