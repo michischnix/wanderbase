@@ -75,7 +75,7 @@ export default function AboutPage() {
               aria-label="Get our alpine adventure guide (opens in new tab)"
             >
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-12 py-4">
-                Get Our Guide
+                Join the Community  
               </Button>
             </a>
           </div>

@@ -72,8 +72,8 @@ export function Navigation() {
                 About
               </Link>
               <Button asChild className="bg-primary hover:bg-primary/90 w-fit">
-                <a href="https://outdoorblueprint.gumroad.com/l/ob_jotr" target="_blank" rel="noopener noreferrer">
-                  Get Guide
+                <a href="https://wanderbase.gumroad.com/subscribe" target="_blank" rel="noopener noreferrer">
+                  Join the Community
                 </a>
               </Button>
             </div>
