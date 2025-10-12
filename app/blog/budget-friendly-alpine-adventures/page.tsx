@@ -2,6 +2,7 @@ import { Navigation } from "@/components/navigation"
 import { BlogHero } from "@/components/blog-hero"
 import { Footer } from "@/components/footer"
 import { BlogFAQ } from "@/components/blog-faq"
+import { NewsletterSignup } from "@/components/newsletter-signup"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -269,6 +270,8 @@ export default function BudgetFriendlyAlpineAdventuresPage() {
 
         <BlogFAQ faqs={faqs} blogTitle="Budget-Friendly Alpine Adventures" />
       </div>
+
+      <NewsletterSignup />
 
       <Footer />
     </div>
