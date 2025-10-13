@@ -12,8 +12,7 @@ const blogPosts = [
     title: "7 Hidden Costs That Destroy Your Alpine Hiking Budget (And How to Avoid Them)",
     category: "Budget Tips",
     date: "Mar 15, 2024",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-sanmane-1365425.jpg-diWFGnCJ1uivMo0MNrtCVVFlz4NFcG.jpeg",
+    image: "/alpine-sunset-dramatic-peaks.jpg",
     slug: "hidden-costs",
   },
   {
@@ -34,8 +33,7 @@ const blogPosts = [
     title: "Top 10 Free or Ultra-Low-Cost Outdoor Activities You Can Do Anywhere",
     category: "Budget Tips",
     date: "Mar 20, 2024",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-ivan-samkov-9629911%20%281%29-MpjMqo6MudtcbKFkU1zZlUadrvhc6O.jpg",
+    image: "/winter-hikers-snowy-ridge.jpg",
     slug: "free-outdoor-activities",
   },
   {
@@ -56,8 +54,7 @@ const blogPosts = [
     title: "Seasonal Guides on a Dime: Affordable Outdoor Adventures Year-Round",
     category: "Budget Tips",
     date: "Mar 28, 2024",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-simonmigaj-748898%20%281%29-MpjMqo6MudtcbKFkU1zZlUadrvhc6O.jpg",
+    image: "/alpine-autumn-trees-mountains.jpg",
     slug: "seasonal-budget-adventures",
   },
   {
@@ -78,8 +75,7 @@ const blogPosts = [
     title: "Free Alpine Hikes: 12 Stunning Trails That Cost Nothing",
     category: "Free Trails",
     date: "Mar 8, 2024",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-fmaderebner-238622.jpg-9OhMz6CFerNpjuymbhQHBeTJJovNjM.jpeg",
+    image: "/summer-alpine-meadow-trail.jpg",
     slug: "free-trails",
   },
   {

@@ -31,8 +31,7 @@ const blogPosts = [
     title: "7 Hidden Costs That Destroy Your Alpine Hiking Budget (And How to Avoid Them)",
     excerpt:
       "Don't let surprise expenses ruin your Alps adventure. Discover the 7 hidden costs every budget hiker faces and proven strategies to avoid them.",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-sanmane-1365425.jpg-diWFGnCJ1uivMo0MNrtCVVFlz4NFcG.jpeg",
+    image: "/alpine-sunset-dramatic-peaks.jpg",
     date: "Mar 15, 2024",
     category: "Budget Tips",
     slug: "hidden-costs",
@@ -41,8 +40,7 @@ const blogPosts = [
     title: "Seasonal Guides on a Dime: Affordable Outdoor Adventures Year-Round",
     excerpt:
       "Discover budget-friendly outdoor adventures for every season. From spring wildflower hikes to winter snowshoeing, adventure awaits year-round without breaking the bank.",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-simonmigaj-748898%20%281%29-MpjMqo6MudtcbKFkU1zZlUadrvhc6O.jpg",
+    image: "/alpine-autumn-trees-mountains.jpg",
     date: "Mar 28, 2024",
     category: "Budget Tips",
     slug: "seasonal-budget-adventures",
@@ -60,8 +58,7 @@ const blogPosts = [
     title: "Free Alpine Hikes: 12 Stunning Trails That Cost Nothing",
     excerpt:
       "Discover 12 breathtaking Alpine hikes in Germany and Austria that are completely free. No cable cars, no parking fees—just pure mountain adventure on a zero budget.",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-fmaderebner-238622.jpg-9OhMz6CFerNpjuymbhQHBeTJJovNjM.jpeg",
+    image: "/summer-alpine-meadow-trail.jpg",
     date: "Mar 8, 2024",
     category: "Free Trails",
     slug: "free-trails",
