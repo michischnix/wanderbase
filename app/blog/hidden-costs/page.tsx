@@ -73,125 +73,109 @@ export default function HiddenCostsBlogPage() {
 
       <BlogHero post={post} />
 
-      <div className="max-w-6xl mx-auto px-6 py-16">
-        <article className="mx-auto" style={{ maxWidth: "750px" }}>
-          
-
-          <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
+      <div className="max-w-[750px] mx-auto px-6 py-16">
+        <div className="mb-12">
+          <p className="leading-relaxed text-foreground first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 font-medium text-xl">
             Planning your dream Alpine hiking trip? You've probably calculated accommodation, food, and transport costs.
-            But what about the hidden expenses that can double your budget overnight?
+            But what about the hidden expenses that can double your budget overnight? After years of documenting budget
+            Alpine adventures, the same costly mistakes appear repeatedly.
           </p>
+        </div>
 
-          <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
-            After years of documenting budget Alpine adventures, the same costly mistakes appear repeatedly. These are
-            the 7 hidden costs that catch everyone off-guard—and proven strategies to avoid them.
-          </p>
+        <article className="space-y-8">
+          <h2 className="text-2xl font-bold mt-16 mb-6">The Tourist Tax Trap That Everyone Forgets</h2>
 
-          <h2 className="text-3xl font-bold mt-16 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>
-            The Tourist Tax Trap That Everyone Forgets
-          </h2>
-
-          <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
+          <p className="text-lg leading-relaxed">
             Every single Alpine town charges a "Kurtaxe" or tourist tax, and it's rarely mentioned during booking. This
             seemingly small fee adds up quickly across multiple destinations.
           </p>
 
-          <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
+          <p className="text-lg leading-relaxed">
             In Zermatt, you'll pay €3.50 per night on top of your accommodation costs. For a week's stay, that's an
             extra €24.50 you never budgeted for. Multiply this across several towns on a longer hiking trip, and you're
             looking at an additional €50-100 that wasn't in your original calculations.
           </p>
 
-          <h2 className="text-3xl font-bold mt-16 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>
-            Mountain Transport: The 400% Markup Nobody Talks About
-          </h2>
+          <div className="my-8 p-6 border-l-4 bg-yellow-50 border-yellow-400 text-yellow-900 rounded-r-lg">
+            <strong>📋 Planning Tip:</strong> Always ask about tourist tax when booking accommodation. Some booking
+            platforms include it in the total price, while others add it as a surprise at checkout.
+          </div>
 
-          <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
+          <h2 className="text-2xl font-bold mt-16 mb-6">Mountain Transport: The 400% Markup Nobody Talks About</h2>
+
+          <p className="text-lg leading-relaxed">
             Cable cars and mountain railways represent one of the steepest markups you'll encounter in the Alps. A
             simple return trip can cost €40 or more, turning a budget day hike into an expensive excursion.
           </p>
 
-          <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
-            Here's where smart planning makes a massive difference. Instead of purchasing return tickets, hike up and
-            ride down—this immediately cuts your transport costs by 50%. Many cable car operators offer "Good Morning"
-            tickets for early departures that are 30% cheaper than standard fares.
-          </p>
+          <div className="my-8 p-6 border-l-4 bg-green-50 border-green-400 text-green-900 rounded-r-lg">
+            <strong>💰 Money Saver:</strong> Hike up and ride down to cut transport costs by 50%. Many cable car
+            operators offer "Good Morning" tickets for early departures that are 30% cheaper than standard fares.
+          </div>
 
-          <h2 className="text-3xl font-bold mt-16 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>
-            The Emergency Insurance Gap That Could Cost Thousands
-          </h2>
+          <h2 className="text-2xl font-bold mt-16 mb-6">The Emergency Insurance Gap That Could Cost Thousands</h2>
 
-          <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
+          <p className="text-lg leading-relaxed">
             Mountain rescue operations can cost upwards of €10,000 without proper insurance coverage. Your standard
             travel insurance likely doesn't cover specialized mountain rescue, helicopter evacuations, or medical
             treatment at high altitude.
           </p>
 
-          <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
-            The Austrian Alpine Club membership at €58 per year includes worldwide mountain rescue coverage and often
-            pays for itself on a single trip. Club members also receive discounts at mountain huts throughout the Alps.
-          </p>
+          <div className="my-8 p-6 border-l-4 bg-red-50 border-red-400 text-red-900 rounded-r-lg">
+            <strong>⚠️ Safety Warning:</strong> Never assume your regular travel insurance covers mountain rescue. Check
+            your policy specifically for high-altitude coverage and helicopter evacuation before your trip.
+          </div>
 
-          <h2 className="text-3xl font-bold mt-16 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>
-            When Gear Fails: The Mid-Trip Replacement Nightmare
-          </h2>
+          <h2 className="text-2xl font-bold mt-16 mb-6">When Gear Fails: The Mid-Trip Replacement Nightmare</h2>
 
-          <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
+          <p className="text-lg leading-relaxed">
             Nothing destroys a hiking budget faster than equipment failure in remote locations. Broken hiking boots or
             torn rain gear can cost €100-300 to replace mid-trip, and mountain gear shops charge premium prices.
           </p>
 
-          <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
-            Prevention is your best strategy here. Test all equipment on local day hikes before committing to multi-day
-            Alpine adventures. Pack a basic repair kit with duct tape, needle and thread, and superglue for emergency
-            fixes.
-          </p>
+          <div className="my-8 p-6 border-l-4 bg-blue-50 border-blue-400 text-blue-900 rounded-r-lg">
+            <strong>💡 Pro Tip:</strong> Test all equipment on local day hikes before committing to multi-day Alpine
+            adventures. Pack a basic repair kit with duct tape, needle and thread, and superglue for emergency fixes.
+          </div>
 
-          <h2 className="text-3xl font-bold mt-16 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>
-            The Altitude Tax: Why Mountain Food Costs Triple
-          </h2>
+          <h2 className="text-2xl font-bold mt-16 mb-6">The Altitude Tax: Why Mountain Food Costs Triple</h2>
 
-          <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
+          <p className="text-lg leading-relaxed">
             Mountain huts operate under challenging logistics, with supplies often delivered by helicopter. This results
             in food markups of 200-400% compared to valley prices. A simple pasta dish that costs €8 in town becomes
             €20-25 at altitude.
           </p>
 
-          <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
+          <p className="text-lg leading-relaxed">
             Smart hikers adapt their eating strategy accordingly. Plan one substantial meal in town each day, then pack
             lightweight, high-energy snacks for the trails. Energy bars, nuts, and dried fruit provide excellent
             nutrition without the premium prices.
           </p>
 
-          <h2 className="text-3xl font-bold mt-16 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>
-            Parking: The Hidden Daily Expense
-          </h2>
+          <h2 className="text-2xl font-bold mt-16 mb-6">Parking: The Hidden Daily Expense</h2>
 
-          <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
+          <p className="text-lg leading-relaxed">
             Trailhead parking fees range from €5-15 per day, with parking fines reaching €50-100 for violations. Popular
             hiking destinations often have complex parking regulations that catch tourists off-guard.
           </p>
 
-          <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
+          <p className="text-lg leading-relaxed">
             Research parking costs and regulations before choosing trailheads. Public transport is often cheaper than
             daily parking fees, especially for multi-day stays. Download parking apps like EasyPark for cashless
             payment—many Alpine parking zones only accept exact change or card payments.
           </p>
 
-          <h2 className="text-3xl font-bold mt-16 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>
-            Weather Contingency: The Budget Killer Nobody Plans For
-          </h2>
+          <h2 className="text-2xl font-bold mt-16 mb-6">Weather Contingency: The Budget Killer Nobody Plans For</h2>
 
-          <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
+          <p className="text-lg leading-relaxed">
             Alpine weather changes rapidly, forcing expensive last-minute plan modifications. Sudden storms can require
             unplanned accommodation nights, alternative activities, or complete route changes.
           </p>
 
-          <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
-            Maintain a 20% contingency fund specifically for weather-related expenses. Book accommodation with flexible
-            cancellation policies when possible, even if it costs slightly more upfront. Research indoor alternatives
-            and backup activities for each destination before arrival.
-          </p>
+          <blockquote className="my-12 pl-8 border-l-4 border-primary italic text-xl font-medium">
+            Maintain a 20% contingency fund specifically for weather-related expenses. The Alps are unpredictable, but
+            with proper planning, you can handle any surprise without derailing your budget.
+          </blockquote>
         </article>
 
         <BlogFAQ faqs={faqs} blogTitle={post.title} />
