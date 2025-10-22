@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
+import Image from "next/image"
 
 interface BlogHeroProps {
   title?: string
@@ -63,11 +64,14 @@ export function BlogHero({ title, excerpt, date, category, image, imageAlt, read
       {/* Hero Image */}
       <section className="mb-4 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="aspect-[18/10] overflow-hidden">
-            <img
+          <div className="aspect-[18/10] overflow-hidden relative">
+            <Image
               src={blogImage || "/placeholder.svg"}
               alt={imageAlt || `${blogTitle} - Adventure scene`}
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
             />
           </div>
         </div>
