@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/navigation"
 import { BlogHero } from "@/components/blog-hero"
 import { BlogFAQ } from "@/components/blog-faq"
+import { NewsletterSignup } from "@/components/newsletter-signup"
 import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
 
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-sanmane-1365425.jpg-diWFGnCJ1uivMo0MNrtCVVFlz4NFcG.jpeg",
+        url: "/alpine-sunset-dramatic-peaks.jpg",
         width: 1200,
         height: 630,
         alt: "Alpine hikers on rocky mountain terrain",
@@ -35,8 +36,7 @@ export default function HiddenCostsBlogPage() {
     category: "Budget Tips",
     date: "March 15, 2024",
     readTime: "8 min read",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-sanmane-1365425.jpg-diWFGnCJ1uivMo0MNrtCVVFlz4NFcG.jpeg",
+    image: "/alpine-sunset-dramatic-peaks.jpg",
   }
 
   const faqs = [
@@ -180,6 +180,8 @@ export default function HiddenCostsBlogPage() {
 
         <BlogFAQ faqs={faqs} blogTitle={post.title} />
       </div>
+
+      <NewsletterSignup />
 
       <Footer />
     </div>

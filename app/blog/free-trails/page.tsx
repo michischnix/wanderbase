@@ -1,5 +1,7 @@
 import { Navigation } from "@/components/navigation"
 import { BlogHero } from "@/components/blog-hero"
+import { BlogFAQ } from "@/components/blog-faq"
+import { NewsletterSignup } from "@/components/newsletter-signup"
 import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
 
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-fmaderebner-238622.jpg-9OhMz6CFerNpjuymbhQHBeTJJovNjM.jpeg",
+        url: "/summer-alpine-meadow-trail.jpg",
         width: 1200,
         height: 630,
         alt: "Couple sitting by pristine alpine lake with mountain reflections",
@@ -34,9 +36,36 @@ export default function FreeTrailsBlogPage() {
     category: "Trail Guides",
     date: "December 5, 2024",
     readTime: "15 min read",
-    image:
-      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pexels-fmaderebner-238622.jpg-9OhMz6CFerNpjuymbhQHBeTJJovNjM.jpeg",
+    image: "/summer-alpine-meadow-trail.jpg",
   }
+
+  const faqs = [
+    {
+      question: "Are free Alpine hiking trails safe for beginners?",
+      answer:
+        "Yes, many free Alpine trails are suitable for beginners. The trails mentioned in this guide range from easy lake circuits to more challenging mountain ascents. Always check trail difficulty ratings, weather forecasts, and your personal fitness level before starting. Begin with shorter, well-marked trails like the Hallstätter See circuit before attempting more demanding routes.",
+    },
+    {
+      question: "Do I need special equipment for free Alpine hiking?",
+      answer:
+        "Basic hiking equipment is sufficient for most free Alpine trails: sturdy hiking boots, weather-appropriate clothing layers, water, snacks, and a basic first aid kit. Download offline maps on your phone using apps like Maps.me, and carry a portable battery charger. More technical routes may require hiking poles and additional safety equipment.",
+    },
+    {
+      question: "How can I find free parking near Alpine trailheads?",
+      answer:
+        "Park in nearby villages rather than tourist parking lots, which often charge €5-15 daily. Look for residential street parking (always respect local regulations), church parking areas, or small village lots. Early morning arrivals typically provide more parking options. Apps like Park4Night can help locate free parking areas near trailheads.",
+    },
+    {
+      question: "What's the best time of year for free Alpine hiking?",
+      answer:
+        "Shoulder seasons (April-May and September-October) offer excellent conditions with fewer crowds and unstaffed facilities, meaning more free access. Summer (June-August) provides the most reliable weather but attracts peak tourism. Winter hiking requires specialized equipment and experience. Always check trail conditions and weather forecasts regardless of season.",
+    },
+    {
+      question: "Are there any hidden costs I should know about for 'free' trails?",
+      answer:
+        "Most free trails truly cost nothing, but budget for potential expenses: village parking (usually free but sometimes €2-5), mountain hut refreshments if desired (optional), and emergency mountain rescue insurance (€20-40 annually through Alpine clubs). Bring your own food and water to avoid mountain hut markups of 200-400%.",
+    },
+  ]
 
   return (
     <div className="min-h-screen bg-background">
@@ -327,7 +356,11 @@ export default function FreeTrailsBlogPage() {
             opportunities—the mountains reward curious hikers with limitless possibilities for zero-cost exploration.
           </blockquote>
         </div>
+
+        <BlogFAQ faqs={faqs} blogTitle={post.title} />
       </div>
+
+      <NewsletterSignup />
 
       <Footer />
     </div>

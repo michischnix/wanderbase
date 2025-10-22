@@ -61,6 +61,11 @@ export function Footer() {
                   Privacy & Cookie Policy
                 </Link>
               </li>
+              <li>
+                <Link href="/legal-notice" className="hover:text-background transition-colors">
+                  Legal Notice
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
