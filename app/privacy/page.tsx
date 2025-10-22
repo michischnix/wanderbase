@@ -39,7 +39,7 @@ export default function PrivacyPolicyPage() {
               <strong>Data Controller:</strong> The Wanderbase
             </p>
             <p className="text-foreground/80 leading-relaxed mb-2">
-              <strong>Contact Email:</strong> privacy@thewanderbase.com
+              <strong>Contact Email:</strong> thewanderbase@gmail.com
             </p>
             <p className="text-foreground/80 leading-relaxed mb-4">
               <strong>Website:</strong> www.thewanderbase.com
