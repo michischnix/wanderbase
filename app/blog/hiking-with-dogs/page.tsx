@@ -3,6 +3,7 @@ import { Navigation } from "@/components/navigation"
 import { BlogHero } from "@/components/blog-hero"
 import { Footer } from "@/components/footer"
 import { BlogFAQ } from "@/components/blog-faq"
+import { GuidesTeaser } from "@/components/guides-teaser"
 
 export const metadata: Metadata = {
   title: "Paws & Paths: A Beginner's Guide to Hiking with Dogs | Wanderbase",
@@ -213,6 +214,8 @@ export default function HikingWithDogsPage() {
 
         <BlogFAQ faqs={faqData} blogTitle="Hiking with Dogs" />
       </div>
+
+      <GuidesTeaser />
 
       <Footer />
     </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { BlogHero } from "@/components/blog-hero"
 import { Footer } from "@/components/footer"
+import { GuidesTeaser } from "@/components/guides-teaser"
 
 export const metadata: Metadata = {
   title: "Two Wheels, Endless Trails: Discover Bikepacking | Wanderbase",
@@ -189,6 +190,8 @@ export default function BikepackingGuidePage() {
           </p>
         </article>
       </div>
+
+      <GuidesTeaser />
 
       <Footer />
     </div>

@@ -2,6 +2,7 @@ import { Navigation } from "@/components/navigation"
 import { BlogHero } from "@/components/blog-hero"
 import { BlogFAQ } from "@/components/blog-faq"
 import { Footer } from "@/components/footer"
+import { GuidesTeaser } from "@/components/guides-teaser"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -74,15 +75,16 @@ export default function WeekendAdventuresPage() {
 
       <div className="max-w-6xl mx-auto px-6 py-6">
         <article className="mx-auto" style={{ maxWidth: "750px" }}>
-          
-
           <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
             The best wilderness escapes often lie within a two-hour drive of your front door. While social media
             showcases exotic destinations requiring expensive flights, some of the most restorative outdoor experiences
             happen in overlooked local areas that cost almost nothing to explore.
           </p>
 
-          <p className="mb-8 leading-relaxed text-2xl" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
+          <p
+            className="mb-8 leading-relaxed text-2xl"
+            style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}
+          >
             The Local Adventure Mindset
           </p>
 
@@ -429,6 +431,8 @@ export default function WeekendAdventuresPage() {
 
         <BlogFAQ faqs={faqs} blogTitle="Weekend Wilderness Escapes" />
       </div>
+
+      <GuidesTeaser />
 
       <Footer />
     </div>

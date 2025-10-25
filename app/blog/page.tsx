@@ -159,7 +159,7 @@ export default function BlogPage() {
       <Navigation />
 
       <section className="pt-32 pb-16 px-6">
-        <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center text-background">
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-8">Adventure Stories</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Expert insights, inspiring stories, and practical tips for budget-conscious outdoor adventurers.
@@ -184,7 +184,7 @@ export default function BlogPage() {
               <button
                 key={tag}
                 onClick={() => setActiveTag(tag)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors bg-secondary text-foreground ${
                   activeTag === tag
                     ? "bg-primary text-primary-foreground"
                     : "bg-muted text-muted-foreground hover:bg-muted/80"

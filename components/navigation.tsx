@@ -36,16 +36,26 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8 px-0">
-            <Link href="/blog" className="text-foreground hover:text-primary transition-colors font-medium shadow-none px-3.5 text-base">
+            <Link
+              href="/guides"
+              className="text-foreground hover:text-primary transition-colors font-medium shadow-none px-3.5 text-base"
+            >
+              Guides
+            </Link>
+            <Link
+              href="/blog"
+              className="text-foreground hover:text-primary transition-colors font-medium shadow-none px-3.5 text-base"
+            >
               Adventure Blog
             </Link>
-            <Link href="/about" className="text-foreground hover:text-primary transition-colors font-medium shadow-none px-3.5 text-base">
-              About Us 
+            <Link
+              href="/about"
+              className="text-foreground hover:text-primary transition-colors font-medium shadow-none px-3.5 text-base"
+            >
+              About Us
             </Link>
             <Button asChild className="bg-primary hover:bg-primary/90 font-semibold shadow-none text-base">
-              <a href="https://wanderbase.gumroad.com/subscribe" target="_blank" rel="noopener noreferrer">
-                Join the Community
-              </a>
+              <Link href="/guides">Explore our Guides</Link>
             </Button>
           </div>
 
@@ -65,6 +75,9 @@ export function Navigation() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col space-y-4">
+              <Link href="/guides" className="text-foreground hover:text-primary transition-colors">
+                Guides
+              </Link>
               <Link href="/blog" className="text-foreground hover:text-primary transition-colors">
                 Blog
               </Link>
@@ -72,9 +85,7 @@ export function Navigation() {
                 About
               </Link>
               <Button asChild className="bg-primary hover:bg-primary/90 w-fit">
-                <a href="https://wanderbase.gumroad.com/subscribe" target="_blank" rel="noopener noreferrer">
-                  Join the Community
-                </a>
+                <Link href="/guides">Explore our Guides</Link>
               </Button>
             </div>
           </div>

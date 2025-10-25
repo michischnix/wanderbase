@@ -71,6 +71,7 @@ export function BlogHero({ title, excerpt, date, category, image, imageAlt, read
               fill
               className="object-cover"
               priority
+              fetchPriority="high"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
             />
           </div>

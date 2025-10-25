@@ -36,6 +36,11 @@ export function Footer() {
             <h3 className="font-semibold mb-6 text-lg text-white">Explore</h3>
             <ul className="space-y-3 text-white">
               <li>
+                <Link href="/guides" className="hover:text-background transition-colors">
+                  Guides
+                </Link>
+              </li>
+              <li>
                 <Link href="/blog" className="hover:text-background transition-colors">
                   Adventure Blog
                 </Link>
@@ -46,15 +51,9 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a
-                  href="https://wanderbase.gumroad.com/subscribe"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-background transition-colors"
-                  aria-label="Get alpine adventure guide (opens in new tab)"
-                >
-                  Join the Community
-                </a>
+                <Link href="/guides" className="hover:text-background transition-colors">
+                  Explore our Guides
+                </Link>
               </li>
               <li>
                 <Link href="/privacy" className="hover:text-background transition-colors">

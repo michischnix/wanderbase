@@ -1,11 +1,8 @@
-"use client"
-
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { NewsletterSignup } from "@/components/newsletter-signup"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { useEffect, useState } from "react"
 import Image from "next/image"
 
 const blogPosts = [
@@ -66,14 +63,6 @@ const blogPosts = [
 ]
 
 export default function HomePage() {
-  const [scrollY, setScrollY] = useState(0)
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
@@ -85,10 +74,8 @@ export default function HomePage() {
             alt="Mountain landscape background"
             fill
             className="object-cover"
-            style={{
-              transform: `translateY(${scrollY * 0.5}px)`,
-            }}
             priority
+            fetchPriority="high"
             sizes="100vw"
           />
         </div>
@@ -104,19 +91,80 @@ export default function HomePage() {
             Ditch the inflated prices and tourist traps. Get expert-vetted guides, budget hacks, and proven routes to
             stunning alpine destinations—all designed for the cost-conscious explorer.
           </p>
-          <a
-            href="https://wanderbase.gumroad.com/subscribe"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Get started with our alpine adventure guide (opens in new tab)"
-          >
+          <Link href="/guides" aria-label="Explore our hiking guides">
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 px-5 text-base py-4 my-0 shadow-none font-semibold"
             >
-              {"Join the Community"}
+              Explore our Guides
             </Button>
-          </a>
+          </Link>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 bg-[#f0eee7]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-6 md:text-5xl">Expert Hiking Guides</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Get comprehensive guides to prepare for your alpine adventures with confidence.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {/* Free Guide Teaser */}
+            <div className="group bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden hover:-translate-y-1">
+              <div className="relative aspect-[16/9] overflow-hidden">
+                <Image
+                  src="/winter-hiking-starter-kit.png"
+                  alt="Winter Hiking Starter Kit"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <div className="p-8">
+                <div className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-4 bg-secondary text-foreground">
+                  FREE GUIDE
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight">Winter Hiking Starter Kit</h3>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  A free guide to preparing for winter trails safely and confidently. Perfect for beginners taking their
+                  first steps into winter hiking.
+                </p>
+                <Link href="/guides">
+                  <Button className="bg-primary hover:bg-primary/90 w-full font-semibold">View Guide</Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Paid Guide Teaser */}
+            <div className="group bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden hover:-translate-y-1">
+              <div className="relative aspect-[16/9] overflow-hidden">
+                <Image
+                  src="/beginners-guide-hiking-alps.jpg"
+                  alt="The Beginner's Guide to Hiking in the Alps"
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <div className="p-8">
+                <div className="inline-block px-4 py-1.5 rounded-full text-sm font-semibold mb-4 text-foreground bg-secondary">
+                  PREMIUM GUIDE
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight">
+                  The Beginner's Guide to Hiking in the Alps
+                </h3>
+                <p className="text-muted-foreground leading-relaxed mb-6">
+                  Your complete resource for alpine adventures with detailed routes, budget tips, and insider knowledge
+                  for unforgettable experiences.
+                </p>
+                <Link href="/guides">
+                  <Button className="bg-primary hover:bg-primary/90 w-full font-semibold">View Guide</Button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -144,7 +192,7 @@ export default function HomePage() {
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      priority={index === 0}
+                      loading={index === 0 ? "eager" : "lazy"}
                     />
                   </div>
                   <div className="p-6">

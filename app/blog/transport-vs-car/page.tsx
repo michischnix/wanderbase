@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/navigation"
 import { BlogHero } from "@/components/blog-hero"
 import { Footer } from "@/components/footer"
+import { GuidesTeaser } from "@/components/guides-teaser"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -218,6 +219,8 @@ export default function TransportVsCarBlogPage() {
           </div>
         </div>
       </div>
+
+      <GuidesTeaser />
 
       <Footer />
     </div>

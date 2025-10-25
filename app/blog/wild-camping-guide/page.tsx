@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { BlogHero } from "@/components/blog-hero"
 import { Footer } from "@/components/footer"
+import { GuidesTeaser } from "@/components/guides-teaser"
 
 export const metadata: Metadata = {
   title: "Beyond the Campsite: Discover Wild Camping for You | Wanderbase",
@@ -189,6 +190,8 @@ export default function WildCampingGuidePage() {
           </p>
         </article>
       </div>
+
+      <GuidesTeaser />
 
       <Footer />
     </div>

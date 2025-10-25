@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { BlogHero } from "@/components/blog-hero"
 import { Footer } from "@/components/footer"
+import { GuidesTeaser } from "@/components/guides-teaser"
 
 export const metadata: Metadata = {
   title: "Backcountry Skiing 101: Your First Steps Beyond the Resort | Wanderbase",
@@ -172,6 +173,8 @@ export default function BackcountrySkiingPage() {
           </blockquote>
         </article>
       </div>
+
+      <GuidesTeaser />
 
       <Footer />
     </div>

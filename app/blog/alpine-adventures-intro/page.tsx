@@ -2,6 +2,7 @@ import { Navigation } from "@/components/navigation"
 import { BlogHero } from "@/components/blog-hero"
 import { Footer } from "@/components/footer"
 import { BlogFAQ } from "@/components/blog-faq"
+import { GuidesTeaser } from "@/components/guides-teaser"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -133,6 +134,8 @@ export default function AlpineAdventuresIntroPage() {
 
         <BlogFAQ faqs={faqs} blogTitle={post.title} />
       </div>
+
+      <GuidesTeaser />
 
       <Footer />
     </div>
