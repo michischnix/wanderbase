@@ -67,19 +67,12 @@ export default function HomePage() {
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      <section className="px-6 py-32 relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/mountains-bg.jpg"
-            alt="Mountain landscape background"
-            fill
-            className="object-cover"
-            priority
-            fetchPriority="high"
-            sizes="100vw"
-          />
-        </div>
-
+      <section
+        className="px-6 py-32 relative overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url(/mountains-bg.jpg)",
+        }}
+      >
         {/* Beige overlay with 50% opacity */}
         <div className="absolute inset-0" style={{ backgroundColor: "#e2dcc8", opacity: 0.5 }}></div>
 
@@ -107,7 +100,8 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-6 md:text-5xl">Our Expert Hiking Guides</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Dive into our comprehensive, curated hiking guides designed to provide you with the essential knowledge needed to master the mountains.
+              Dive into our comprehensive, curated hiking guides designed to provide you with the essential knowledge
+              needed to master the mountains.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -156,7 +150,8 @@ export default function HomePage() {
                   The Beginner's Guide to Hiking in the Alps
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Your complete package for alpine adventures with detailed routes, budget tips, and insider knowledge for unforgettable experiences.
+                  Your complete package for alpine adventures with detailed routes, budget tips, and insider knowledge
+                  for unforgettable experiences.
                 </p>
                 <Link href="/guides">
                   <Button className="bg-primary hover:bg-primary/90 w-full font-semibold">View Guide</Button>
