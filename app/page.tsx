@@ -105,9 +105,9 @@ export default function HomePage() {
       <section className="py-24 px-6 bg-[#f0eee7]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-6 md:text-5xl">Expert Hiking Guides</h2>
+            <h2 className="text-4xl font-bold text-foreground mb-6 md:text-5xl">Our Expert Hiking Guides</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Get comprehensive guides to prepare for your alpine adventures with confidence.
+              Dive into our comprehensive, curated hiking guides designed to provide you with the essential knowledge needed to master the mountains.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -156,8 +156,7 @@ export default function HomePage() {
                   The Beginner's Guide to Hiking in the Alps
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Your complete resource for alpine adventures with detailed routes, budget tips, and insider knowledge
-                  for unforgettable experiences.
+                  Your complete package for alpine adventures with detailed routes, budget tips, and insider knowledge for unforgettable experiences.
                 </p>
                 <Link href="/guides">
                   <Button className="bg-primary hover:bg-primary/90 w-full font-semibold">View Guide</Button>

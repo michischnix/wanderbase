@@ -11,9 +11,9 @@ export default function GuidesPage() {
 
       <section className="px-6 bg-[#f0eee7] py-28 pt-32 pb-12 text-background bg-background">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight text-foreground">Expert Hiking Guides</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-tight text-foreground">Our Expert Hiking Guides</h1>
           <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Comprehensive guides to help you prepare for your next alpine adventure with confidence and safety.
+            {"Dive into our comprehensive, curated hiking guides designed to provide you with the essential knowledge needed to master the mountains."}
           </p>
         </div>
       </section>
@@ -95,8 +95,7 @@ export default function GuidesPage() {
                   The Beginner's Guide to Hiking in the Alps
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  Your first steps to alpine views with all the tips and confidence you need for an unforgettable
-                  adventure. Complete route planning, accommodation tips, and insider knowledge.
+                  Your first steps to alpine views with all the tips and confidence you need for great adventures. Complete route planning, safety tips, and insider knowledge.
                 </p>
                 <ul className="space-y-2 text-muted-foreground mb-8">
                   <li className="flex items-start">
@@ -105,7 +104,7 @@ export default function GuidesPage() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-3">✓</span>
-                    Budget accommodation recommendations
+                    Budget destination recommendations
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-3">✓</span>
