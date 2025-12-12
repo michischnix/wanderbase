@@ -32,12 +32,12 @@ export function NewsletterSignup() {
 
   return (
     <section className="relative w-full py-40 md:py-48 px-6 overflow-hidden">
-      <div ref={bgRef} className="absolute inset-0 -top-20 -bottom-20 z-0 will-change-transform">
+      <div ref={bgRef} className="absolute inset-0 -top-40 -bottom-40 z-0 will-change-transform">
         <Image
           src="/images/wanderbase-background-dec25-2.jpeg"
           alt="Misty mountain landscape with evergreen trees"
           fill
-          className="object-cover"
+          className="object-cover scale-110"
           sizes="100vw"
           priority={false}
         />
