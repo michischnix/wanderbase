@@ -56,7 +56,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link rel="preload" href="/mountains-bg.jpg" as="image" fetchPriority="high" />
+        {/* Removed manual preload for mountains-bg.jpg as next/image now handles it with proper responsive sizing */}
         <link rel="preload" href="/wb-logo2.png" as="image" fetchPriority="low" />
         <link rel="preload" href="/wb-logo2-white.png" as="image" fetchPriority="low" />
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />

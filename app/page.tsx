@@ -1,9 +1,12 @@
+"use client"
+
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { NewsletterSignup } from "@/components/newsletter-signup"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
+import { useEffect, useRef, useState } from "react"
 
 const blogPosts = [
   {
@@ -63,31 +66,98 @@ const blogPosts = [
 ]
 
 export default function HomePage() {
+  const [blurAmount, setBlurAmount] = useState(10)
+  const heroRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const duration = 10000 // 10 seconds
+    const delay = 3000 // 3 second delay
+    let animationFrameId: number
+
+    const startAnimation = () => {
+      const startTime = Date.now()
+      const startBlur = 10
+      const endBlur = 0
+
+      const animate = () => {
+        const elapsed = Date.now() - startTime
+        const progress = Math.min(elapsed / duration, 1)
+
+        // Smooth easing function for natural blur transition
+        const easeOutCubic = 1 - Math.pow(1 - progress, 3)
+        const currentBlur = startBlur - (startBlur - endBlur) * easeOutCubic
+
+        setBlurAmount(currentBlur)
+
+        if (progress < 1) {
+          animationFrameId = requestAnimationFrame(animate)
+        }
+      }
+
+      animate()
+    }
+
+    // Wait for page to be fully loaded, then add delay
+    if (document.readyState === "complete") {
+      setTimeout(startAnimation, delay)
+    } else {
+      window.addEventListener("load", () => {
+        setTimeout(startAnimation, delay)
+      })
+    }
+
+    return () => {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const scrolled = window.scrollY
+        const parallaxSpeed = 0.5
+        heroRef.current.style.transform = `translateY(${scrolled * parallaxSpeed}px)`
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
 
-      <section
-        className="px-6 py-32 relative overflow-hidden bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url(/mountains-bg.jpg)",
-        }}
-      >
-        {/* Beige overlay with 50% opacity */}
-        <div className="absolute inset-0" style={{ backgroundColor: "#e2dcc8", opacity: 0.5 }}></div>
+      <section className="px-6 py-32 relative overflow-hidden">
+        <div ref={heroRef} className="absolute inset-0 will-change-transform">
+          <Image
+            src="/images/wanderbase-background-dec25.jpeg"
+            alt="Mountain landscape background"
+            fill
+            className="object-cover"
+            style={{ filter: `blur(${blurAmount}px)` }}
+            priority
+            fetchPriority="high"
+            quality={90}
+            sizes="100vw"
+          />
+        </div>
+        <div className="absolute inset-0 bg-black/15 z-10 py-0 my-0 shadow-none"></div>
 
-        <div className="max-w-4xl mx-auto text-center relative z-10 shadow-none">
-          <h1 className="md:text-6xl leading-tight text-gray-900 drop-shadow-sm font-bold shadow-none mt-8 px-0 lg:text-5xl tracking-normal mb-8 text-4xl">
-            Hike the Trails, Not Your Budget.
+        <div className="max-w-4xl text-center relative z-20 shadow-none mx-auto my-0 px-0">
+          <h1 className="md:text-6xl leading-tight drop-shadow-sm font-bold shadow-none mb-8 text-4xl leading-8 mr-[0] ml-[0] text-white lg:text-6xl tracking-tight px-[0] py-[0] mt-36">
+            {"Hike the Trails, Not Your Budget."}
           </h1>
-          <p className="text-xl text-gray-800 leading-relaxed max-w-2xl mx-auto drop-shadow-sm mb-8 font-medium px-0 shadow-none">
+          <p className="text-xl leading-relaxed max-w-2xl mx-auto drop-shadow-sm mb-8 font-medium px-0 shadow-none text-white">
             Ditch the inflated prices and tourist traps. Get expert-vetted guides, budget hacks, and proven routes to
             stunning alpine destinations—all designed for the cost-conscious explorer.
           </p>
           <Link href="/guides" aria-label="Explore our hiking guides">
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 px-5 text-base py-4 my-0 shadow-none font-semibold"
+              className="bg-primary hover:bg-primary/90 px-5 text-base py-4 my-0 font-semibold shadow-md"
             >
               Explore our Guides
             </Button>

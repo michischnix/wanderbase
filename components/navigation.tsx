@@ -1,56 +1,42 @@
 "use client"
 
 import Link from "next/link"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-border transition-colors duration-200 border-b-0 ${
-        isScrolled ? "bg-background/95" : ""
-      }`}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center space-x-3">
             <div className="w-10 h-10 relative">
-              <Image src="/wb-logo2.png" alt="Wanderbase Logo" fill className="object-contain" />
+              <Image src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/wb-logo2-Zv8LXMn1Kf8CPwAZbQAFmqe46zXsBC.png" alt="Wanderbase Logo" fill className="object-contain" />
             </div>
-            <span className="text-foreground font-black text-2xl tracking-tighter">The Wanderbase</span>
+            <span className="font-black text-2xl tracking-tighter text-foreground">The Wanderbase</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8 px-0">
             <Link
               href="/guides"
-              className="text-foreground hover:text-primary transition-colors font-medium shadow-none px-3.5 text-base"
+              className="hover:text-primary transition-colors font-medium shadow-none px-3.5 text-base text-foreground"
             >
               Guides
             </Link>
             <Link
               href="/blog"
-              className="text-foreground hover:text-primary transition-colors font-medium shadow-none px-3.5 text-base"
+              className="hover:text-primary transition-colors font-medium shadow-none px-3.5 text-base text-foreground"
             >
               Adventure Blog
             </Link>
             <Link
               href="/about"
-              className="text-foreground hover:text-primary transition-colors font-medium shadow-none px-3.5 text-base"
+              className="hover:text-primary transition-colors font-medium shadow-none px-3.5 text-base text-foreground"
             >
               About Us
             </Link>

@@ -15,8 +15,7 @@ export function Footer() {
               <span className="text-2xl font-black tracking-tighter text-white">The Wanderbase</span>
             </div>
             <p className="text-lg max-w-md leading-relaxed font-light shadow-none text-white">
-              Your trusted companion for outdoor adventures. Expert guides and inspiring stories to fuel your next
-              expedition.
+              {"Your trusted companion for outdoor adventures — offering expert guides and inspiring stories to fuel your next journey, made for the cost-conscious explorer."}  
             </p>
             <div className="mt-6 text-4xl">
               <a
@@ -51,9 +50,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/guides" className="hover:text-background transition-colors">
-                  Explore our Guides
-                </Link>
+                
               </li>
               <li>
                 <Link href="/privacy" className="hover:text-background transition-colors">
