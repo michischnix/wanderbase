@@ -184,7 +184,7 @@ export default function BlogPage() {
               <button
                 key={tag}
                 onClick={() => setActiveTag(tag)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors bg-secondary text-foreground ${
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors text-foreground bg-popover ${
                   activeTag === tag
                     ? "bg-primary text-primary-foreground"
                     : "bg-muted text-muted-foreground hover:bg-muted/80"

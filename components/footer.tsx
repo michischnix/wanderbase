@@ -67,7 +67,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-background/20 mt-12 pt-8 text-center text-background/60">
-          <p className="text-white">&copy; 2025 Wanderbase. All rights reserved.</p>
+          <p className="text-white">© 2026 Wanderbase. All rights reserved.</p>
         </div>
       </div>
     </footer>
