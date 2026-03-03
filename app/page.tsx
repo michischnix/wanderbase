@@ -111,7 +111,7 @@ export default function HomePage() {
           <Link href="/guides" aria-label="Explore our hiking guides">
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 px-5 text-base py-4 my-0 font-semibold shadow-md"
+              className="bg-primary hover:bg-primary/90 px-5 text-base py-4 my-0 font-semibold shadow-md border-primary-foreground border-none border-0"
             >
               Explore our Guides
             </Button>
