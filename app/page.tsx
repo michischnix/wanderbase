@@ -6,7 +6,7 @@ import { NewsletterSignup } from "@/components/newsletter-signup"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 
 const blogPosts = [
   {
@@ -66,52 +66,7 @@ const blogPosts = [
 ]
 
 export default function HomePage() {
-  const [blurAmount, setBlurAmount] = useState(10)
   const heroRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const duration = 10000 // 10 seconds
-    const delay = 3000 // 3 second delay
-    let animationFrameId: number
-
-    const startAnimation = () => {
-      const startTime = Date.now()
-      const startBlur = 10
-      const endBlur = 0
-
-      const animate = () => {
-        const elapsed = Date.now() - startTime
-        const progress = Math.min(elapsed / duration, 1)
-
-        // Smooth easing function for natural blur transition
-        const easeOutCubic = 1 - Math.pow(1 - progress, 3)
-        const currentBlur = startBlur - (startBlur - endBlur) * easeOutCubic
-
-        setBlurAmount(currentBlur)
-
-        if (progress < 1) {
-          animationFrameId = requestAnimationFrame(animate)
-        }
-      }
-
-      animate()
-    }
-
-    // Wait for page to be fully loaded, then add delay
-    if (document.readyState === "complete") {
-      setTimeout(startAnimation, delay)
-    } else {
-      window.addEventListener("load", () => {
-        setTimeout(startAnimation, delay)
-      })
-    }
-
-    return () => {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId)
-      }
-    }
-  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -137,7 +92,6 @@ export default function HomePage() {
             alt="Mountain landscape background"
             fill
             className="object-cover"
-            style={{ filter: `blur(${blurAmount}px)` }}
             priority
             fetchPriority="high"
             quality={90}
