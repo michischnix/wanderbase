@@ -3,16 +3,21 @@ import { Navigation } from "@/components/navigation"
 import { BlogHero } from "@/components/blog-hero"
 import { Footer } from "@/components/footer"
 import { GuidesTeaser } from "@/components/guides-teaser"
+import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Beyond the Campsite: Discover Wild Camping for You | Wanderbase",
+  title: "Beyond the Campsite: Discover Wild Camping | Wanderbase",
   description:
     "Escape the crowds and discover the freedom of wild camping. Learn essential skills, gear recommendations, and safety tips for your first backcountry adventure.",
+  robots: "index, follow",
+  canonical: "https://wanderbase.com/blog/wild-camping-guide",
   openGraph: {
-    title: "Beyond the Campsite: Discover Wild Camping for You",
+    title: "Beyond the Campsite: Discover Wild Camping",
     description:
       "Escape the crowds and discover the freedom of wild camping. Learn essential skills, gear recommendations, and safety tips for your first backcountry adventure.",
-    images: ["/wild-camping-tent.jpg"],
+    url: "https://wanderbase.com/blog/wild-camping-guide",
+    type: "article",
+    images: [{ url: "/wild-camping-tent.jpg", width: 1200, height: 630, alt: "Lone tent in wild camping setting at dawn" }],
   },
 }
 
@@ -28,13 +33,47 @@ export default function WildCampingGuidePage() {
     tags: ["Camping", "Wilderness", "Beginner Guide"],
   }
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Beyond the Campsite: Discover Wild Camping",
+    datePublished: "2025-01-15",
+    dateModified: "2025-01-15",
+    author: { "@type": "Person", name: "Wanderbase Editorial Team" },
+    publisher: { "@type": "Organization", name: "Wanderbase", logo: { "@type": "ImageObject", url: "https://wanderbase.com/wb-logo2.png" } },
+    image: "https://wanderbase.com/wild-camping-tent.jpg",
+    description: "Essential guide to wild camping: gear list, how to choose legal locations, Leave No Trace principles, and safety for your first trip.",
+  }
+
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <Navigation />
 
       <BlogHero post={post} />
 
       <div className="max-w-[750px] mx-auto px-6 py-16">
+
+        {/* GEO Capsule */}
+        <div className="mb-10 p-5 bg-primary/8 border border-primary/25 rounded-lg">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Quick Answer</p>
+          <p className="text-base leading-relaxed text-foreground">
+            Wild camping is legal in National Forests (free, 14-day limit), Bureau of Land Management land (free, 14
+            days), and tolerated above treeline in much of Europe. You need a shelter, sleeping system rated for
+            temperatures, water purification, and a satellite communicator for remote areas. Always verify regulations
+            at your specific location before setting camp.
+          </p>
+        </div>
+
+        {/* Author & date */}
+        <div className="mb-10 flex items-center gap-3 text-sm text-muted-foreground border-b pb-6">
+          <span>By <strong className="text-foreground">Wanderbase Editorial Team</strong></span>
+          <span>·</span>
+          <span>January 15, 2025</span>
+          <span>·</span>
+          <span className="text-primary font-medium">Last updated: January 2025</span>
+        </div>
+
         <div className="mb-12">
           <p className="leading-relaxed text-foreground first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 font-medium text-xl">
             There's something magical about waking up to nothing but the sounds of nature, with no neighbors, no
@@ -52,7 +91,7 @@ export default function WildCampingGuidePage() {
           </p>
 
           <h2 className="text-xl sm:text-2xl my-4 sm:my-6" id="what-is-wild-camping">
-            What is Wild Camping?
+            What Is Wild Camping and Why Is It Different from a Campground?
           </h2>
 
           <p>

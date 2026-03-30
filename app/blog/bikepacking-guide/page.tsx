@@ -3,16 +3,21 @@ import { Navigation } from "@/components/navigation"
 import { BlogHero } from "@/components/blog-hero"
 import { Footer } from "@/components/footer"
 import { GuidesTeaser } from "@/components/guides-teaser"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Two Wheels, Endless Trails: Discover Bikepacking | Wanderbase",
   description:
     "Combine cycling and camping for the ultimate adventure. Learn essential bikepacking skills, gear selection, and route planning for your first multi-day cycling expedition.",
+  robots: "index, follow",
+  canonical: "https://wanderbase.com/blog/bikepacking-guide",
   openGraph: {
     title: "Two Wheels, Endless Trails: Discover Bikepacking",
     description:
       "Combine cycling and camping for the ultimate adventure. Learn essential bikepacking skills, gear selection, and route planning for your first multi-day cycling expedition.",
-    images: ["/bikepacking-desert.jpg"],
+    url: "https://wanderbase.com/blog/bikepacking-guide",
+    type: "article",
+    images: [{ url: "/bikepacking-desert.jpg", width: 1200, height: 630, alt: "Bikepacker on desert trail with loaded bags" }],
   },
 }
 
@@ -27,13 +32,46 @@ export default function BikepackingGuidePage() {
     image: "/bikepacking-desert.jpg",
   }
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Two Wheels, Endless Trails: Discover Bikepacking",
+    datePublished: "2025-01-25",
+    dateModified: "2025-01-25",
+    author: { "@type": "Person", name: "Wanderbase Editorial Team" },
+    publisher: { "@type": "Organization", name: "Wanderbase", logo: { "@type": "ImageObject", url: "https://wanderbase.com/wb-logo2.png" } },
+    image: "https://wanderbase.com/bikepacking-desert.jpg",
+    description: "A complete guide to bikepacking: bike setup, packing systems, route planning, camping strategy, and tips for your first multi-day trip.",
+  }
+
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <Navigation />
 
       <BlogHero post={post} />
 
       <div className="max-w-[750px] mx-auto px-6 py-16">
+
+        {/* GEO Capsule */}
+        <div className="mb-10 p-5 bg-primary/8 border border-primary/25 rounded-lg">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Quick Answer</p>
+          <p className="text-base leading-relaxed text-foreground">
+            Bikepacking uses frame bags, seat packs, and handlebar rolls instead of traditional panniers — keeping
+            weight centred so the bike handles singletrack. Any bike with 35mm+ tyre clearance works. For your first
+            trip, plan 2–3 days, 20–40 miles per day, close to home. A basic bag setup costs €100–200 to start.
+          </p>
+        </div>
+
+        {/* Author & date */}
+        <div className="mb-10 flex items-center gap-3 text-sm text-muted-foreground border-b pb-6">
+          <span>By <strong className="text-foreground">Wanderbase Editorial Team</strong></span>
+          <span>·</span>
+          <span>January 25, 2025</span>
+          <span>·</span>
+          <span className="text-primary font-medium">Last updated: January 2025</span>
+        </div>
+
         <div className="mb-12">
           <p className="leading-relaxed text-foreground first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 font-medium text-xl">
             Bikepacking represents the perfect fusion of cycling and camping, offering a unique way to explore remote
@@ -51,7 +89,7 @@ export default function BikepackingGuidePage() {
           </p>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="what-is-bikepacking">
-            What is Bikepacking?
+            What Is Bikepacking and How Does It Differ from Traditional Bicycle Touring?
           </h2>
 
           <p>

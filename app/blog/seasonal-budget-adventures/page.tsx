@@ -4,6 +4,7 @@ import { BlogFAQ } from "@/components/blog-faq"
 import { NewsletterSignup } from "@/components/newsletter-signup"
 import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Seasonal Guides on a Dime: Affordable Outdoor Adventures Year-Round",
@@ -29,51 +30,61 @@ export const metadata: Metadata = {
 }
 
 export default function SeasonalBudgetAdventuresPage() {
-  const post = {
-    title: "Seasonal Guides on a Dime: Affordable Outdoor Adventures Year-Round",
-    excerpt:
-      "Every season offers unique outdoor magic when you know where to look. Discover budget-friendly adventures for spring wildflowers, summer swimming holes, fall colors, and winter snow activities.",
-    category: "Budget Tips",
-    date: "March 28, 2024",
-    readTime: "13 min read",
-    image: "/alpine-autumn-trees-mountains.jpg",
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Seasonal Guides on a Dime: Affordable Outdoor Adventures Year-Round",
+    datePublished: "2024-03-28",
+    dateModified: "2024-03-28",
+    author: { "@type": "Person", name: "Wanderbase Editorial Team" },
+    publisher: {
+      "@type": "Organization",
+      name: "Wanderbase",
+      logo: { "@type": "ImageObject", url: "https://wanderbase.com/wb-logo2.png" },
+    },
+    image: "https://wanderbase.com/alpine-autumn-trees-mountains.jpg",
+    description: "Budget-friendly outdoor adventures for every season — from spring wildflower hikes to winter snowshoeing without breaking the bank.",
   }
 
-  const faqData = [
-    {
-      question: "What are the best budget-friendly outdoor activities for each season?",
-      answer:
-        "Spring offers free wildflower hikes and bird migration watching. Summer provides access to swimming holes and extended daylight for longer adventures. Fall features spectacular foliage hikes and harvest season activities. Winter enables snowshoeing and winter photography on free trails. Each season has unique opportunities that cost little to nothing.",
-    },
-    {
-      question: "How can I save money on seasonal outdoor gear?",
-      answer:
-        "Buy gear at end-of-season clearance sales (50-70% off), rent expensive items before committing to purchase, invest in multi-season versatile pieces like merino wool base layers, and properly store off-season gear to extend its life. Focus on quality basics rather than specialized single-season equipment.",
-    },
-    {
-      question: "When is the best time to visit outdoor destinations on a budget?",
-      answer:
-        "Shoulder seasons (spring and fall) offer 60% of the experience for 30% of the cost. Avoid school holidays and peak summer/winter periods. Weekdays (Tuesday-Thursday) typically have lower accommodation and activity costs than weekends. Off-peak timing provides better value and fewer crowds.",
-    },
-    {
-      question: "What free seasonal activities can I do year-round?",
-      answer:
-        "Spring wildflower hikes, summer swimming holes, fall foliage viewing, and winter snowshoeing on public trails are all free. Many parks offer free ranger programs, nature centers provide educational activities, and seasonal festivals often have free components. Research local phenology calendars to time activities perfectly.",
-    },
-    {
-      question: "How do I plan a year-round adventure calendar on a budget?",
-      answer:
-        "Create monthly adventure themes based on seasonal opportunities, build annual traditions around key seasonal events, develop weather contingency plans for each season, and use end-of-season clearance sales to prepare for the next year. Embrace each season's unique character rather than fighting against it.",
-    },
-  ]
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  }
 
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
 
       <BlogHero post={post} />
 
       <div className="max-w-[750px] mx-auto px-6 py-16">
+        {/* GEO Capsule */}
+        <div className="mb-10 p-5 bg-primary/8 border border-primary/25 rounded-lg">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Quick Answer</p>
+          <p className="text-base leading-relaxed text-foreground">
+            Each season offers unique free or low-cost activities: spring — wildflower hikes and waterfall trails; summer
+            — public swimming holes and free ranger programs; fall — foliage hikes and mushroom foraging; winter —
+            snowshoeing on free trails. Shoulder seasons (May–June, September–October) cut accommodation costs by 40–60%
+            versus peak season.
+          </p>
+        </div>
+
+        {/* Author & date */}
+        <div className="mb-10 flex items-center gap-3 text-sm text-muted-foreground border-b pb-6">
+          <span>By <strong className="text-foreground">Wanderbase Editorial Team</strong></span>
+          <span>·</span>
+          <span>March 28, 2024</span>
+          <span>·</span>
+          <span className="text-primary font-medium">Last updated: March 2024</span>
+        </div>
+
         <p className="leading-relaxed text-foreground first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 font-medium text-xl mb-12">
           Most outdoor enthusiasts hibernate during certain seasons, missing incredible adventures that only happen
           during specific times of year. Each season offers unique opportunities for budget-conscious adventurers
@@ -82,7 +93,7 @@ export default function SeasonalBudgetAdventuresPage() {
 
         <article className="space-y-8">
           <section>
-            <h2 className="text-2xl font-bold mt-16 mb-6">The Year-Round Adventure Mindset</h2>
+            <h2 className="text-2xl font-bold mt-16 mb-6">What Is the Year-Round Budget Adventure Mindset?</h2>
 
             <p className="text-lg leading-relaxed">
               Seasonal outdoor activities cost significantly less than their peak-season counterparts. Spring wildflower
@@ -104,7 +115,7 @@ export default function SeasonalBudgetAdventuresPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mt-16 mb-6">Spring: Renewal and Discovery</h2>
+            <h2 className="text-2xl font-bold mt-16 mb-6">What Are the Best Free Outdoor Activities in Spring?</h2>
 
             <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Wildflower Hiking (March-May)</h3>
 
@@ -154,7 +165,7 @@ export default function SeasonalBudgetAdventuresPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mt-16 mb-6">Summer: Water and Extended Daylight</h2>
+            <h2 className="text-2xl font-bold mt-16 mb-6">How Do You Find Free Outdoor Activities During Hot Summer Months?</h2>
 
             <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Public Swimming Holes and Natural Pools</h3>
 
@@ -201,7 +212,7 @@ export default function SeasonalBudgetAdventuresPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mt-16 mb-6">Fall: Colors and Comfortable Weather</h2>
+            <h2 className="text-2xl font-bold mt-16 mb-6">What Budget Adventures Are Unique to Autumn?</h2>
 
             <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Leaf-Peeping Hikes</h3>
 
@@ -256,7 +267,7 @@ export default function SeasonalBudgetAdventuresPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mt-16 mb-6">Winter: Solitude and Snow Sports</h2>
+            <h2 className="text-2xl font-bold mt-16 mb-6">How Do You Enjoy Free Winter Outdoor Activities Without Expensive Ski Passes?</h2>
 
             <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Snowshoeing on Free Trails</h3>
 
@@ -297,7 +308,7 @@ export default function SeasonalBudgetAdventuresPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mt-16 mb-6">Seasonal Gear</h2>
+            <h2 className="text-2xl font-bold mt-16 mb-6">When Should You Rent vs. Buy Seasonal Outdoor Gear?</h2>
 
             <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Rent vs. Buy Decision Matrix</h3>
 
@@ -332,7 +343,7 @@ export default function SeasonalBudgetAdventuresPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mt-16 mb-6">Planning Your Adventure Calendar</h2>
+            <h2 className="text-2xl font-bold mt-16 mb-6">How Do You Build a Year-Round Budget Adventure Calendar?</h2>
 
             <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Monthly Adventure Themes</h3>
 

@@ -4,16 +4,21 @@ import { BlogHero } from "@/components/blog-hero"
 import { Footer } from "@/components/footer"
 import { BlogFAQ } from "@/components/blog-faq"
 import { GuidesTeaser } from "@/components/guides-teaser"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Paws & Paths: A Beginner's Guide to Hiking with Dogs | Wanderbase",
   description:
     "Transform your hiking adventures by bringing your four-legged companion. Learn essential tips for safe, enjoyable hikes with your dog, from training to trail etiquette.",
+  robots: "index, follow",
+  canonical: "https://wanderbase.com/blog/hiking-with-dogs",
   openGraph: {
     title: "Paws & Paths: A Beginner's Guide to Hiking with Dogs",
     description:
       "Transform your hiking adventures by bringing your four-legged companion. Learn essential tips for safe, enjoyable hikes with your dog, from training to trail etiquette.",
-    images: ["/hiking-with-dog.jpg"],
+    url: "https://wanderbase.com/blog/hiking-with-dogs",
+    type: "article",
+    images: [{ url: "/hiking-with-dog.jpg", width: 1200, height: 630, alt: "Dog and hiker on mountain trail" }],
   },
 }
 
@@ -57,13 +62,58 @@ export default function HikingWithDogsPage() {
     },
   ]
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Paws & Paths: A Beginner's Guide to Hiking with Dogs",
+    datePublished: "2025-01-20",
+    dateModified: "2025-01-20",
+    author: { "@type": "Person", name: "Wanderbase Editorial Team" },
+    publisher: { "@type": "Organization", name: "Wanderbase", logo: { "@type": "ImageObject", url: "https://wanderbase.com/wb-logo2.png" } },
+    image: "https://wanderbase.com/hiking-with-dog.jpg",
+    description: "Complete guide to hiking with your dog: preparation, essential gear, trail etiquette, reading your dog's signals, and planning your first trip.",
+  }
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  }
+
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
 
       <BlogHero post={post} />
 
       <div className="max-w-[750px] mx-auto px-6 py-16">
+
+        {/* GEO Capsule */}
+        <div className="mb-10 p-5 bg-primary/8 border border-primary/25 rounded-lg">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Quick Answer</p>
+          <p className="text-base leading-relaxed text-foreground">
+            For a safe first hike with your dog: choose a 2–3 mile dog-friendly trail, carry double the water you think
+            you need, train reliable recall and "leave it" commands first, and start early to avoid heat. Essential gear
+            is minimal: sturdy 6-foot leash, collapsible bowl, and basic dog first aid. National Parks often prohibit
+            dogs on trails — always check regulations before departing.
+          </p>
+        </div>
+
+        {/* Author & date */}
+        <div className="mb-10 flex items-center gap-3 text-sm text-muted-foreground border-b pb-6">
+          <span>By <strong className="text-foreground">Wanderbase Editorial Team</strong></span>
+          <span>·</span>
+          <span>January 20, 2025</span>
+          <span>·</span>
+          <span className="text-primary font-medium">Last updated: January 2025</span>
+        </div>
+
         <div className="mb-12">
           <p className="leading-relaxed text-foreground first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 font-medium text-xl">
             Few things compare to the joy of exploring nature with your canine companion by your side. Dogs make
@@ -78,7 +128,7 @@ export default function HikingWithDogsPage() {
           </p>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="benefits-hiking-dogs">
-            Benefits of Hiking with Dogs
+            What Are the Real Benefits of Hiking with Your Dog?
           </h2>
 
           <p className="text-lg leading-relaxed">
