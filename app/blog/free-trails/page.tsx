@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Discover 12 free Alpine hiking trails in Germany and Austria with spectacular views — no cable car fees, no entrance charges. Start exploring for free.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/free-trails",
+  alternates: { canonical: "https://wanderbase.com/blog/free-trails" },
   openGraph: {
     title: "Free Alpine Hikes: 12 Stunning Trails That Cost Nothing",
     description:

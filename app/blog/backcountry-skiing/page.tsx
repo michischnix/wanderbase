@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Discover the freedom of backcountry skiing with our comprehensive beginner's guide. Learn essential skills, safety protocols, and gear recommendations for your first off-piste adventures.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/backcountry-skiing",
+  alternates: { canonical: "https://wanderbase.com/blog/backcountry-skiing" },
   openGraph: {
     title: "Backcountry Skiing 101: Your First Steps Beyond the Resort",
     description:

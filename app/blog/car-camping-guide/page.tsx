@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Master the art of car camping with our comprehensive guide. From vehicle setup to campsite selection, learn how to turn your car into the perfect base camp.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/car-camping-guide",
+  alternates: { canonical: "https://wanderbase.com/blog/car-camping-guide" },
   openGraph: {
     title: "Park, Pitch, Relax: Car Camping Made Simple",
     description:

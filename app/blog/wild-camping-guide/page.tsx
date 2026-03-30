@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Escape the crowds and discover the freedom of wild camping. Learn essential skills, gear recommendations, and safety tips for your first backcountry adventure.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/wild-camping-guide",
+  alternates: { canonical: "https://wanderbase.com/blog/wild-camping-guide" },
   openGraph: {
     title: "Beyond the Campsite: Discover Wild Camping",
     description:

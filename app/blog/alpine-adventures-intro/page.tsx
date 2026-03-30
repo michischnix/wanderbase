@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Discover the allure of the Alps and master budget planning for your next alpine adventure. Start exploring stunning trails without overspending.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/alpine-adventures-intro",
+  alternates: { canonical: "https://wanderbase.com/blog/alpine-adventures-intro" },
   openGraph: {
     title: "Introduction to Alpine Adventures: What You Need to Know",
     description:

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Transform your hiking adventures by bringing your four-legged companion. Learn essential tips for safe, enjoyable hikes with your dog, from training to trail etiquette.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/hiking-with-dogs",
+  alternates: { canonical: "https://wanderbase.com/blog/hiking-with-dogs" },
   openGraph: {
     title: "Paws & Paths: A Beginner's Guide to Hiking with Dogs",
     description:

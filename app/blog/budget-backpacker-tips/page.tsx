@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Learn from experienced budget backpackers who've mastered affordable adventure. Practical money-saving strategies and insider tips — start planning your next trip.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/budget-backpacker-tips",
+  alternates: { canonical: "https://wanderbase.com/blog/budget-backpacker-tips" },
   openGraph: {
     title: "Insider Tips from Budget Backpackers: Before Your Next Affordable Adventure",
     description:

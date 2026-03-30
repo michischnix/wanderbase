@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Discover 10 amazing outdoor activities that cost nothing or next to nothing. From urban foraging to geocaching, wild swimming to stargazing - adventure doesn't require expensive gear.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/free-outdoor-activities",
+  alternates: { canonical: "https://wanderbase.com/blog/free-outdoor-activities" },
   openGraph: {
     title: "Top 10 Free or Ultra-Low-Cost Outdoor Activities You Can Do Anywhere",
     description:

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Combine cycling and camping for the ultimate adventure. Learn essential bikepacking skills, gear selection, and route planning for your first multi-day cycling expedition.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/bikepacking-guide",
+  alternates: { canonical: "https://wanderbase.com/blog/bikepacking-guide" },
   openGraph: {
     title: "Two Wheels, Endless Trails: Discover Bikepacking",
     description:

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Discover budget outdoor gear that delivers professional performance without the premium price. Complete buying guide with specific recommendations and where to find the best deals.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/budget-gear-guide",
+  alternates: { canonical: "https://wanderbase.com/blog/budget-gear-guide" },
   openGraph: {
     title: "The Ultimate Budget Gear Rundown: Affordable Essentials That Don't Skimp on Quality",
     description:

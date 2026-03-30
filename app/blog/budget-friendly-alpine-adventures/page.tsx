@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Discover how to enjoy unforgettable alpine experiences without breaking the bank. Essential tips for budget-conscious adventurers — save money and explore more.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/budget-friendly-alpine-adventures",
+  alternates: { canonical: "https://wanderbase.com/blog/budget-friendly-alpine-adventures" },
   openGraph: {
     title: "Budget-Friendly Alpine Adventures: The Essential Beginner's Guide",
     description:

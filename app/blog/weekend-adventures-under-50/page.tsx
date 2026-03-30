@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Discover amazing weekend wilderness adventures within driving distance of home, all for under $50. Complete itinerary with costs, tips, and local adventure ideas.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/weekend-adventures-under-50",
+  alternates: { canonical: "https://wanderbase.com/blog/weekend-adventures-under-50" },
   openGraph: {
     title: "Weekend Wilderness Escapes from Home: Best Local Adventures Under $50",
     description:

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Discover 7 hidden costs that double your Alpine hiking budget. Learn proven strategies to avoid expensive surprises on your mountain adventure. Start saving now.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/hidden-costs",
+  alternates: { canonical: "https://wanderbase.com/blog/hidden-costs" },
   openGraph: {
     title: "7 Hidden Costs That Destroy Your Alpine Hiking Budget",
     description:

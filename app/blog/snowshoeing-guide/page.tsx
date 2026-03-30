@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Discover the accessible world of snowshoeing with our complete beginner's guide. Learn gear selection, techniques, and safety tips for your first winter hiking adventures.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/snowshoeing-guide",
+  alternates: { canonical: "https://wanderbase.com/blog/snowshoeing-guide" },
   openGraph: {
     title: "Snowshoeing 101: Step Into Winter Adventure",
     description:

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Learn step-by-step how to plan an unforgettable alpine adventure on a budget. From setting budgets to finding free activities — start planning today.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/plan-memorable-alpine-adventure",
+  alternates: { canonical: "https://wanderbase.com/blog/plan-memorable-alpine-adventure" },
   openGraph: {
     title: "How to Plan a Budget Alpine Adventure Without Breaking the Bank",
     description:

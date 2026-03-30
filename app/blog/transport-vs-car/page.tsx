@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Public transport vs car rental in the Alps: complete cost analysis with real numbers from 50+ destinations. Discover which option saves money. Read the full breakdown.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/transport-vs-car",
+  alternates: { canonical: "https://wanderbase.com/blog/transport-vs-car" },
   openGraph: {
     title: "Public Transport vs. Car in the Alps: Which Saves More Money?",
     description:

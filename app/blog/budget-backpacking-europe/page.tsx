@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Discover budget-friendly European backpacking destinations with stunning trails in the Balkans, Czech Republic, and Northern Spain. Complete cost breakdown and money-saving tips included.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/budget-backpacking-europe",
+  alternates: { canonical: "https://wanderbase.com/blog/budget-backpacking-europe" },
   openGraph: {
     title: "Backpacking Europe on the Cheap: Hidden Trails That Won't Break the Bank",
     description:

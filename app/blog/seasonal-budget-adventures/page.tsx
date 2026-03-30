@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Discover budget-friendly outdoor adventures for every season. From spring wildflower hikes to winter snowshoeing, enjoy year-round outdoor activities without breaking the bank.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/seasonal-budget-adventures",
+  alternates: { canonical: "https://wanderbase.com/blog/seasonal-budget-adventures" },
   openGraph: {
     title: "Seasonal Guides on a Dime: Affordable Outdoor Adventures Year-Round",
     description:
