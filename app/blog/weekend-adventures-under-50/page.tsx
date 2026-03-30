@@ -29,6 +29,34 @@ export const metadata: Metadata = {
   },
 }
 
+const faqs = [
+  {
+    question: "How do you find free camping near home for a weekend trip?",
+    answer:
+      "Park4Night and Freecampsites.net are the best apps for finding free legal spots within driving distance. In the USA, BLM (Bureau of Land Management) land allows free dispersed camping — the BLM website maps all public lands. In Europe, look for national forest land (Staatswald in Germany, forêt domaniale in France) where low-impact camping is generally tolerated. Always check current fire restrictions.",
+  },
+  {
+    question: "What is the cheapest way to do a weekend wilderness trip?",
+    answer:
+      "Drive (don't fly), camp for free on public land, cook all your own meals from home-packed ingredients, and choose trails with free parking. A full weekend — Friday evening to Sunday afternoon — costs €15–25 in fuel, €0 camping (free dispersed), and €15–20 in food. Total: €30–45. The main investment is time, not money.",
+  },
+  {
+    question: "What gear do you need for a budget weekend camping trip?",
+    answer:
+      "Minimum viable kit: a sleeping bag rated for the expected temperature (€30–50 at Decathlon), a foam sleeping mat (€12), a tarp or budget tent (€25–45), a small stove with a gas canister (€20 + €4 gas), a pot (€8), and a headlamp (€10). Total first-time cost: €100–150. This gear lasts for years of weekend trips, making each subsequent trip essentially free.",
+  },
+  {
+    question: "How early should you leave for a weekend wilderness trip to maximise time outdoors?",
+    answer:
+      "Leave Friday after work — even arriving at camp at 10 PM is fine if you set up in daylight or use a headlamp. This gives you two full days (Saturday and Sunday) plus Friday evening for stargazing or campfire time. Leaving Saturday morning wastes half a day. Pre-pack your car Thursday evening so Friday departure is instant.",
+  },
+  {
+    question: "What are the best weekend wilderness activities that cost nothing?",
+    answer:
+      "Hiking, wild swimming, birdwatching, foraging for berries and mushrooms, rock scrambling, photography, campfire cooking, stargazing, and journaling are all free once you're on public land. Many national forests also offer free ranger-led walks on weekends. The wilderness itself is the activity — the absence of entertainment infrastructure is the point.",
+  },
+]
+
 export default function WeekendAdventuresPage() {
   const articleSchema = {
     "@context": "https://schema.org",

@@ -29,6 +29,34 @@ export const metadata: Metadata = {
   },
 }
 
+const faqData = [
+  {
+    question: "What is the single most effective way to reduce travel costs?",
+    answer:
+      "Flexible scheduling is the most impactful cost reducer — traveling during shoulder seasons (April–June, September–October) and on weekdays rather than weekends can cut accommodation costs by 30–50% and transport by 20–30%. Combined with cooking your own meals from local markets, these two habits alone can reduce trip costs by 50–70%.",
+  },
+  {
+    question: "How do budget backpackers handle accommodation costs?",
+    answer:
+      "Experienced budget backpackers use a hierarchy: free camping or wild camping first, then Couchsurfing, hostel dormitories, and budget guesthouses. Loyalty to platforms like Hostelworld or Booking.com builds rewards. Longer stays negotiate weekly discounts. House-sitting and work exchanges eliminate accommodation costs entirely for extended travel.",
+  },
+  {
+    question: "What apps do experienced budget backpackers rely on most?",
+    answer:
+      "The essential toolkit: Too Good To Go for discounted surplus restaurant meals (saves 50–70% on food), Omio or Rome2Rio for cheap transport comparisons, Maps.me for offline navigation, Couchsurfing for free accommodation and local connections, and Workaway for accommodation-in-exchange-for-work opportunities.",
+  },
+  {
+    question: "How do budget backpackers manage emergency funds?",
+    answer:
+      "Most experienced travelers maintain a reserve of 20–25% of total trip budget untouched for emergencies. They use travel insurance with medical evacuation coverage (€30–60 for a month), carry a backup credit card from a different network (Visa + Mastercard), and keep €100–200 in cash in a separate location from their main wallet.",
+  },
+  {
+    question: "When does budget backpacking become unsafe or unwise?",
+    answer:
+      "Cost-cutting becomes dangerous when it compromises food safety (avoiding street food in hygiene-risk areas), shelter security (choosing accommodation in unsafe neighborhoods), or health (skipping travel insurance or vaccinations). The 20% emergency buffer is non-negotiable. Never sacrifice safety for savings — the medical bills or rescue costs dwarf any savings.",
+  },
+]
+
 export default function BudgetBackpackerTipsPage() {
   const articleSchema = {
     "@context": "https://schema.org",
@@ -57,12 +85,6 @@ export default function BudgetBackpackerTipsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <Navigation />
-
-      <BlogHero post={post} />
 
       <div className="max-w-[750px] mx-auto px-6 py-16">
         {/* GEO Capsule */}

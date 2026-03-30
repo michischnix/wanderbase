@@ -29,6 +29,34 @@ export const metadata: Metadata = {
   },
 }
 
+const faqData = [
+  {
+    question: "Which season offers the best value for outdoor adventures?",
+    answer:
+      "Shoulder seasons — late spring (May–June) and early autumn (September–October) — offer the best combination of good conditions and low prices. Accommodation costs drop 30–50% vs peak summer, trails are less crowded, and most outdoor activities are still fully accessible. In alpine areas, May and September offer the added bonus of snow-free trails and autumn foliage respectively.",
+  },
+  {
+    question: "What free outdoor activities are available in winter?",
+    answer:
+      "Snowshoeing on public forest trails (free if you own or rent snowshoes for ~€10/day), winter hiking on groomed paths, ice skating on natural frozen lakes, wildlife tracking in snow, and winter photography are all low or zero cost. Many national forests allow free cross-country skiing on ungroomed routes. Avoid ski resorts — lift passes cost €40–70/day.",
+  },
+  {
+    question: "How do you find free camping spots year-round?",
+    answer:
+      "Park4Night and Freecampsites.net map thousands of free legal camping spots worldwide. In the USA, Bureau of Land Management (BLM) land allows free dispersed camping. In Europe, national forests in Germany, Austria, and Scandinavia permit low-impact camping. Always verify current regulations — rules change seasonally in some protected areas.",
+  },
+  {
+    question: "What spring outdoor activities are completely free?",
+    answer:
+      "Wildflower identification hikes, waterfall trail exploration (snowmelt peaks in April–May), bird migration watching, foraging for wild garlic and spring greens, rock scrambling, and cycling on quiet country roads are all free. Spring also marks the opening of many free nature reserves and ranger-led programs that are funded by park fees.",
+  },
+  {
+    question: "How do you stay comfortable on budget outdoor adventures in extreme weather?",
+    answer:
+      "Layering is the key to both comfort and cost efficiency. A moisture-wicking base layer, insulating mid-layer, and windproof/waterproof outer shell cover 95% of conditions. In summer, sun protection (hat, SPF 50+, long sleeves) costs under €20. In winter, hand warmers (€1–2 per pair) and thermal base layers (€15–30) at Decathlon provide professional-level warmth at amateur prices.",
+  },
+]
+
 export default function SeasonalBudgetAdventuresPage() {
   const articleSchema = {
     "@context": "https://schema.org",

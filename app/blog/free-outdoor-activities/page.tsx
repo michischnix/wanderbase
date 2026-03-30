@@ -29,6 +29,34 @@ export const metadata: Metadata = {
   },
 }
 
+const faqData = [
+  {
+    question: "What free outdoor activities require no equipment at all?",
+    answer:
+      "Hiking on public trails, beachcombing, birdwatching, wild swimming in public water bodies, foraging (berries, mushrooms), geocaching (free app), stargazing, and urban parkour all require zero equipment. These activities are available in nearly every region and offer genuine outdoor adventure with no upfront cost whatsoever.",
+  },
+  {
+    question: "Is geocaching really free?",
+    answer:
+      "Yes, the basic Geocaching app is free and gives access to the millions of traditional caches worldwide. A premium subscription (€30/year) adds advanced filtering and mystery caches, but is entirely optional. All you need is a smartphone with GPS. Most geocaches are hidden in genuinely interesting natural and historical locations.",
+  },
+  {
+    question: "Where is foraging legally allowed?",
+    answer:
+      "In most of Northern and Western Europe, picking small amounts of wild berries, mushrooms, and herbs for personal consumption is legal under 'right to roam' laws (particularly in Scandinavia). In the UK, Germany, and Austria, picking reasonable quantities for personal use is generally tolerated on public land. Never forage in nature reserves or private land without permission.",
+  },
+  {
+    question: "What are the best apps for free outdoor activities?",
+    answer:
+      "iNaturalist (species identification, free), Geocaching (treasure hunting, free), Windy (weather, free), Maps.me (offline hiking maps, free), Seek by iNaturalist (AI plant/animal ID, free), and SkyView (stargazing, free). These apps collectively transform nature into an interactive, educational adventure at zero cost.",
+  },
+  {
+    question: "How do you find free wild swimming spots?",
+    answer:
+      "Wild Swimming app, Swimtrek's free spot database, and local Facebook groups (search '[your region] wild swimming') are the best resources. In the UK, the Outdoor Swimming Society maps hundreds of spots. Rivers and lakes on public land with safe water quality and no private ownership notices are generally accessible. Always check for blue-green algae warnings in summer.",
+  },
+]
+
 export default function FreeOutdoorActivitiesPage() {
   const articleSchema = {
     "@context": "https://schema.org",

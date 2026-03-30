@@ -29,6 +29,34 @@ export const metadata: Metadata = {
   },
 }
 
+const faqData = [
+  {
+    question: "What are the cheapest countries in Europe to backpack?",
+    answer:
+      "Albania, North Macedonia, Kosovo, and Bosnia-Herzegovina are Europe's cheapest destinations at €15–25/day all-in. Romania, Bulgaria, and Serbia follow at €20–35/day. These countries offer stunning nature, rich history, and authentic culture at a fraction of Western European costs, with many free national parks and well-marked hiking trails.",
+  },
+  {
+    question: "How do you get from country to country cheaply in Europe?",
+    answer:
+      "FlixBus and RegioJet cover most of Europe for €5–25 per journey. For rail, Interrail passes offer value for travelers visiting 5+ countries. Budget airlines like Ryanair and Wizz Air fill gaps — search on Google Flights with flexible dates. Night buses and trains save a night's accommodation while covering distance.",
+  },
+  {
+    question: "What is the best shoulder season to backpack Europe on a budget?",
+    answer:
+      "Late April to mid-June and September to mid-October offer the best combination of good weather, low crowds, and affordable accommodation. Prices drop 30–50% vs peak summer. In the Balkans, May and September are especially ideal — wildflowers in spring, warm sea temperatures in autumn, and far fewer tourists than July and August.",
+  },
+  {
+    question: "Is wild camping legal in the Balkans?",
+    answer:
+      "Wild camping rules vary: Albania and North Macedonia are generally tolerant of wild camping on public land away from settlements. Slovenia, Croatia, and Serbia require you to stay in designated sites or have landowner permission. Always research current regulations per country, camp low-impact, and leave no trace. National park rules are stricter everywhere.",
+  },
+  {
+    question: "How much money should I save before a 3-month Europe backpacking trip?",
+    answer:
+      "Budget €2,500–4,000 for 3 months in Eastern/Balkan Europe at €25–45/day. Add €300–500 for a travel insurance policy with medical repatriation. Budget Western Europe (France, Germany, Switzerland) requires €4,500–7,000 for the same duration. Keep 20% as an untouched emergency reserve and use a fee-free card like Wise to avoid ATM charges.",
+  },
+]
+
 export default function BudgetBackpackingEuropePage() {
   const articleSchema = {
     "@context": "https://schema.org",

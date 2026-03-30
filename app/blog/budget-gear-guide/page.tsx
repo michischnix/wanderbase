@@ -29,6 +29,34 @@ export const metadata: Metadata = {
   },
 }
 
+const faqs = [
+  {
+    question: "What is the best budget hiking backpack under €50?",
+    answer:
+      "The Decathlon Quechua NH100 (20L, €25) is the best value day hiking pack available. For overnight trips, the Forclaz MT100 (40L, €45) offers a proper suspension system and rain cover at an unbeatable price. Both are available in-store for immediate testing and come with a 2-year warranty — rare at this price point.",
+  },
+  {
+    question: "Can budget hiking boots really handle mountain terrain?",
+    answer:
+      "Yes. The Decathlon Quechua MH100 boots (€45) handle 90% of hiking conditions competently. They're waterproof, have adequate ankle support, and require minimal break-in. The limitation is multi-day technical terrain where a stiffer sole (found in €100+ boots) improves stability. For day hikes and moderate trails, budget boots are fully adequate.",
+  },
+  {
+    question: "Where is the best place to buy budget outdoor gear?",
+    answer:
+      "Decathlon offers the best price-to-performance ratio for new gear. End-of-season clearance sales (September–October for summer gear, February–March for winter gear) offer 40–70% discounts. For secondhand, check Facebook Marketplace, eBay, and local outdoor club notice boards. Gear rental from outdoor shops makes sense for items you'll use rarely.",
+  },
+  {
+    question: "What budget gear should you never compromise on?",
+    answer:
+      "Never compromise on footwear (blisters end trips), rain protection (hypothermia risk), and navigation tools (safety). A poorly fitting boot at any price will ruin a trip. A rain jacket that isn't actually waterproof is dangerous. These three items justify spending slightly more — everything else (poles, packs, clothing layers) can be budget.",
+  },
+  {
+    question: "How do you care for budget gear to make it last longer?",
+    answer:
+      "Rinse synthetic fabrics after use and air-dry (never tumble-dry high). Re-proof waterproof jackets annually with Nikwax TX.Direct (€8). Store sleeping bags uncompressed. Dry wet boots at room temperature, never on radiators. These habits extend budget gear life from 1–2 seasons to 4–5 seasons, making cheap gear genuinely cost-effective long-term.",
+  },
+]
+
 export default function BudgetGearGuidePage() {
   const articleSchema = {
     "@context": "https://schema.org",
