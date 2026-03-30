@@ -4,11 +4,12 @@ import { BlogFAQ } from "@/components/blog-faq"
 import { NewsletterSignup } from "@/components/newsletter-signup"
 import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Free Alpine Hikes: 12 Stunning Trails That Cost Nothing",
   description:
-    "12 stunning free Alpine hiking trails that cost nothing. Discover spectacular mountain adventures without cable car fees or expensive tourist attractions.",
+    "Discover 12 free Alpine hiking trails in Germany and Austria with spectacular views — no cable car fees, no entrance charges. Start exploring for free.",
   robots: "index, follow",
   canonical: "https://wanderbase.com/blog/free-trails",
   openGraph: {
@@ -26,6 +27,22 @@ export const metadata: Metadata = {
       },
     ],
   },
+}
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Free Alpine Hikes: 12 Stunning Trails That Cost Nothing",
+  datePublished: "2024-12-05",
+  dateModified: "2024-12-05",
+  author: { "@type": "Person", name: "Wanderbase Editorial Team" },
+  publisher: {
+    "@type": "Organization",
+    name: "Wanderbase",
+    logo: { "@type": "ImageObject", url: "https://wanderbase.com/wb-logo2.png" },
+  },
+  image: "https://wanderbase.com/summer-alpine-meadow-trail.jpg",
+  description: "12 stunning free Alpine hiking trails in Germany and Austria — no cable car fees, no entrance charges.",
 }
 
 export default function FreeTrailsBlogPage() {
@@ -67,13 +84,50 @@ export default function FreeTrailsBlogPage() {
     },
   ]
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  }
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navigation />
 
       <BlogHero post={post} />
 
       <div className="max-w-[750px] mx-auto px-6 py-16">
+        {/* GEO Capsule */}
+        <div className="mb-10 p-5 bg-primary/8 border border-primary/25 rounded-lg">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Quick Answer</p>
+          <p className="text-base leading-relaxed text-foreground">
+            All 12 trails in this guide are completely free to access — no cable car ticket, no parking fee, no
+            entrance charge. They span Germany and Austria and range from easy lake circuits to challenging summit hikes,
+            all reachable by public transport or free village parking.
+          </p>
+        </div>
+
+        {/* Author & date */}
+        <div className="mb-10 flex items-center gap-3 text-sm text-muted-foreground border-b pb-6">
+          <span>By <strong className="text-foreground">Wanderbase Editorial Team</strong></span>
+          <span>·</span>
+          <span>December 5, 2024</span>
+          <span>·</span>
+          <span className="text-primary font-medium">Last updated: December 2024</span>
+        </div>
+
         {/* Drop cap for first paragraph */}
         <div className="mb-12">
           <p className="leading-relaxed text-foreground first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 font-medium text-xl">
@@ -91,7 +145,7 @@ export default function FreeTrailsBlogPage() {
           </p>
 
           <h2 className="text-2xl font-bold mt-12 mb-6" id="germany-spectacular">
-            Germany: Where Free Meets Spectacular
+            Why Does Germany Offer Some of the Best Free Alpine Hikes in Europe?
           </h2>
 
           <p>
@@ -167,7 +221,7 @@ export default function FreeTrailsBlogPage() {
           </div>
 
           <h2 className="text-2xl font-bold mt-12 mb-6" id="austria-adventures">
-            Austria: Free Alpine Adventures in the Heart of the Alps
+            What Free Alpine Hikes Does Austria Offer for Budget Travelers?
           </h2>
 
           <p>
@@ -281,7 +335,7 @@ export default function FreeTrailsBlogPage() {
           </p>
 
           <h2 className="text-2xl font-bold mt-12 mb-6" id="strategic-approaches">
-            Strategic Approaches to Free Alpine Hiking
+            How Do You Access Free Alpine Trails Outside Commercial Tourism Systems?
           </h2>
 
           <p>
@@ -305,7 +359,7 @@ export default function FreeTrailsBlogPage() {
           </div>
 
           <h2 className="text-2xl font-bold mt-12 mb-6" id="essential-resources">
-            Essential Free Resources for Alpine Adventures
+            What Free Apps and Resources Help You Plan Zero-Cost Alpine Adventures?
           </h2>
 
           <p>
@@ -349,6 +403,18 @@ export default function FreeTrailsBlogPage() {
             capabilities. The European emergency number 112 functions without cell service on any available network,
             providing crucial emergency access even in remote mountain areas.
           </div>
+
+          <p>
+            For additional money-saving strategies beyond trail access, see our guide to{" "}
+            <Link href="/blog/hidden-costs" className="text-primary underline underline-offset-4">
+              7 hidden Alpine hiking costs to avoid
+            </Link>{" "}
+            and our{" "}
+            <Link href="/blog/transport-vs-car" className="text-primary underline underline-offset-4">
+              public transport vs. car comparison
+            </Link>{" "}
+            for getting to trailheads cheaply.
+          </p>
 
           <blockquote className="my-12 pl-8 border-l-4 border-primary italic text-xl font-medium">
             Free Alpine hiking opens extraordinary mountain experiences to anyone willing to trade convenience for

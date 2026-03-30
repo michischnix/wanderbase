@@ -1,7 +1,23 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+
+export const metadata: Metadata = {
+  title: "About Wanderbase – Budget Alpine Adventure Guides",
+  description:
+    "Wanderbase helps budget-conscious adventurers explore the Alps without overspending. Learn about our mission, expert guides, and how we make mountain adventures affordable.",
+  robots: "index, follow",
+  openGraph: {
+    title: "About Wanderbase – Budget Alpine Adventure Guides",
+    description:
+      "Wanderbase helps budget-conscious adventurers explore the Alps without overspending. Learn about our mission, expert guides, and how we make mountain adventures affordable.",
+    url: "https://wanderbase.com/about",
+    type: "website",
+    images: [{ url: "/wb-meta2.png", width: 1200, height: 630, alt: "Wanderbase – About Us" }],
+  },
+}
 
 export default function AboutPage() {
   return (

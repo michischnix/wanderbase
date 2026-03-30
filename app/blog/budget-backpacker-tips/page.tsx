@@ -4,11 +4,12 @@ import { BlogFAQ } from "@/components/blog-faq"
 import { NewsletterSignup } from "@/components/newsletter-signup"
 import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Insider Tips from Budget Backpackers: Before Your Next Affordable Adventure",
+  title: "Insider Tips from Budget Backpackers: Save Money on Your Next Adventure",
   description:
-    "Learn from experienced budget backpackers who've mastered the art of affordable adventure. Practical wisdom, money-saving strategies, and insider tips for your next budget trip.",
+    "Learn from experienced budget backpackers who've mastered affordable adventure. Practical money-saving strategies and insider tips — start planning your next trip.",
   robots: "index, follow",
   canonical: "https://wanderbase.com/blog/budget-backpacker-tips",
   openGraph: {
@@ -29,51 +30,60 @@ export const metadata: Metadata = {
 }
 
 export default function BudgetBackpackerTipsPage() {
-  const post = {
-    title: "Insider Tips from Budget Backpackers: Before Your Next Affordable Adventure",
-    excerpt:
-      "Wisdom from those who've mastered affordable adventure. Learn the insider strategies, mindset shifts, and practical tips that separate successful budget backpackers from expensive tourists.",
-    category: "Budget Tips",
-    date: "March 30, 2024",
-    readTime: "14 min read",
-    image: "/budget-backpacker-tips.png",
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Insider Tips from Budget Backpackers: Save Money on Your Next Adventure",
+    datePublished: "2024-03-30",
+    dateModified: "2024-03-30",
+    author: { "@type": "Person", name: "Wanderbase Editorial Team" },
+    publisher: {
+      "@type": "Organization",
+      name: "Wanderbase",
+      logo: { "@type": "ImageObject", url: "https://wanderbase.com/wb-logo2.png" },
+    },
+    image: "https://wanderbase.com/budget-backpacker-tips.png",
+    description: "Practical money-saving strategies and insider tips from experienced budget backpackers.",
   }
 
-  const faqData = [
-    {
-      question: "What mindset separates budget backpackers from expensive tourists?",
-      answer:
-        "Budget backpackers prioritize experiences over comfort, embrace uncertainty as adventure, and understand that constraints lead to creative and memorable experiences. They adapt to opportunities rather than following rigid itineraries, viewing flexibility as an asset rather than a limitation.",
-    },
-    {
-      question: "How can flexible scheduling save money on outdoor adventures?",
-      answer:
-        "Traveling during shoulder seasons saves 60-70% on accommodation and activities. Booking Tuesday-Thursday instead of weekends reduces costs significantly. Weather-dependent planning allows you to capitalize on last-minute deals and avoid paying premium prices for guaranteed weather windows.",
-    },
-    {
-      question: "Why do budget backpackers prefer public transport over car rentals?",
-      answer:
-        "Public transport eliminates hidden costs like fuel, parking, insurance, and stress. It forces slower travel that leads to local interactions and discoveries. Regional transport passes often include accommodation and attraction discounts, providing additional value beyond basic transportation.",
-    },
-    {
-      question: "What are the essential apps for finding last-minute travel deals?",
-      answer:
-        "HotelTonight for accommodation, Omio for European transport, BlaBlaCar for ridesharing, Too Good To Go for discounted meals, and Reddit communities like r/solotravel for real-time deals and warnings. Set price alerts 20% below target prices and book immediately when deals appear.",
-    },
-    {
-      question: "How do budget backpackers cook hearty meals with minimal equipment?",
-      answer:
-        "Follow the five-ingredient rule for simple, flavorful meals. Shop at local markets for seasonal produce. Master one-pot cooking to reduce cleanup and fuel consumption. Focus on pasta, rice, local vegetables, and regional specialties that don't require complex preparation or multiple cooking vessels.",
-    },
-  ]
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  }
 
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
 
       <BlogHero post={post} />
 
       <div className="max-w-[750px] mx-auto px-6 py-16">
+        {/* GEO Capsule */}
+        <div className="mb-10 p-5 bg-primary/8 border border-primary/25 rounded-lg">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Quick Answer</p>
+          <p className="text-base leading-relaxed text-foreground">
+            The best budget backpackers share five habits: flexible scheduling around shoulder seasons, public transport
+            over car rentals, minimalist packing, using deal-finding apps like HotelTonight and Too Good To Go, and
+            cooking one-pot meals from local markets. Together these habits cut trip costs by 50–70%.
+          </p>
+        </div>
+
+        {/* Author & date */}
+        <div className="mb-10 flex items-center gap-3 text-sm text-muted-foreground border-b pb-6">
+          <span>By <strong className="text-foreground">Wanderbase Editorial Team</strong></span>
+          <span>·</span>
+          <span>March 30, 2024</span>
+          <span>·</span>
+          <span className="text-primary font-medium">Last updated: March 2024</span>
+        </div>
+
         <p className="leading-relaxed text-foreground first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 font-medium text-xl mb-12">
           The most valuable adventure advice doesn't come from expensive guidebooks or gear catalogs—it comes from
           experienced budget backpackers who've learned to maximize adventure while minimizing costs through years of
@@ -82,7 +92,7 @@ export default function BudgetBackpackerTipsPage() {
 
         <article className="space-y-8">
           <section>
-            <h2 className="text-2xl font-bold mt-16 mb-6">What Budget Backpackers Know</h2>
+            <h2 className="text-2xl font-bold mt-16 mb-6">What Do the Most Successful Budget Backpackers Know That Tourists Don&apos;t?</h2>
 
             <p className="text-lg leading-relaxed">
               Successful budget backpackers share common traits that separate them from expensive tourists: they
@@ -106,7 +116,7 @@ export default function BudgetBackpackerTipsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mt-16 mb-6">The Power of Flexible Scheduling</h2>
+            <h2 className="text-2xl font-bold mt-16 mb-6">How Does Flexible Scheduling Cut Your Adventure Costs by Up to 70%?</h2>
 
             <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Off-Peak Travel Windows</h3>
 
@@ -149,7 +159,7 @@ export default function BudgetBackpackerTipsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mt-16 mb-6">Public Transit Over Rentals</h2>
+            <h2 className="text-2xl font-bold mt-16 mb-6">Why Do Budget Backpackers Always Choose Public Transit Over Car Rentals?</h2>
 
             <h3 className="text-xl font-bold mt-12 mb-4 text-primary">The Hidden Costs of Car Rentals</h3>
 
@@ -194,7 +204,7 @@ export default function BudgetBackpackerTipsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mt-16 mb-6">Embracing Minimalism and Multipurpose Gear</h2>
+            <h2 className="text-2xl font-bold mt-16 mb-6">How Does Minimalist, Multipurpose Gear Save You Hundreds of Euros?</h2>
 
             <h3 className="text-xl font-bold mt-12 mb-4 text-primary">The One-Week Wardrobe</h3>
 
@@ -250,7 +260,7 @@ export default function BudgetBackpackerTipsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mt-16 mb-6">Apps and Forums for Last-Minute Deals</h2>
+            <h2 className="text-2xl font-bold mt-16 mb-6">Which Apps and Forums Help You Find Last-Minute Budget Travel Deals?</h2>
 
             <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Essential Money-Saving Apps</h3>
 
@@ -294,7 +304,7 @@ export default function BudgetBackpackerTipsPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold mt-16 mb-6">Cooking Simple but Hearty Meals in the Wild</h2>
+            <h2 className="text-2xl font-bold mt-16 mb-6">How Do Budget Backpackers Cook Hearty, Satisfying Meals in the Wild?</h2>
 
             <h3 className="text-xl font-bold mt-12 mb-4 text-primary">The Five-Ingredient Rule</h3>
 

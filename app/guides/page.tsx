@@ -1,8 +1,24 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { ExternalLink } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Expert Alpine Hiking Guides – Free & Premium | Wanderbase",
+  description:
+    "Download our expert-written hiking guides for the Alps. Free winter hiking starter kit and beginner's budget hiking guide with routes, gear lists, and insider tips.",
+  robots: "index, follow",
+  openGraph: {
+    title: "Expert Alpine Hiking Guides – Free & Premium | Wanderbase",
+    description:
+      "Download our expert-written hiking guides for the Alps. Free winter hiking starter kit and beginner's budget hiking guide with routes, gear lists, and insider tips.",
+    url: "https://wanderbase.com/guides",
+    type: "website",
+    images: [{ url: "/wb-meta2.png", width: 1200, height: 630, alt: "Wanderbase Hiking Guides" }],
+  },
+}
 
 export default function GuidesPage() {
   return (
