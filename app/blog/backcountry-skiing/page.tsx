@@ -109,7 +109,7 @@ export default function BackcountrySkiingPage() {
           </p>
 
           <h2 className="text-2xl my-6" id="essential-skills">
-            Essential Skills and Prerequisites
+            What Skills and Physical Fitness Do You Need Before Your First Backcountry Tour?
           </h2>
 
           <p>
@@ -131,7 +131,7 @@ export default function BackcountrySkiingPage() {
           </p>
 
           <h2 className="text-2xl my-6" id="safety-education">
-            Avalanche Safety Education
+            Why Is Avalanche Education Non-Negotiable for Backcountry Skiers?
           </h2>
 
           <p>
@@ -157,7 +157,7 @@ export default function BackcountrySkiingPage() {
           </p>
 
           <h2 className="text-2xl my-6" id="essential-gear">
-            Essential Backcountry Gear
+            What Specialized Gear Do You Need for Backcountry Skiing?
           </h2>
 
           <p>
@@ -179,7 +179,7 @@ export default function BackcountrySkiingPage() {
           </div>
 
           <h2 className="text-2xl my-6" id="planning-first-tour">
-            Planning Your First Tour
+            How Do You Plan a Safe First Backcountry Ski Tour?
           </h2>
 
           <p>
@@ -195,13 +195,25 @@ export default function BackcountrySkiingPage() {
           </p>
 
           <h2 className="text-2xl my-6" id="building-experience">
-            Building Experience Safely
+            How Do Experienced Backcountry Skiers Build Skills Safely Over Time?
           </h2>
 
           <p>
             Backcountry skiing expertise develops over years of experience, continuous learning, and gradual progression
             to more challenging terrain. There are no shortcuts to mountain wisdom—it must be earned through time,
             practice, and sometimes difficult lessons.
+          </p>
+
+          <p>
+            Before heading out this winter, also read our{" "}
+            <Link href="/blog/snowshoeing-guide" className="text-primary underline underline-offset-4">
+              snowshoeing guide
+            </Link>{" "}
+            for a lower-risk way to build winter mountain confidence, and our{" "}
+            <Link href="/blog/seasonal-budget-adventures" className="text-primary underline underline-offset-4">
+              seasonal budget adventures guide
+            </Link>{" "}
+            for free winter trail ideas.
           </p>
 
           <blockquote className="my-12 pl-8 border-l-4 border-primary italic text-xl font-medium">

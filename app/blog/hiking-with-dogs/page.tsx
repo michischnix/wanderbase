@@ -150,7 +150,7 @@ export default function HikingWithDogsPage() {
           </p>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="pre-hike-preparation">
-            Pre-Hike Preparation
+            How Do You Physically and Mentally Prepare Your Dog for Hiking?
           </h2>
 
           <p className="text-lg leading-relaxed">
@@ -176,7 +176,7 @@ export default function HikingWithDogsPage() {
           </p>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="essential-gear">
-            Essential Gear for Dog Hiking
+            What Gear Does Your Dog Actually Need on the Trail?
           </h2>
 
           <p className="text-lg leading-relaxed">
@@ -197,7 +197,7 @@ export default function HikingWithDogsPage() {
           </div>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="trail-safety">
-            Trail Safety and Etiquette
+            How Do You Keep Your Dog Safe and Well-Behaved on the Trail?
           </h2>
 
           <p className="text-lg leading-relaxed">
@@ -219,7 +219,7 @@ export default function HikingWithDogsPage() {
           </p>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="reading-your-dog">
-            Reading Your Dog on the Trail
+            How Do You Know When Your Dog Has Had Enough on the Trail?
           </h2>
 
           <p className="text-lg leading-relaxed">
@@ -240,7 +240,7 @@ export default function HikingWithDogsPage() {
           </p>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="first-hike-tips">
-            Planning Your First Hike
+            How Do You Plan a Successful First Hike with Your Dog?
           </h2>
 
           <p className="text-lg leading-relaxed">
@@ -255,9 +255,21 @@ export default function HikingWithDogsPage() {
             training reinforcement and have a backup plan if you need to turn around early.
           </p>
 
+          <p className="text-lg leading-relaxed">
+            For trail ideas, see our{" "}
+            <Link href="/blog/free-trails" className="text-primary underline underline-offset-4">
+              12 free Alpine hiking trails
+            </Link>{" "}
+            — many are dog-friendly. For affordable gear to kit out both you and your dog, visit our{" "}
+            <Link href="/blog/budget-gear-guide" className="text-primary underline underline-offset-4">
+              budget outdoor gear guide
+            </Link>
+            .
+          </p>
+
           <blockquote className="my-12 pl-8 border-l-4 border-primary italic text-xl font-medium">
             Hiking with dogs opens up a world of shared adventures and creates memories that will last a lifetime. The
-            key to success is preparation, patience, and always prioritizing your dog's well-being over reaching any
+            key to success is preparation, patience, and always prioritizing your dog&apos;s well-being over reaching any
             particular destination.
           </blockquote>
         </article>

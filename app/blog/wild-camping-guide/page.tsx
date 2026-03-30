@@ -113,7 +113,7 @@ export default function WildCampingGuidePage() {
           </div>
 
           <h2 className="text-xl sm:text-2xl my-4 sm:my-6" id="essential-gear">
-            Essential Gear for Wild Camping
+            What Gear Do You Actually Need for Your First Wild Camping Trip?
           </h2>
 
           <p>
@@ -144,7 +144,7 @@ export default function WildCampingGuidePage() {
           </div>
 
           <h2 className="my-4 sm:my-6 text-xl sm:text-2xl" id="choosing-location">
-            Choosing the Perfect Location
+            How Do You Find and Legally Access Wild Camping Locations?
           </h2>
 
           <p>
@@ -166,7 +166,7 @@ export default function WildCampingGuidePage() {
           </div>
 
           <h2 className="text-xl sm:text-2xl my-4 sm:my-6" id="safety-considerations">
-            Safety Considerations
+            How Do You Stay Safe When Camping Far from Civilization?
           </h2>
 
           <p>
@@ -187,7 +187,7 @@ export default function WildCampingGuidePage() {
           </p>
 
           <h2 className="text-xl sm:text-2xl my-4 sm:my-6" id="leave-no-trace">
-            Leave No Trace Principles
+            How Do You Practice Leave No Trace in Pristine Wild Areas?
           </h2>
 
           <p>
@@ -207,7 +207,7 @@ export default function WildCampingGuidePage() {
           </blockquote>
 
           <h2 className="text-xl sm:text-2xl my-4 sm:my-6" id="getting-started">
-            Getting Started: Your First Trip
+            How Do You Plan Your First Wild Camping Trip Step by Step?
           </h2>
 
           <p>
@@ -223,9 +223,16 @@ export default function WildCampingGuidePage() {
           </p>
 
           <p>
-            Wild camping opens up a world of adventure that traditional campgrounds simply can't match. The solitude,
-            the connection with nature, and the self-reliance skills you'll develop make every challenge worthwhile.
-            Start small, learn continuously, and always prioritize safety and environmental stewardship.
+            Wild camping opens up a world of adventure that traditional campgrounds simply can't match. For budget-smart
+            gear recommendations, visit our{" "}
+            <Link href="/blog/budget-gear-guide" className="text-primary underline underline-offset-4">
+              budget outdoor gear guide
+            </Link>
+            . Looking for free hikes to pair with your wild camps? See our list of{" "}
+            <Link href="/blog/free-trails" className="text-primary underline underline-offset-4">
+              12 free Alpine trails
+            </Link>
+            .
           </p>
         </article>
       </div>

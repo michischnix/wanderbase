@@ -111,7 +111,7 @@ export default function BikepackingGuidePage() {
           </div>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="bike-setup">
-            Bike Setup and Modifications
+            How Do You Set Up Your Bike for Multi-Day Bikepacking Trips?
           </h2>
 
           <p>
@@ -140,7 +140,7 @@ export default function BikepackingGuidePage() {
           </p>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="packing-systems">
-            Packing Systems and Gear
+            What Bag System Should You Use for Your First Bikepacking Setup?
           </h2>
 
           <p>
@@ -162,7 +162,7 @@ export default function BikepackingGuidePage() {
           </div>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="route-planning">
-            Route Planning Essentials
+            How Do You Plan a Safe and Enjoyable Bikepacking Route?
           </h2>
 
           <p>
@@ -183,7 +183,7 @@ export default function BikepackingGuidePage() {
           </blockquote>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="camping-considerations">
-            Camping and Resupply
+            How Do You Handle Wild Camping and Resupply on a Bikepacking Trip?
           </h2>
 
           <p>
@@ -206,7 +206,7 @@ export default function BikepackingGuidePage() {
           </p>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="first-trip-tips">
-            Planning Your First Trip
+            What Should You Know Before Your First Bikepacking Trip?
           </h2>
 
           <p>
@@ -219,6 +219,18 @@ export default function BikepackingGuidePage() {
             Choose a 2-3 day trip within 2 hours of home, selecting familiar terrain or well-documented routes. Plan
             conservative daily distances of 20-40 miles, include bailout options and resupply opportunities, and test
             all gear on overnight trips before departing.
+          </p>
+
+          <p>
+            For your camping setup, see our{" "}
+            <Link href="/blog/wild-camping-guide" className="text-primary underline underline-offset-4">
+              wild camping guide
+            </Link>{" "}
+            for LNT principles and site selection, and our{" "}
+            <Link href="/blog/budget-gear-guide" className="text-primary underline underline-offset-4">
+              budget gear guide
+            </Link>{" "}
+            for affordable equipment recommendations.
           </p>
 
           <p>
