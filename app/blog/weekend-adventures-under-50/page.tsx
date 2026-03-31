@@ -4,13 +4,14 @@ import { BlogFAQ } from "@/components/blog-faq"
 import { Footer } from "@/components/footer"
 import { GuidesTeaser } from "@/components/guides-teaser"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Weekend Wilderness Escapes from Home: Best Local Adventures Under $50",
   description:
     "Discover amazing weekend wilderness adventures within driving distance of home, all for under $50. Complete itinerary with costs, tips, and local adventure ideas.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/weekend-adventures-under-50",
+  alternates: { canonical: "https://wanderbase.com/blog/weekend-adventures-under-50" },
   openGraph: {
     title: "Weekend Wilderness Escapes from Home: Best Local Adventures Under $50",
     description:
@@ -28,53 +29,91 @@ export const metadata: Metadata = {
   },
 }
 
+const faqs = [
+  {
+    question: "How do you find free camping near home for a weekend trip?",
+    answer:
+      "Park4Night and Freecampsites.net are the best apps for finding free legal spots within driving distance. In the USA, BLM (Bureau of Land Management) land allows free dispersed camping — the BLM website maps all public lands. In Europe, look for national forest land (Staatswald in Germany, forêt domaniale in France) where low-impact camping is generally tolerated. Always check current fire restrictions.",
+  },
+  {
+    question: "What is the cheapest way to do a weekend wilderness trip?",
+    answer:
+      "Drive (don't fly), camp for free on public land, cook all your own meals from home-packed ingredients, and choose trails with free parking. A full weekend — Friday evening to Sunday afternoon — costs €15–25 in fuel, €0 camping (free dispersed), and €15–20 in food. Total: €30–45. The main investment is time, not money.",
+  },
+  {
+    question: "What gear do you need for a budget weekend camping trip?",
+    answer:
+      "Minimum viable kit: a sleeping bag rated for the expected temperature (€30–50 at Decathlon), a foam sleeping mat (€12), a tarp or budget tent (€25–45), a small stove with a gas canister (€20 + €4 gas), a pot (€8), and a headlamp (€10). Total first-time cost: €100–150. This gear lasts for years of weekend trips, making each subsequent trip essentially free.",
+  },
+  {
+    question: "How early should you leave for a weekend wilderness trip to maximise time outdoors?",
+    answer:
+      "Leave Friday after work — even arriving at camp at 10 PM is fine if you set up in daylight or use a headlamp. This gives you two full days (Saturday and Sunday) plus Friday evening for stargazing or campfire time. Leaving Saturday morning wastes half a day. Pre-pack your car Thursday evening so Friday departure is instant.",
+  },
+  {
+    question: "What are the best weekend wilderness activities that cost nothing?",
+    answer:
+      "Hiking, wild swimming, birdwatching, foraging for berries and mushrooms, rock scrambling, photography, campfire cooking, stargazing, and journaling are all free once you're on public land. Many national forests also offer free ranger-led walks on weekends. The wilderness itself is the activity — the absence of entertainment infrastructure is the point.",
+  },
+]
+
 export default function WeekendAdventuresPage() {
-  const post = {
-    title: "Weekend Wilderness Escapes from Home: Best Local Adventures Under $50",
-    excerpt:
-      "Great wilderness adventures don't require expensive flights or exotic destinations. Discover how to create memorable weekend escapes within driving distance of home, all for under $50 total cost.",
-    category: "Budget Tips",
-    date: "March 25, 2024",
-    readTime: "11 min read",
-    image: "/weekend-wilderness-escapes.png",
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Weekend Wilderness Escapes from Home: Best Local Adventures Under €50",
+    datePublished: "2024-03-25",
+    dateModified: "2024-03-25",
+    author: { "@type": "Person", name: "Wanderbase Editorial Team" },
+    publisher: {
+      "@type": "Organization",
+      name: "Wanderbase",
+      logo: { "@type": "ImageObject", url: "https://wanderbase.com/wb-logo2.png" },
+    },
+    image: "https://wanderbase.com/weekend-wilderness-escapes.png",
+    description: "Amazing weekend wilderness adventures within driving distance of home, all for under €50. Complete itinerary with real costs.",
   }
 
-  const faqs = [
-    {
-      question: "How can I find free camping spots near my home?",
-      answer:
-        "Use apps like Campendium, FreeRoam, and iOverlander to locate free dispersed camping areas in national forests. Many state parks also offer primitive camping for $10-15 per night. Check local Facebook groups and hiking forums for insider tips on lesser-known free camping spots that locals use regularly.",
-    },
-    {
-      question: "What's the best way to save money on weekend adventure food?",
-      answer:
-        "Shop at local markets instead of tourist-oriented stores, and focus on simple one-pot meals using seasonal ingredients. Bring a cooler with fresh food from home rather than buying expensive trail meals. Pasta, rice, and local vegetables can create satisfying meals for $2-3 per person, compared to $12-15 at park restaurants.",
-    },
-    {
-      question: "How do I find local adventure spots that aren't crowded?",
-      answer:
-        "Visit your local library's map collection to discover trails and public lands that don't appear on digital maps. Ask at local outdoor gear shops for recommendations, and join regional Facebook groups where locals share hidden gems. Explore during weekdays when weekend warriors are at work, and consider lesser-known state parks instead of popular destinations.",
-    },
-    {
-      question: "Is it safe to do weekend adventures alone on a tight budget?",
-      answer:
-        "Solo adventures can be safe with proper preparation. Always tell someone your plans and expected return time, carry a first aid kit and emergency whistle, and start with well-marked trails close to home. Consider joining local hiking clubs or meetup groups to find adventure partners who share your budget-conscious approach.",
-    },
-    {
-      question: "How can I extend my weekend adventures without spending more money?",
-      answer:
-        "Leave Friday evening instead of Saturday morning to maximize outdoor time. Choose destinations within 2 hours of home to minimize fuel costs. Opt for dispersed camping instead of paid campsites, and bring all food from home. Carpooling with friends can split costs further, reducing individual expenses to $15-20 per person for an entire weekend.",
-    },
-  ]
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  }
 
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
 
       <BlogHero post={post} />
 
       <div className="max-w-6xl mx-auto px-6 py-6">
         <article className="mx-auto" style={{ maxWidth: "750px" }}>
+
+          {/* GEO Capsule */}
+          <div className="mb-10 p-5 bg-primary/8 border border-primary/25 rounded-lg">
+            <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Quick Answer</p>
+            <p className="text-base leading-relaxed text-foreground">
+              A complete two-night weekend wilderness escape costs €33–75 total — roughly €15–25 fuel, €0–15 camping
+              (free dispersed camping in national forests or €10–15 state park sites), €15–25 food from home. Most trips
+              land at €45. Leave Friday evening to maximise outdoor time.
+            </p>
+          </div>
+
+          {/* Author & date */}
+          <div className="mb-10 flex items-center gap-3 text-sm text-muted-foreground border-b pb-6">
+            <span>By <strong className="text-foreground">Wanderbase Editorial Team</strong></span>
+            <span>·</span>
+            <span>March 25, 2024</span>
+            <span>·</span>
+            <span className="text-primary font-medium">Last updated: March 2024</span>
+          </div>
+
           <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
             The best wilderness escapes often lie within a two-hour drive of your front door. While social media
             showcases exotic destinations requiring expensive flights, some of the most restorative outdoor experiences
@@ -109,7 +148,7 @@ export default function WeekendAdventuresPage() {
           </div>
 
           <h2 className="text-3xl font-bold mt-16 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>
-            Types of Local Destinations to Explore
+            Where Are the Best Local Wilderness Destinations Within 2 Hours of Home?
           </h2>
 
           <h3 className="text-2xl font-bold mt-12 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>
@@ -176,7 +215,7 @@ export default function WeekendAdventuresPage() {
           </div>
 
           <h2 className="text-3xl font-bold mt-16 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>
-            Real Weekend Cost Breakdown
+            How Much Does a Weekend Adventure Actually Cost? A Real Breakdown
           </h2>
 
           <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
@@ -249,7 +288,7 @@ export default function WeekendAdventuresPage() {
           </div>
 
           <h2 className="text-3xl font-bold mt-16 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>
-            Proven Money-Saving Strategies
+            What Money-Saving Strategies Reliably Work for Weekend Adventures?
           </h2>
 
           <h3 className="text-2xl font-bold mt-12 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>

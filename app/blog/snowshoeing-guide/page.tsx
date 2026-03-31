@@ -3,16 +3,21 @@ import { Navigation } from "@/components/navigation"
 import { BlogHero } from "@/components/blog-hero"
 import { Footer } from "@/components/footer"
 import { GuidesTeaser } from "@/components/guides-teaser"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Snowshoeing 101: Step Into Winter Adventure | Wanderbase",
   description:
     "Discover the accessible world of snowshoeing with our complete beginner's guide. Learn gear selection, techniques, and safety tips for your first winter hiking adventures.",
+  robots: "index, follow",
+  alternates: { canonical: "https://wanderbase.com/blog/snowshoeing-guide" },
   openGraph: {
     title: "Snowshoeing 101: Step Into Winter Adventure",
     description:
       "Discover the accessible world of snowshoeing with our complete beginner's guide. Learn gear selection, techniques, and safety tips for your first winter hiking adventures.",
-    images: ["/snowshoeing-gear.jpg"],
+    url: "https://wanderbase.com/blog/snowshoeing-guide",
+    type: "article",
+    images: [{ url: "/snowshoeing-gear.jpg", width: 1200, height: 630, alt: "Snowshoer on winter trail surrounded by snow-covered trees" }],
   },
 }
 
@@ -28,13 +33,46 @@ export default function SnowshoeingGuidePage() {
     tags: ["Winter Sports", "Snowshoeing", "Beginner Guide"],
   }
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Snowshoeing 101: Step Into Winter Adventure",
+    datePublished: "2025-01-28",
+    dateModified: "2025-01-28",
+    author: { "@type": "Person", name: "Wanderbase Editorial Team" },
+    publisher: { "@type": "Organization", name: "Wanderbase", logo: { "@type": "ImageObject", url: "https://wanderbase.com/wb-logo2.png" } },
+    image: "https://wanderbase.com/snowshoeing-gear.jpg",
+    description: "Complete beginner's guide to snowshoeing: gear selection, techniques, safety tips, and how to plan your first winter adventure.",
+  }
+
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <Navigation />
 
       <BlogHero post={post} />
 
       <div className="max-w-[750px] mx-auto px-6 py-16">
+
+        {/* GEO Capsule */}
+        <div className="mb-10 p-5 bg-primary/8 border border-primary/25 rounded-lg">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Quick Answer</p>
+          <p className="text-base leading-relaxed text-foreground">
+            Snowshoeing requires minimal startup investment: recreational snowshoes from €80–100 (or rent for €15–25/day),
+            waterproof insulated boots, a layering system, and trekking poles. If you can walk, you can snowshoe — no
+            learning curve required. Start on 2–3 mile easy trails on calm, clear days.
+          </p>
+        </div>
+
+        {/* Author & date */}
+        <div className="mb-10 flex items-center gap-3 text-sm text-muted-foreground border-b pb-6">
+          <span>By <strong className="text-foreground">Wanderbase Editorial Team</strong></span>
+          <span>·</span>
+          <span>January 28, 2025</span>
+          <span>·</span>
+          <span className="text-primary font-medium">Last updated: January 2025</span>
+        </div>
+
         <div className="mb-12">
           <p className="leading-relaxed text-foreground first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 font-medium text-xl">
             Snowshoeing is one of the most accessible winter sports, requiring minimal technical skill while offering
@@ -46,7 +84,7 @@ export default function SnowshoeingGuidePage() {
 
         <article className="text-foreground text-lg leading-relaxed space-y-8">
           <h2 className="text-2xl my-6" id="why-snowshoeing">
-            Why Choose Snowshoeing?
+            Why Should Beginners Choose Snowshoeing Over Other Winter Sports?
           </h2>
 
           <p>
@@ -68,7 +106,7 @@ export default function SnowshoeingGuidePage() {
           </p>
 
           <h2 className="text-2xl my-6" id="snowshoe-types">
-            Types of Snowshoes
+            Which Type of Snowshoe Is Right for Beginners?
           </h2>
 
           <p>
@@ -97,7 +135,7 @@ export default function SnowshoeingGuidePage() {
           </div>
 
           <h2 className="text-2xl my-6" id="essential-gear">
-            Essential Snowshoeing Gear
+            What Clothing and Gear Do You Need to Stay Warm and Safe Snowshoeing?
           </h2>
 
           <p>
@@ -125,7 +163,7 @@ export default function SnowshoeingGuidePage() {
           </p>
 
           <h2 className="text-2xl my-6" id="basic-techniques">
-            Basic Snowshoeing Techniques
+            What Are the Basic Snowshoeing Techniques Every Beginner Should Know?
           </h2>
 
           <p>
@@ -154,7 +192,7 @@ export default function SnowshoeingGuidePage() {
           </p>
 
           <h2 className="text-2xl my-6" id="winter-safety">
-            Winter Safety Considerations
+            What Winter Safety Hazards Do Snowshoers Need to Know?
           </h2>
 
           <p>
@@ -175,7 +213,7 @@ export default function SnowshoeingGuidePage() {
           </p>
 
           <h2 className="text-2xl my-6" id="first-adventure">
-            Planning Your First Adventure
+            How Do You Plan a Perfect First Snowshoeing Adventure?
           </h2>
 
           <p>
@@ -191,9 +229,15 @@ export default function SnowshoeingGuidePage() {
           </p>
 
           <p>
-            Before your trip, test all gear and clothing systems, practice putting on snowshoes with gloves, and check
-            weather and trail conditions. Inform others of your plans and expected return, pack extra food, water, and
-            warm layers, charge electronic devices and carry backup power, and review basic winter safety and first aid.
+            For more winter activity inspiration, see our{" "}
+            <Link href="/blog/seasonal-budget-adventures" className="text-primary underline underline-offset-4">
+              year-round seasonal budget adventure guide
+            </Link>
+            . Looking for free winter trails? Our{" "}
+            <Link href="/blog/free-trails" className="text-primary underline underline-offset-4">
+              free Alpine trails guide
+            </Link>{" "}
+            covers 12 zero-cost hikes accessible in winter.
           </p>
 
           <p>

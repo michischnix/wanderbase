@@ -3,6 +3,7 @@ import { BlogHero } from "@/components/blog-hero"
 import { BlogFAQ } from "@/components/blog-faq"
 import { Footer } from "@/components/footer"
 import { GuidesTeaser } from "@/components/guides-teaser"
+import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Master the art of car camping with our comprehensive guide. From vehicle setup to campsite selection, learn how to turn your car into the perfect base camp.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/car-camping-guide",
+  alternates: { canonical: "https://wanderbase.com/blog/car-camping-guide" },
   openGraph: {
     title: "Park, Pitch, Relax: Car Camping Made Simple",
     description:
@@ -68,13 +69,58 @@ export default function CarCampingGuidePage() {
     },
   ]
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Park, Pitch, Relax: Car Camping Made Simple",
+    datePublished: "2025-01-18",
+    dateModified: "2025-01-18",
+    author: { "@type": "Person", name: "Wanderbase Editorial Team" },
+    publisher: { "@type": "Organization", name: "Wanderbase", logo: { "@type": "ImageObject", url: "https://wanderbase.com/wb-logo2.png" } },
+    image: "https://wanderbase.com/car-camping-vans.jpg",
+    description: "Complete guide to car camping: vehicle setup, essential gear, campsite selection, comfort tips, and safety for your first trip.",
+  }
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  }
+
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
 
       <BlogHero post={post} />
 
       <div className="max-w-[750px] mx-auto px-6 py-16">
+
+        {/* GEO Capsule */}
+        <div className="mb-10 p-5 bg-primary/8 border border-primary/25 rounded-lg">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Quick Answer</p>
+          <p className="text-base leading-relaxed text-foreground">
+            Any vehicle works for car camping — even a compact car. You need a sleeping pad or air mattress, a sleeping
+            bag rated for the expected temperature, a portable stove, a cooler, and 5+ litres of water per person per
+            day. Arrive at popular sites early on weekends. Always lock valuables in your vehicle and never run your
+            engine or generator in an enclosed space.
+          </p>
+        </div>
+
+        {/* Author & date */}
+        <div className="mb-10 flex items-center gap-3 text-sm text-muted-foreground border-b pb-6">
+          <span>By <strong className="text-foreground">Wanderbase Editorial Team</strong></span>
+          <span>·</span>
+          <span>January 18, 2025</span>
+          <span>·</span>
+          <span className="text-primary font-medium">Last updated: January 2025</span>
+        </div>
+
         <div className="mb-12">
           <p className="leading-relaxed text-foreground first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 font-medium text-xl">
             Car camping bridges the gap between backpacking and RV camping, offering the perfect balance of convenience
@@ -85,7 +131,7 @@ export default function CarCampingGuidePage() {
 
         <article className="space-y-8">
           <h2 className="text-2xl font-bold mt-16 mb-6" id="why-car-camping">
-            Why Choose Car Camping?
+            Why Is Car Camping the Best Starting Point for New Outdoor Enthusiasts?
           </h2>
 
           <p className="text-lg leading-relaxed">
@@ -94,23 +140,18 @@ export default function CarCampingGuidePage() {
             ability to easily relocate if conditions change.
           </p>
 
-          <div className="my-8 p-6 border-l-4 bg-green-50 border-green-400 text-green-900 rounded-r-lg">
-            <strong>💰 Money Saver:</strong> Car camping eliminates hotel costs and reduces gear investment. You can use
-            regular household items instead of specialized ultralight equipment, saving hundreds of dollars.
-          </div>
-
           <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Key Benefits</h3>
           <ul className="space-y-3 text-lg leading-relaxed">
             <li>Carry more comfort items without weight restrictions</li>
             <li>Easy access to your vehicle for supplies and emergency exit</li>
             <li>Weather protection and secure storage</li>
-            <li>Ability to power devices with your car's electrical system</li>
+            <li>Ability to power devices with your car&apos;s electrical system</li>
             <li>Perfect for families with children or pets</li>
             <li>Great stepping stone to more advanced camping styles</li>
           </ul>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="vehicle-setup">
-            Setting Up Your Vehicle
+            How Do You Set Up Any Vehicle as a Comfortable Car Camping Base?
           </h2>
 
           <p className="text-lg leading-relaxed">
@@ -118,11 +159,6 @@ export default function CarCampingGuidePage() {
             available space and organizing gear efficiently. Even small cars can accommodate comfortable camping setups
             with proper planning.
           </p>
-
-          <div className="my-8 p-6 border-l-4 bg-blue-50 border-blue-400 text-blue-900 rounded-r-lg">
-            <strong>💡 Pro Tip:</strong> Fold-down rear seats create a flat sleeping surface in most SUVs and wagons.
-            Add a foam mattress topper for comfort that rivals many beds at home.
-          </div>
 
           <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Interior Organization</h3>
           <ul className="space-y-3 text-lg leading-relaxed">
@@ -143,7 +179,7 @@ export default function CarCampingGuidePage() {
           </ul>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="essential-gear">
-            Essential Car Camping Gear
+            What Gear Do You Actually Need for a Great Car Camping Trip?
           </h2>
 
           <p className="text-lg leading-relaxed">
@@ -154,7 +190,7 @@ export default function CarCampingGuidePage() {
           <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Sleep System</h3>
           <ul className="space-y-3 text-lg leading-relaxed">
             <li>Comfortable sleeping pad or air mattress</li>
-            <li>Regular sleeping bags or blankets (weight isn't critical)</li>
+            <li>Regular sleeping bags or blankets (weight isn&apos;t critical)</li>
             <li>Pillows from home or inflatable camping pillows</li>
             <li>Sheets and extra blankets for temperature regulation</li>
           </ul>
@@ -170,7 +206,7 @@ export default function CarCampingGuidePage() {
           </ul>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="campsite-selection">
-            Choosing Your Campsite
+            How Do You Choose and Evaluate the Right Car Camping Site?
           </h2>
 
           <p className="text-lg leading-relaxed">
@@ -178,11 +214,6 @@ export default function CarCampingGuidePage() {
             access, level ground for sleeping, and space for your extended setup while considering privacy and natural
             features.
           </p>
-
-          <div className="my-8 p-6 border-l-4 bg-yellow-50 border-yellow-400 text-yellow-900 rounded-r-lg">
-            <strong>📋 Planning Tip:</strong> Arrive at popular car camping spots early in the day, especially on
-            weekends. The best sites with level ground and privacy fill up quickly during peak seasons.
-          </div>
 
           <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Site Evaluation Checklist</h3>
           <ul className="space-y-3 text-lg leading-relaxed">
@@ -196,7 +227,7 @@ export default function CarCampingGuidePage() {
           </ul>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="comfort-tips">
-            Maximizing Comfort
+            How Do You Maximize Comfort and Create a Home Away From Home?
           </h2>
 
           <p className="text-lg leading-relaxed">
@@ -205,7 +236,7 @@ export default function CarCampingGuidePage() {
           </p>
 
           <blockquote className="my-12 pl-8 border-l-4 border-primary italic text-xl font-medium">
-            Car camping isn't about roughing it—it's about enjoying nature with all the comforts that make the
+            Car camping isn&apos;t about roughing it—it&apos;s about enjoying nature with all the comforts that make the
             experience memorable and repeatable.
           </blockquote>
 
@@ -221,7 +252,7 @@ export default function CarCampingGuidePage() {
           </ul>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="safety-security">
-            Safety and Security
+            What Safety and Security Measures Should Every Car Camper Take?
           </h2>
 
           <p className="text-lg leading-relaxed">
@@ -229,11 +260,6 @@ export default function CarCampingGuidePage() {
             safety, vehicle security, and emergency preparedness. Your vehicle provides both protection and a means of
             quick evacuation if needed.
           </p>
-
-          <div className="my-8 p-6 border-l-4 bg-red-50 border-red-400 text-red-900 rounded-r-lg">
-            <strong>⚠️ Safety Warning:</strong> Never run your vehicle engine or generator inside enclosed spaces. Carbon
-            monoxide poisoning is a serious risk. Always ensure proper ventilation when using any fuel-burning devices.
-          </div>
 
           <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Security Measures</h3>
           <ul className="space-y-3 text-lg leading-relaxed">
@@ -247,13 +273,20 @@ export default function CarCampingGuidePage() {
 
           <p className="text-lg leading-relaxed">
             Car camping opens up incredible opportunities for outdoor adventure while maintaining the comfort and
-            security that many people need to truly enjoy nature. Whether you're planning weekend getaways or extended
-            road trips, mastering car camping techniques will enhance every outdoor experience.
+            security that many people need to truly enjoy nature. Ready to venture further from the road? See our{" "}
+            <Link href="/blog/wild-camping-guide" className="text-primary underline underline-offset-4">
+              wild camping guide
+            </Link>{" "}
+            for free dispersed camping tips, or browse our{" "}
+            <Link href="/blog/budget-gear-guide" className="text-primary underline underline-offset-4">
+              budget gear guide
+            </Link>{" "}
+            to upgrade your kit without overspending.
           </p>
 
           <blockquote className="my-12 pl-8 border-l-4 border-primary italic text-xl font-medium">
             Start with short trips close to home to refine your setup and systems. As you gain experience and
-            confidence, you'll find that car camping can take you to amazing places while providing a comfortable and
+            confidence, you&apos;ll find that car camping can take you to amazing places while providing a comfortable and
             secure base for all your outdoor adventures.
           </blockquote>
         </article>

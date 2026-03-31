@@ -4,17 +4,18 @@ import { Footer } from "@/components/footer"
 import { BlogFAQ } from "@/components/blog-faq"
 import { GuidesTeaser } from "@/components/guides-teaser"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Introduction to Alpine Adventures - The Wanderbase",
+  title: "Introduction to Alpine Adventures: What You Need to Know",
   description:
-    "Discover the allure of the Alps and learn the importance of budget planning for your next alpine adventure.",
+    "Discover the allure of the Alps and master budget planning for your next alpine adventure. Start exploring stunning trails without overspending.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/alpine-adventures-intro",
+  alternates: { canonical: "https://wanderbase.com/blog/alpine-adventures-intro" },
   openGraph: {
-    title: "Introduction to Alpine Adventures",
+    title: "Introduction to Alpine Adventures: What You Need to Know",
     description:
-      "Discover the allure of the Alps and learn the importance of budget planning for your next alpine adventure.",
+      "Discover the allure of the Alps and master budget planning for your next alpine adventure. Start exploring stunning trails without overspending.",
     url: "https://wanderbase.com/blog/alpine-adventures-intro",
     type: "article",
     images: [
@@ -67,13 +68,68 @@ export default function AlpineAdventuresIntroPage() {
     },
   ]
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Introduction to Alpine Adventures: What You Need to Know",
+    datePublished: "2024-04-02",
+    dateModified: "2024-04-02",
+    author: { "@type": "Person", name: "Wanderbase Editorial Team" },
+    publisher: {
+      "@type": "Organization",
+      name: "Wanderbase",
+      logo: { "@type": "ImageObject", url: "https://wanderbase.com/wb-logo2.png" },
+    },
+    image: "https://wanderbase.com/alpine-hiking-trail.png",
+    description:
+      "Discover the allure of the Alps and master budget planning for your next alpine adventure. Start exploring stunning trails without overspending.",
+  }
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  }
+
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <Navigation />
 
       <BlogHero post={post} />
 
       <div className="max-w-[750px] mx-auto px-6 py-16">
+        {/* GEO Capsule */}
+        <div className="mb-10 p-5 bg-primary/8 border border-primary/25 rounded-lg">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Quick Answer</p>
+          <p className="text-base leading-relaxed text-foreground">
+            Alpine adventures span eight countries across Europe. Budget trips cost €500–800 per person per week if you
+            travel in shoulder season, stay in hostels, and stick to free hiking trails. The best first-timer
+            destinations are Austria and Italy&apos;s Dolomites for value.
+          </p>
+        </div>
+
+        {/* Author & date */}
+        <div className="mb-10 flex items-center gap-3 text-sm text-muted-foreground border-b pb-6">
+          <span>By <strong className="text-foreground">Wanderbase Editorial Team</strong></span>
+          <span>·</span>
+          <span>April 2, 2024</span>
+          <span>·</span>
+          <span className="text-primary font-medium">Last updated: April 2024</span>
+        </div>
+
         <div className="mb-12">
           <p className="leading-relaxed text-foreground first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 font-medium text-xl">
             Exploring the Alps is a dream for many outdoor enthusiasts. The region boasts a diverse range of activities,
@@ -83,7 +139,7 @@ export default function AlpineAdventuresIntroPage() {
         </div>
 
         <article className="space-y-8">
-          <h2 className="text-2xl font-bold mt-16 mb-6">The Allure of the Alps</h2>
+          <h2 className="text-2xl font-bold mt-16 mb-6">What Makes the Alps Worth Visiting on Any Budget?</h2>
 
           <p className="text-lg leading-relaxed">
             The Alps stretch across eight countries, including France, Switzerland, Italy, and Austria, each offering
@@ -97,25 +153,33 @@ export default function AlpineAdventuresIntroPage() {
             perfect for hiking, with trails ranging from easy walks to demanding multi-day treks like the Tour du Mont
             Blanc. Mountain biking, rock climbing, and paragliding are also popular activities for adrenaline junkies.
             Meanwhile, autumn brings a quieter beauty, with golden foliage and crisp air, ideal for those seeking
-            solitude and reflection in nature.
+            solitude and reflection in nature. For a complete guide to free hiking options, see our{" "}
+            <Link href="/blog/free-trails" className="text-primary underline underline-offset-4">
+              12 stunning free Alpine trails
+            </Link>
+            .
           </p>
 
-          <h2 className="text-2xl font-bold mt-16 mb-6">The Importance of Budget Planning</h2>
+          <h2 className="text-2xl font-bold mt-16 mb-6">Why Does Budget Planning Matter Before You Head to the Alps?</h2>
 
           <p className="text-lg leading-relaxed">
             While the allure of alpine adventures is undeniable, planning them on a budget is essential for making the
             most of your experience without financial stress. Budget planning allows you to prioritize your activities,
-            ensuring you can enjoy everything the Alps have to offer without overspending.
+            ensuring you can enjoy everything the Alps have to offer without overspending. There are also{" "}
+            <Link href="/blog/hidden-costs" className="text-primary underline underline-offset-4">
+              7 hidden costs that trip up most hikers
+            </Link>{" "}
+            — knowing them upfront can save you hundreds of euros.
           </p>
 
           <div className="my-8 p-6 border-l-4 bg-blue-50 border-blue-400 text-blue-900 rounded-r-lg">
-            <strong>💡 Pro Tip:</strong> Consider visiting during the shoulder seasons—late spring or early autumn—when
+            <strong>Pro Tip:</strong> Consider visiting during the shoulder seasons—late spring or early autumn—when
             prices for accommodations and activities are often significantly lower than peak winter or summer months.
           </div>
 
           <p className="text-lg leading-relaxed">
-            Accommodation costs can vary widely, so it's worth exploring options beyond traditional hotels. Hostels,
-            guesthouses, and vacation rentals often provide more affordable alternatives, especially if you're traveling
+            Accommodation costs can vary widely, so it&apos;s worth exploring options beyond traditional hotels. Hostels,
+            guesthouses, and vacation rentals often provide more affordable alternatives, especially if you&apos;re traveling
             with a group. Many alpine towns also have campsites that offer stunning views at a fraction of the cost.
           </p>
 
@@ -123,7 +187,11 @@ export default function AlpineAdventuresIntroPage() {
             Food is another area where you can cut costs without sacrificing quality. Instead of dining out for every
             meal, consider shopping at local markets and preparing your own food. Many accommodations offer kitchen
             facilities, making it easy to cook simple, hearty meals. When you do eat out, opt for lunch specials or
-            local eateries rather than touristy restaurants.
+            local eateries rather than touristy restaurants. For a full breakdown of getting around cheaply, read our{" "}
+            <Link href="/blog/transport-vs-car" className="text-primary underline underline-offset-4">
+              public transport vs. car rental comparison
+            </Link>
+            .
           </p>
 
           <blockquote className="my-12 pl-8 border-l-4 border-primary italic text-xl font-medium">

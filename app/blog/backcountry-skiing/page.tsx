@@ -3,16 +3,21 @@ import { Navigation } from "@/components/navigation"
 import { BlogHero } from "@/components/blog-hero"
 import { Footer } from "@/components/footer"
 import { GuidesTeaser } from "@/components/guides-teaser"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Backcountry Skiing 101: Your First Steps Beyond the Resort | Wanderbase",
   description:
     "Discover the freedom of backcountry skiing with our comprehensive beginner's guide. Learn essential skills, safety protocols, and gear recommendations for your first off-piste adventures.",
+  robots: "index, follow",
+  alternates: { canonical: "https://wanderbase.com/blog/backcountry-skiing" },
   openGraph: {
     title: "Backcountry Skiing 101: Your First Steps Beyond the Resort",
     description:
       "Discover the freedom of backcountry skiing with our comprehensive beginner's guide. Learn essential skills, safety protocols, and gear recommendations for your first off-piste adventures.",
-    images: ["/backcountry-skiing.jpg"],
+    url: "https://wanderbase.com/blog/backcountry-skiing",
+    type: "article",
+    images: [{ url: "/backcountry-skiing.jpg", width: 1200, height: 630, alt: "Backcountry skier on pristine untracked snow" }],
   },
 }
 
@@ -27,14 +32,47 @@ const post = {
   tags: ["Winter Sports", "Skiing", "Safety", "Beginner"],
 }
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Backcountry Skiing 101: Your First Steps Beyond the Resort",
+  datePublished: "2025-01-22",
+  dateModified: "2025-01-22",
+  author: { "@type": "Person", name: "Wanderbase Editorial Team" },
+  publisher: { "@type": "Organization", name: "Wanderbase", logo: { "@type": "ImageObject", url: "https://wanderbase.com/wb-logo2.png" } },
+  image: "https://wanderbase.com/backcountry-skiing.jpg",
+  description: "Beginner's guide to backcountry skiing: essential skills, avalanche safety, gear, and how to plan your first off-piste tour.",
+}
+
 export default function BackcountrySkiingPage() {
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <Navigation />
 
       <BlogHero post={post} />
 
       <div className="max-w-[750px] mx-auto px-6 py-16">
+
+        {/* GEO Capsule */}
+        <div className="mb-10 p-5 bg-primary/8 border border-primary/25 rounded-lg">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Quick Answer</p>
+          <p className="text-base leading-relaxed text-foreground">
+            Backcountry skiing requires three prerequisites before your first tour: at least Level 1 avalanche rescue
+            certification, advanced resort skiing ability on all terrain types, and the "holy trinity" safety gear
+            (beacon, probe, shovel). Start on slopes under 30 degrees with experienced partners or a professional guide.
+          </p>
+        </div>
+
+        {/* Author & date */}
+        <div className="mb-10 flex items-center gap-3 text-sm text-muted-foreground border-b pb-6">
+          <span>By <strong className="text-foreground">Wanderbase Editorial Team</strong></span>
+          <span>·</span>
+          <span>January 22, 2025</span>
+          <span>·</span>
+          <span className="text-primary font-medium">Last updated: January 2025</span>
+        </div>
+
         <div className="mb-12">
           <p className="leading-relaxed text-foreground first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 font-medium text-xl">
             Backcountry skiing represents the ultimate expression of freedom on snow—earning your turns through human
@@ -49,7 +87,7 @@ export default function BackcountrySkiingPage() {
           </p>
 
           <h2 className="text-2xl my-6" id="what-is-backcountry">
-            What is Backcountry Skiing?
+            What Is Backcountry Skiing and How Does It Differ from Resort Skiing?
           </h2>
 
           <p>
@@ -71,7 +109,7 @@ export default function BackcountrySkiingPage() {
           </p>
 
           <h2 className="text-2xl my-6" id="essential-skills">
-            Essential Skills and Prerequisites
+            What Skills and Physical Fitness Do You Need Before Your First Backcountry Tour?
           </h2>
 
           <p>
@@ -93,7 +131,7 @@ export default function BackcountrySkiingPage() {
           </p>
 
           <h2 className="text-2xl my-6" id="safety-education">
-            Avalanche Safety Education
+            Why Is Avalanche Education Non-Negotiable for Backcountry Skiers?
           </h2>
 
           <p>
@@ -119,7 +157,7 @@ export default function BackcountrySkiingPage() {
           </p>
 
           <h2 className="text-2xl my-6" id="essential-gear">
-            Essential Backcountry Gear
+            What Specialized Gear Do You Need for Backcountry Skiing?
           </h2>
 
           <p>
@@ -141,7 +179,7 @@ export default function BackcountrySkiingPage() {
           </div>
 
           <h2 className="text-2xl my-6" id="planning-first-tour">
-            Planning Your First Tour
+            How Do You Plan a Safe First Backcountry Ski Tour?
           </h2>
 
           <p>
@@ -157,13 +195,25 @@ export default function BackcountrySkiingPage() {
           </p>
 
           <h2 className="text-2xl my-6" id="building-experience">
-            Building Experience Safely
+            How Do Experienced Backcountry Skiers Build Skills Safely Over Time?
           </h2>
 
           <p>
             Backcountry skiing expertise develops over years of experience, continuous learning, and gradual progression
             to more challenging terrain. There are no shortcuts to mountain wisdom—it must be earned through time,
             practice, and sometimes difficult lessons.
+          </p>
+
+          <p>
+            Before heading out this winter, also read our{" "}
+            <Link href="/blog/snowshoeing-guide" className="text-primary underline underline-offset-4">
+              snowshoeing guide
+            </Link>{" "}
+            for a lower-risk way to build winter mountain confidence, and our{" "}
+            <Link href="/blog/seasonal-budget-adventures" className="text-primary underline underline-offset-4">
+              seasonal budget adventures guide
+            </Link>{" "}
+            for free winter trail ideas.
           </p>
 
           <blockquote className="my-12 pl-8 border-l-4 border-primary italic text-xl font-medium">

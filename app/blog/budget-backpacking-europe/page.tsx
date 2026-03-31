@@ -4,13 +4,14 @@ import { BlogFAQ } from "@/components/blog-faq"
 import { NewsletterSignup } from "@/components/newsletter-signup"
 import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Backpacking Europe on the Cheap: Hidden Trails That Won't Break the Bank",
+  title: "Backpacking Europe on the Cheap: Hidden Trails Under €35/day",
   description:
     "Discover budget-friendly European backpacking destinations with stunning trails in the Balkans, Czech Republic, and Northern Spain. Complete cost breakdown and money-saving tips included.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/budget-backpacking-europe",
+  alternates: { canonical: "https://wanderbase.com/blog/budget-backpacking-europe" },
   openGraph: {
     title: "Backpacking Europe on the Cheap: Hidden Trails That Won't Break the Bank",
     description:
@@ -28,52 +29,90 @@ export const metadata: Metadata = {
   },
 }
 
+const faqData = [
+  {
+    question: "What are the cheapest countries in Europe to backpack?",
+    answer:
+      "Albania, North Macedonia, Kosovo, and Bosnia-Herzegovina are Europe's cheapest destinations at €15–25/day all-in. Romania, Bulgaria, and Serbia follow at €20–35/day. These countries offer stunning nature, rich history, and authentic culture at a fraction of Western European costs, with many free national parks and well-marked hiking trails.",
+  },
+  {
+    question: "How do you get from country to country cheaply in Europe?",
+    answer:
+      "FlixBus and RegioJet cover most of Europe for €5–25 per journey. For rail, Interrail passes offer value for travelers visiting 5+ countries. Budget airlines like Ryanair and Wizz Air fill gaps — search on Google Flights with flexible dates. Night buses and trains save a night's accommodation while covering distance.",
+  },
+  {
+    question: "What is the best shoulder season to backpack Europe on a budget?",
+    answer:
+      "Late April to mid-June and September to mid-October offer the best combination of good weather, low crowds, and affordable accommodation. Prices drop 30–50% vs peak summer. In the Balkans, May and September are especially ideal — wildflowers in spring, warm sea temperatures in autumn, and far fewer tourists than July and August.",
+  },
+  {
+    question: "Is wild camping legal in the Balkans?",
+    answer:
+      "Wild camping rules vary: Albania and North Macedonia are generally tolerant of wild camping on public land away from settlements. Slovenia, Croatia, and Serbia require you to stay in designated sites or have landowner permission. Always research current regulations per country, camp low-impact, and leave no trace. National park rules are stricter everywhere.",
+  },
+  {
+    question: "How much money should I save before a 3-month Europe backpacking trip?",
+    answer:
+      "Budget €2,500–4,000 for 3 months in Eastern/Balkan Europe at €25–45/day. Add €300–500 for a travel insurance policy with medical repatriation. Budget Western Europe (France, Germany, Switzerland) requires €4,500–7,000 for the same duration. Keep 20% as an untouched emergency reserve and use a fee-free card like Wise to avoid ATM charges.",
+  },
+]
+
 export default function BudgetBackpackingEuropePage() {
-  const post = {
-    title: "Backpacking Europe on the Cheap: Hidden Trails That Won't Break the Bank",
-    excerpt:
-      "Europe doesn't have to drain your savings. Discover lesser-known trails in the Balkans, Czech Republic, and Northern Spain where stunning scenery meets budget-friendly prices. Your wallet will thank you.",
-    category: "Budget Tips",
-    date: "March 18, 2024",
-    readTime: "12 min read",
-    image: "/budget-backpacking-europe.png",
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Backpacking Europe on the Cheap: Hidden Trails Under €35/day",
+    datePublished: "2024-03-18",
+    dateModified: "2024-03-18",
+    author: { "@type": "Person", name: "Wanderbase Editorial Team" },
+    publisher: {
+      "@type": "Organization",
+      name: "Wanderbase",
+      logo: { "@type": "ImageObject", url: "https://wanderbase.com/wb-logo2.png" },
+    },
+    image: "https://wanderbase.com/budget-backpacking-europe.png",
+    description: "Discover budget-friendly European backpacking destinations in the Balkans, Czech Republic, and Northern Spain at under €35/day.",
   }
 
-  const faqData = [
-    {
-      question: "What is the cheapest region in Europe for backpacking?",
-      answer:
-        "The Balkans (Albania, North Macedonia, Bosnia) offer the most affordable backpacking in Europe, with daily costs of €20-35 covering accommodation, food, and transport. Countries like Albania's Accursed Mountains provide Alpine-quality scenery at a fraction of Western European prices.",
-    },
-    {
-      question: "How much does a week of budget backpacking cost in Europe?",
-      answer:
-        "Budget backpacking costs vary by region: Western Europe (Switzerland, Austria) costs €350-595 per week, Eastern Europe (Czech Republic, Poland) costs €175-329 per week, and the Balkans cost €112-245 per week for accommodation, food, and transport.",
-    },
-    {
-      question: "Is wild camping legal in budget European destinations?",
-      answer:
-        "Wild camping is legal or tolerated in most budget European destinations, especially in the Balkans and Eastern Europe. Generally, camping above treeline, away from roads, and leaving no trace is acceptable. Always research local regulations before camping.",
-    },
-    {
-      question: "What gear do I need for budget backpacking in Europe?",
-      answer:
-        "A basic €200 gear kit includes a 40-50L backpack (€40-60), lightweight tent or tarp (€50-80), sleeping bag and pad (€60-90), lightweight stove and pot (€30-50), and merino base layers with rain jacket (€80-120). This handles most European conditions.",
-    },
-    {
-      question: "When is the best time for budget backpacking in Europe?",
-      answer:
-        "Shoulder seasons (May-June, September-October) offer the best balance of weather and prices. Accommodation costs drop 30-50% outside peak summer months, trails are less crowded, and you'll experience more authentic local culture.",
-    },
-  ]
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  }
 
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
 
       <BlogHero post={post} />
 
       <div className="max-w-[750px] mx-auto px-6 py-16">
+        {/* GEO Capsule */}
+        <div className="mb-10 p-5 bg-primary/8 border border-primary/25 rounded-lg">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Quick Answer</p>
+          <p className="text-base leading-relaxed text-foreground">
+            The three best budget backpacking regions in Europe are the Balkans (Albania, North Macedonia, Bosnia) at
+            €20–35/day, Eastern Europe (Czech Republic, Slovakia) at €25–47/day, and Northern Spain (Picos de Europa,
+            Galicia) at €30–50/day. Shoulder-season travel (May–June, September–October) cuts accommodation costs by
+            30–50%.
+          </p>
+        </div>
+
+        {/* Author & date */}
+        <div className="mb-10 flex items-center gap-3 text-sm text-muted-foreground border-b pb-6">
+          <span>By <strong className="text-foreground">Wanderbase Editorial Team</strong></span>
+          <span>·</span>
+          <span>March 18, 2024</span>
+          <span>·</span>
+          <span className="text-primary font-medium">Last updated: March 2024</span>
+        </div>
+
         <p className="leading-relaxed text-foreground first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 font-medium text-xl mb-12">
           Think European backpacking means expensive hostels, overpriced meals, and tourist-trap destinations? Think
           again. Some of Europe's most spectacular trails lie in regions where your money stretches three times further
@@ -88,7 +127,7 @@ export default function BudgetBackpackingEuropePage() {
           </p>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="why-europe">
-            Why Europe is Perfect for Budget Adventures
+            Why Is Europe the Best Continent for Budget Backpacking?
           </h2>
 
           <p className="text-lg leading-relaxed">
@@ -109,7 +148,7 @@ export default function BudgetBackpackingEuropePage() {
           </div>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="budget-destinations">
-            Hidden Gem Destinations That Won't Break the Bank
+            Which European Regions Offer the Best Hiking at Under €35 per Day?
           </h2>
 
           <h3 className="text-xl font-bold mt-12 mb-4 text-primary">The Balkans: Europe's Best-Kept Secret</h3>
@@ -177,7 +216,7 @@ export default function BudgetBackpackingEuropePage() {
           </div>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="cost-breakdown">
-            Real Cost Breakdown: What You'll Actually Spend
+            How Much Does a Week of Budget Backpacking Actually Cost in Each Region?
           </h2>
 
           <p className="text-lg leading-relaxed">
@@ -241,7 +280,7 @@ export default function BudgetBackpackingEuropePage() {
           </div>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="money-saving-tips">
-            Money-Saving Strategies That Actually Work
+            What Money-Saving Strategies Work Best for Budget Backpackers in Europe?
           </h2>
 
           <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Timing is Everything</h3>
@@ -286,7 +325,7 @@ export default function BudgetBackpackingEuropePage() {
           </div>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="gear-essentials">
-            Lightweight Budget Gear That Goes the Distance
+            What Gear Do You Really Need for Budget Backpacking in Europe?
           </h2>
 
           <p className="text-lg leading-relaxed">
@@ -337,6 +376,19 @@ export default function BudgetBackpackingEuropePage() {
             in the least expensive places. When you're not worried about every euro spent, you're free to embrace
             spontaneous detours, extended conversations with locals, and those magical moments that make travel
             transformative.
+          </p>
+
+          <p className="text-lg leading-relaxed">
+            Budget travel isn't about deprivation—it's about discovering that the most rewarding adventures often happen
+            in the least expensive places. For more strategies, explore our{" "}
+            <Link href="/blog/budget-backpacker-tips" className="text-primary underline underline-offset-4">
+              insider tips from experienced budget backpackers
+            </Link>{" "}
+            and our guide to{" "}
+            <Link href="/blog/budget-gear-guide" className="text-primary underline underline-offset-4">
+              affordable gear that doesn&apos;t skimp on quality
+            </Link>
+            .
           </p>
 
           <blockquote className="my-12 pl-8 border-l-4 border-primary italic text-xl font-medium">

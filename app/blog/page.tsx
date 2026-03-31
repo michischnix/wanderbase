@@ -1,5 +1,6 @@
 "use client"
 
+import { Suspense } from "react"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -123,6 +124,14 @@ const blogPosts = [
 ]
 
 export default function BlogPage() {
+  return (
+    <Suspense fallback={null}>
+      <BlogPageContent />
+    </Suspense>
+  )
+}
+
+function BlogPageContent() {
   const [activeTag, setActiveTag] = useState<string | null>(null)
   const searchParams = useSearchParams()
 

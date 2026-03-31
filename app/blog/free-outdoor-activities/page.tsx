@@ -4,13 +4,14 @@ import { BlogFAQ } from "@/components/blog-faq"
 import { NewsletterSignup } from "@/components/newsletter-signup"
 import { Footer } from "@/components/footer"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Top 10 Free or Ultra-Low-Cost Outdoor Activities You Can Do Anywhere",
   description:
     "Discover 10 amazing outdoor activities that cost nothing or next to nothing. From urban foraging to geocaching, wild swimming to stargazing - adventure doesn't require expensive gear.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/free-outdoor-activities",
+  alternates: { canonical: "https://wanderbase.com/blog/free-outdoor-activities" },
   openGraph: {
     title: "Top 10 Free or Ultra-Low-Cost Outdoor Activities You Can Do Anywhere",
     description:
@@ -28,52 +29,90 @@ export const metadata: Metadata = {
   },
 }
 
+const faqData = [
+  {
+    question: "What free outdoor activities require no equipment at all?",
+    answer:
+      "Hiking on public trails, beachcombing, birdwatching, wild swimming in public water bodies, foraging (berries, mushrooms), geocaching (free app), stargazing, and urban parkour all require zero equipment. These activities are available in nearly every region and offer genuine outdoor adventure with no upfront cost whatsoever.",
+  },
+  {
+    question: "Is geocaching really free?",
+    answer:
+      "Yes, the basic Geocaching app is free and gives access to the millions of traditional caches worldwide. A premium subscription (€30/year) adds advanced filtering and mystery caches, but is entirely optional. All you need is a smartphone with GPS. Most geocaches are hidden in genuinely interesting natural and historical locations.",
+  },
+  {
+    question: "Where is foraging legally allowed?",
+    answer:
+      "In most of Northern and Western Europe, picking small amounts of wild berries, mushrooms, and herbs for personal consumption is legal under 'right to roam' laws (particularly in Scandinavia). In the UK, Germany, and Austria, picking reasonable quantities for personal use is generally tolerated on public land. Never forage in nature reserves or private land without permission.",
+  },
+  {
+    question: "What are the best apps for free outdoor activities?",
+    answer:
+      "iNaturalist (species identification, free), Geocaching (treasure hunting, free), Windy (weather, free), Maps.me (offline hiking maps, free), Seek by iNaturalist (AI plant/animal ID, free), and SkyView (stargazing, free). These apps collectively transform nature into an interactive, educational adventure at zero cost.",
+  },
+  {
+    question: "How do you find free wild swimming spots?",
+    answer:
+      "Wild Swimming app, Swimtrek's free spot database, and local Facebook groups (search '[your region] wild swimming') are the best resources. In the UK, the Outdoor Swimming Society maps hundreds of spots. Rivers and lakes on public land with safe water quality and no private ownership notices are generally accessible. Always check for blue-green algae warnings in summer.",
+  },
+]
+
 export default function FreeOutdoorActivitiesPage() {
-  const post = {
-    title: "Top 10 Free or Ultra-Low-Cost Outdoor Activities You Can Do Anywhere",
-    excerpt:
-      "Adventure doesn't require expensive gear or admission tickets. Discover 10 incredible outdoor activities that cost nothing or next to nothing, yet deliver unforgettable experiences right in your backyard.",
-    category: "Budget Tips",
-    date: "March 20, 2024",
-    readTime: "10 min read",
-    image: "/winter-hikers-snowy-ridge.jpg",
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Top 10 Free or Ultra-Low-Cost Outdoor Activities You Can Do Anywhere",
+    datePublished: "2024-03-20",
+    dateModified: "2024-03-20",
+    author: { "@type": "Person", name: "Wanderbase Editorial Team" },
+    publisher: {
+      "@type": "Organization",
+      name: "Wanderbase",
+      logo: { "@type": "ImageObject", url: "https://wanderbase.com/wb-logo2.png" },
+    },
+    image: "https://wanderbase.com/winter-hikers-snowy-ridge.jpg",
+    description: "10 amazing outdoor activities that cost nothing or next to nothing — from urban foraging to geocaching, wild swimming to stargazing.",
   }
 
-  const faqData = [
-    {
-      question: "What are the best free outdoor activities for beginners?",
-      answer:
-        "Urban foraging walks, geocaching, and beachcombing are excellent free activities for beginners. They require minimal equipment (just a smartphone for geocaching), can be done anywhere, and provide immediate rewards while building outdoor skills gradually.",
-    },
-    {
-      question: "Is geocaching really free?",
-      answer:
-        "Yes, geocaching is completely free with the basic membership. You only need a smartphone with GPS and the official Geocaching app. Basic membership provides access to thousands of caches worldwide, making it one of the most accessible free outdoor activities.",
-    },
-    {
-      question: "What safety precautions should I take for wild swimming?",
-      answer:
-        "Never swim alone, check water quality and current conditions before entering, enter water gradually to acclimate, always have a clear exit strategy, and wear a bright swim cap for visibility. Join local wild swimming groups for guidance on safe locations.",
-    },
-    {
-      question: "Can I really forage for food in urban areas?",
-      answer:
-        "Yes, urban foraging is possible and rewarding. Start with easily identifiable plants like dandelions, plantain, and wild garlic. Use plant identification apps, follow the rule of thirds (never harvest more than one-third of any plant), and avoid areas near roads or treated with chemicals.",
-    },
-    {
-      question: "What equipment do I need for rock scrambling?",
-      answer:
-        "Rock scrambling requires minimal equipment: sturdy hiking shoes with good grip, a first aid kit, and appropriate clothing. Unlike rock climbing, no ropes or specialized gear are needed. Start with easy routes and gradually build skills and confidence.",
-    },
-  ]
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  }
 
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
 
       <BlogHero post={post} />
 
       <div className="max-w-[750px] mx-auto px-6 py-16">
+        {/* GEO Capsule */}
+        <div className="mb-10 p-5 bg-primary/8 border border-primary/25 rounded-lg">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Quick Answer</p>
+          <p className="text-base leading-relaxed text-foreground">
+            The top 3 truly free outdoor activities available anywhere are geocaching (free app, thousands of worldwide
+            caches), urban foraging (requires only a plant-ID app), and rock scrambling (no gear needed beyond sturdy
+            shoes). Wild swimming, beachcombing, and stargazing photography are also completely free and available to
+            everyone.
+          </p>
+        </div>
+
+        {/* Author & date */}
+        <div className="mb-10 flex items-center gap-3 text-sm text-muted-foreground border-b pb-6">
+          <span>By <strong className="text-foreground">Wanderbase Editorial Team</strong></span>
+          <span>·</span>
+          <span>March 20, 2024</span>
+          <span>·</span>
+          <span className="text-primary font-medium">Last updated: March 2024</span>
+        </div>
+
         <p className="leading-relaxed text-foreground first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 font-medium text-xl mb-12">
           The best outdoor adventures don't come with price tags. While gear companies want you to believe that fun
           requires expensive equipment, some of the most rewarding outdoor experiences cost absolutely nothing—except
@@ -82,7 +121,7 @@ export default function FreeOutdoorActivitiesPage() {
 
         <article className="space-y-8">
           <h2 className="text-2xl font-bold mt-16 mb-6" id="why-free-activities">
-            Why Free Doesn't Mean Less Fun
+            Why Do Free Outdoor Activities Provide More Authentic Experiences Than Paid Ones?
           </h2>
 
           <p className="text-lg leading-relaxed">
@@ -285,7 +324,7 @@ export default function FreeOutdoorActivitiesPage() {
           </p>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="community-tips">
-            Building Your Free Adventure Community
+            How Do You Build a Local Community Around Free Outdoor Adventures?
           </h2>
 
           <p className="text-lg leading-relaxed">
@@ -316,7 +355,7 @@ export default function FreeOutdoorActivitiesPage() {
           </div>
 
           <h2 className="text-2xl font-bold mt-16 mb-6" id="monthly-challenge">
-            Your Monthly Adventure Challenge
+            What Is the Best Way to Try a New Free Outdoor Activity Every Month?
           </h2>
 
           <p className="text-lg leading-relaxed">
@@ -341,6 +380,20 @@ export default function FreeOutdoorActivitiesPage() {
           <p className="text-lg leading-relaxed">
             Document your experiences through photos, journal entries, or social media posts. This creates a personal
             adventure archive and inspires others to try these activities.
+          </p>
+
+          <p className="text-lg leading-relaxed">
+            Document your experiences through photos, journal entries, or social media posts. This creates a personal
+            adventure archive and inspires others to try these activities. For more ideas on keeping costs to a minimum,
+            see our{" "}
+            <Link href="/blog/free-trails" className="text-primary underline underline-offset-4">
+              guide to 12 completely free Alpine trails
+            </Link>{" "}
+            and{" "}
+            <Link href="/blog/weekend-adventures-under-50" className="text-primary underline underline-offset-4">
+              weekend wilderness escapes under €50
+            </Link>
+            .
           </p>
 
           <blockquote className="my-12 pl-8 border-l-4 border-primary italic text-xl font-medium">

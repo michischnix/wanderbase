@@ -4,13 +4,14 @@ import { BlogFAQ } from "@/components/blog-faq"
 import { Footer } from "@/components/footer"
 import { GuidesTeaser } from "@/components/guides-teaser"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "The Ultimate Budget Gear Rundown: Affordable Essentials That Don't Skimp on Quality",
   description:
     "Discover budget outdoor gear that delivers professional performance without the premium price. Complete buying guide with specific recommendations and where to find the best deals.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/budget-gear-guide",
+  alternates: { canonical: "https://wanderbase.com/blog/budget-gear-guide" },
   openGraph: {
     title: "The Ultimate Budget Gear Rundown: Affordable Essentials That Don't Skimp on Quality",
     description:
@@ -28,53 +29,91 @@ export const metadata: Metadata = {
   },
 }
 
+const faqs = [
+  {
+    question: "What is the best budget hiking backpack under €50?",
+    answer:
+      "The Decathlon Quechua NH100 (20L, €25) is the best value day hiking pack available. For overnight trips, the Forclaz MT100 (40L, €45) offers a proper suspension system and rain cover at an unbeatable price. Both are available in-store for immediate testing and come with a 2-year warranty — rare at this price point.",
+  },
+  {
+    question: "Can budget hiking boots really handle mountain terrain?",
+    answer:
+      "Yes. The Decathlon Quechua MH100 boots (€45) handle 90% of hiking conditions competently. They're waterproof, have adequate ankle support, and require minimal break-in. The limitation is multi-day technical terrain where a stiffer sole (found in €100+ boots) improves stability. For day hikes and moderate trails, budget boots are fully adequate.",
+  },
+  {
+    question: "Where is the best place to buy budget outdoor gear?",
+    answer:
+      "Decathlon offers the best price-to-performance ratio for new gear. End-of-season clearance sales (September–October for summer gear, February–March for winter gear) offer 40–70% discounts. For secondhand, check Facebook Marketplace, eBay, and local outdoor club notice boards. Gear rental from outdoor shops makes sense for items you'll use rarely.",
+  },
+  {
+    question: "What budget gear should you never compromise on?",
+    answer:
+      "Never compromise on footwear (blisters end trips), rain protection (hypothermia risk), and navigation tools (safety). A poorly fitting boot at any price will ruin a trip. A rain jacket that isn't actually waterproof is dangerous. These three items justify spending slightly more — everything else (poles, packs, clothing layers) can be budget.",
+  },
+  {
+    question: "How do you care for budget gear to make it last longer?",
+    answer:
+      "Rinse synthetic fabrics after use and air-dry (never tumble-dry high). Re-proof waterproof jackets annually with Nikwax TX.Direct (€8). Store sleeping bags uncompressed. Dry wet boots at room temperature, never on radiators. These habits extend budget gear life from 1–2 seasons to 4–5 seasons, making cheap gear genuinely cost-effective long-term.",
+  },
+]
+
 export default function BudgetGearGuidePage() {
-  const post = {
-    title: "The Ultimate Budget Gear Rundown: Affordable Essentials That Don't Skimp on Quality",
-    excerpt:
-      "Quality outdoor gear doesn't require premium prices. Discover specific budget recommendations for backpacks, footwear, rain gear, and camping essentials that perform as well as expensive alternatives.",
-    category: "Budget Tips",
-    date: "March 22, 2024",
-    readTime: "15 min read",
-    image: "/budget-gear-essentials.png",
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "The Ultimate Budget Gear Rundown: Affordable Essentials That Don't Skimp on Quality",
+    datePublished: "2024-03-22",
+    dateModified: "2024-03-22",
+    author: { "@type": "Person", name: "Wanderbase Editorial Team" },
+    publisher: {
+      "@type": "Organization",
+      name: "Wanderbase",
+      logo: { "@type": "ImageObject", url: "https://wanderbase.com/wb-logo2.png" },
+    },
+    image: "https://wanderbase.com/budget-gear-essentials.png",
+    description: "Budget outdoor gear that delivers professional performance without the premium price — with specific product recommendations.",
   }
 
-  const faqs = [
-    {
-      question: "Is budget outdoor gear really as good as expensive brands?",
-      answer:
-        "Budget gear delivers 90% of the performance for 30% of the cost in most cases. The main differences are in advanced features, weight savings, and durability under extreme conditions. For casual hikers and weekend adventurers, budget gear performs excellently. Invest in premium gear only for activities you do frequently or in harsh conditions.",
-    },
-    {
-      question: "What's the most important piece of gear to invest in?",
-      answer:
-        "Footwear is the most critical investment. Poorly fitting boots cause blisters, injuries, and can ruin entire trips. Even budget boots (€40-60) work well if they fit properly. Never compromise on fit to save money. Test boots thoroughly before committing to multi-day adventures.",
-    },
-    {
-      question: "Where can I find the best deals on outdoor gear?",
-      answer:
-        "Decathlon offers consistently excellent value for basic gear. Military surplus stores provide durable equipment at budget prices. Brand outlet stores offer 40-60% discounts on previous season items. Online, watch for end-of-season sales (50-70% off) and use price tracking apps to catch deals. Black Friday and seasonal clearances provide the deepest discounts.",
-    },
-    {
-      question: "Should I buy or rent outdoor gear for my first trip?",
-      answer:
-        "Rent specialized equipment like camping gear or winter sports equipment for your first few trips. This prevents expensive mistakes if you discover the activity isn't for you. Once you're committed to regular outdoor adventures, invest in budget gear and upgrade individual items based on actual use patterns.",
-    },
-    {
-      question: "How can I make budget gear last longer?",
-      answer:
-        "Proper maintenance dramatically extends gear lifespan. Clean equipment after each use, store in dry conditions, and perform basic repairs promptly. A €40 jacket that lasts five years provides better value than a €20 jacket replaced annually. Learn basic repair skills like patching, seam sealing, and zipper fixes to extend gear life significantly.",
-    },
-  ]
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  }
 
   return (
     <div className="min-h-screen bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Navigation />
 
       <BlogHero post={post} />
 
       <div className="max-w-6xl mx-auto px-6 py-16">
         <article className="mx-auto" style={{ maxWidth: "750px" }}>
+
+          {/* GEO Capsule */}
+          <div className="mb-10 p-5 bg-primary/8 border border-primary/25 rounded-lg">
+            <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Quick Answer</p>
+            <p className="text-base leading-relaxed text-foreground">
+              A complete budget hiking kit costs under €200: Decathlon daypack (€25), Quechua boots (€45), Forclaz rain
+              jacket (€35), sleeping bag + pad (€70), and a compact stove (€20). These items deliver 90% of premium
+              performance at 30% of the cost. Buy at end-of-season clearance for 50–70% off.
+            </p>
+          </div>
+
+          {/* Author & date */}
+          <div className="mb-10 flex items-center gap-3 text-sm text-muted-foreground border-b pb-6">
+            <span>By <strong className="text-foreground">Wanderbase Editorial Team</strong></span>
+            <span>·</span>
+            <span>March 22, 2024</span>
+            <span>·</span>
+            <span className="text-primary font-medium">Last updated: March 2024</span>
+          </div>
+
           <h1 className="text-4xl md:text-5xl font-bold mb-12 leading-tight" style={{ color: "#1E1E1E" }}>
             The Ultimate Budget Gear Rundown: Affordable Essentials That Don't Skimp on Quality
           </h1>
@@ -92,7 +131,7 @@ export default function BudgetGearGuidePage() {
           </p>
 
           <h2 className="text-3xl font-bold mt-16 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>
-            The Budget Gear Mindset
+            How Do You Shop for Budget Outdoor Gear Without Sacrificing Performance?
           </h2>
 
           <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
@@ -108,7 +147,7 @@ export default function BudgetGearGuidePage() {
           </p>
 
           <h2 className="text-3xl font-bold mt-16 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>
-            Daypacks: Your Daily Adventure Companion
+            What Are the Best Budget Daypacks Under €40?
           </h2>
 
           <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
@@ -125,7 +164,7 @@ export default function BudgetGearGuidePage() {
           </p>
 
           <h2 className="text-3xl font-bold mt-16 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>
-            Footwear That Won't Break Your Budget or Feet
+            Which Hiking Boots Offer the Best Value Under €60?
           </h2>
 
           <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
@@ -142,7 +181,7 @@ export default function BudgetGearGuidePage() {
           </p>
 
           <h2 className="text-3xl font-bold mt-16 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>
-            Rain Protection That Actually Works
+            What Budget Rain Gear Actually Keeps You Dry?
           </h2>
 
           <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
@@ -158,7 +197,7 @@ export default function BudgetGearGuidePage() {
           </p>
 
           <h2 className="text-3xl font-bold mt-16 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>
-            Camping Basics for Every Budget
+            How Can You Build a Complete Camping Kit for Under €130?
           </h2>
 
           <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
@@ -174,7 +213,7 @@ export default function BudgetGearGuidePage() {
           </p>
 
           <h2 className="text-3xl font-bold mt-16 mb-6 leading-tight" style={{ color: "#1E1E1E" }}>
-            Where to Find the Best Deals
+            Where Can You Find the Best Deals on Outdoor Gear Year-Round?
           </h2>
 
           <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
@@ -188,6 +227,18 @@ export default function BudgetGearGuidePage() {
             inventory. Use price tracking apps like Honey or CamelCamelCamel to receive alerts when items reach your
             target price. Black Friday and end-of-season clearances offer the deepest discounts—plan major gear
             purchases around these events.
+          </p>
+
+          <p className="mb-8 leading-relaxed" style={{ fontSize: "18px", lineHeight: "1.6", color: "#1E1E1E" }}>
+            Once you have your gear sorted, see our{" "}
+            <Link href="/blog/budget-backpacking-europe" className="text-primary underline underline-offset-4">
+              guide to budget backpacking in Europe
+            </Link>{" "}
+            or learn how to{" "}
+            <Link href="/blog/budget-backpacker-tips" className="text-primary underline underline-offset-4">
+              travel smarter with insider tips from experienced backpackers
+            </Link>
+            .
           </p>
         </article>
 

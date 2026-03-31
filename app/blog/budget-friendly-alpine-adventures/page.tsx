@@ -4,17 +4,18 @@ import { Footer } from "@/components/footer"
 import { BlogFAQ } from "@/components/blog-faq"
 import { NewsletterSignup } from "@/components/newsletter-signup"
 import type { Metadata } from "next"
+import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Introduction to Budget-Friendly Alpine Adventures - The Wanderbase",
+  title: "Budget-Friendly Alpine Adventures: The Essential Beginner's Guide",
   description:
-    "Discover how to enjoy unforgettable alpine experiences without breaking the bank. Learn essential tips for budget-conscious adventurers.",
+    "Discover how to enjoy unforgettable alpine experiences without breaking the bank. Essential tips for budget-conscious adventurers — save money and explore more.",
   robots: "index, follow",
-  canonical: "https://wanderbase.com/blog/budget-friendly-alpine-adventures",
+  alternates: { canonical: "https://wanderbase.com/blog/budget-friendly-alpine-adventures" },
   openGraph: {
-    title: "Introduction to Budget-Friendly Alpine Adventures",
+    title: "Budget-Friendly Alpine Adventures: The Essential Beginner's Guide",
     description:
-      "Discover how to enjoy unforgettable alpine experiences without breaking the bank. Learn essential tips for budget-conscious adventurers.",
+      "Discover how to enjoy unforgettable alpine experiences without breaking the bank. Essential tips for budget-conscious adventurers — save money and explore more.",
     url: "https://wanderbase.com/blog/budget-friendly-alpine-adventures",
     type: "article",
     images: [
@@ -56,6 +57,33 @@ const faqs = [
   },
 ]
 
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "Budget-Friendly Alpine Adventures: The Essential Beginner's Guide",
+  datePublished: "2024-12-10",
+  dateModified: "2024-12-10",
+  author: { "@type": "Person", name: "Wanderbase Editorial Team" },
+  publisher: {
+    "@type": "Organization",
+    name: "Wanderbase",
+    logo: { "@type": "ImageObject", url: "https://wanderbase.com/wb-logo2.png" },
+  },
+  image: "https://wanderbase.com/budget-alpine-hikers-sunset.jpg",
+  description:
+    "Discover how to enjoy unforgettable alpine experiences without breaking the bank. Essential tips for budget-conscious adventurers.",
+}
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: { "@type": "Answer", text: faq.answer },
+  })),
+}
+
 export default function BudgetFriendlyAlpineAdventuresPage() {
   const post = {
     title: "Introduction to Budget-Friendly Alpine Adventures",
@@ -69,11 +97,39 @@ export default function BudgetFriendlyAlpineAdventuresPage() {
 
   return (
     <div className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <Navigation />
 
       <BlogHero post={post} />
 
       <div className="max-w-[750px] mx-auto px-6 py-16">
+        {/* GEO Capsule */}
+        <div className="mb-10 p-5 bg-primary/8 border border-primary/25 rounded-lg">
+          <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Quick Answer</p>
+          <p className="text-base leading-relaxed text-foreground">
+            Budget Alpine adventures are possible from €30–50 per day by traveling in shoulder season (April–June or
+            September–October), staying in hostels or campsites, using public transport day passes, and choosing free
+            hiking trails over paid cable car attractions.
+          </p>
+        </div>
+
+        {/* Author & date */}
+        <div className="mb-10 flex items-center gap-3 text-sm text-muted-foreground border-b pb-6">
+          <span>By <strong className="text-foreground">Wanderbase Editorial Team</strong></span>
+          <span>·</span>
+          <span>December 10, 2024</span>
+          <span>·</span>
+          <span className="text-primary font-medium">Last updated: December 2024</span>
+        </div>
+
         <div className="mb-12">
           <p className="leading-relaxed text-foreground first-letter:text-6xl first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:mt-1 font-medium text-xl">
             Exploring the Alps is a dream for many outdoor enthusiasts. The region boasts a diverse range of activities,
@@ -83,7 +139,7 @@ export default function BudgetFriendlyAlpineAdventuresPage() {
         </div>
 
         <article className="space-y-8">
-          <h2 className="text-2xl font-bold mt-16 mb-6">The Allure of the Alps</h2>
+          <h2 className="text-2xl font-bold mt-16 mb-6">What Makes the Alps Worth Every Euro You Spend?</h2>
 
           <p className="text-lg leading-relaxed">
             Imagine gliding down a snow-covered slope, surrounded by majestic mountains, or trekking through vibrant
@@ -91,29 +147,33 @@ export default function BudgetFriendlyAlpineAdventuresPage() {
             landscapes and cultural experiences that can be enjoyed on any budget.
           </p>
 
-          <h2 className="text-2xl font-bold mt-16 mb-6">The Importance of Budget Planning</h2>
+          <h2 className="text-2xl font-bold mt-16 mb-6">Why Is Budget Planning the First Step of Any Alpine Trip?</h2>
 
           <p className="text-lg leading-relaxed">
             While the allure of alpine adventures is undeniable, planning them on a budget is essential for making the
             most of your experience without financial stress. Budget planning allows you to prioritize your activities,
-            ensuring you can enjoy everything the Alps have to offer without overspending.
+            ensuring you can enjoy everything the Alps have to offer without overspending. Watch out for the{" "}
+            <Link href="/blog/hidden-costs" className="text-primary underline underline-offset-4">
+              7 hidden costs most hikers don&apos;t account for
+            </Link>{" "}
+            — they can double your expenses if you&apos;re unprepared.
           </p>
 
           <div className="my-8 p-6 border-l-4 bg-green-50 border-green-400 text-green-900 rounded-r-lg">
-            <strong>💰 Money Saver:</strong> Visit during shoulder seasons (April-June or September-October) when prices
-            drop by 30-50% and you'll enjoy fewer crowds while experiencing the same stunning landscapes.
+            <strong>Money Saver:</strong> Visit during shoulder seasons (April–June or September–October) when prices
+            drop by 30–50% and you&apos;ll enjoy fewer crowds while experiencing the same stunning landscapes.
           </div>
 
-          <h2 className="text-2xl font-bold mt-16 mb-6">Why Budget Matters</h2>
+          <h2 className="text-2xl font-bold mt-16 mb-6">How Does Budgeting Change the Quality of Your Alpine Experience?</h2>
 
           <p className="text-lg leading-relaxed">
-            Budgeting is not just about saving money; it's about maximizing your experience. When you plan your finances
+            Budgeting is not just about saving money; it&apos;s about maximizing your experience. When you plan your finances
             wisely, you can allocate funds to essential aspects of your trip, such as gear, accommodations, and
             activities. By researching budget-friendly lodging options like hostels or camping sites, you can enjoy the
             stunning alpine scenery without overspending.
           </p>
 
-          <h2 className="text-2xl font-bold mt-16 mb-6">Choosing the Right Time to Visit</h2>
+          <h2 className="text-2xl font-bold mt-16 mb-6">When Is the Best Time to Visit the Alps on a Tight Budget?</h2>
 
           <p className="text-lg leading-relaxed">
             When it comes to planning a budget-friendly adventure in the Alps, timing is everything. Selecting the right
@@ -121,16 +181,16 @@ export default function BudgetFriendlyAlpineAdventuresPage() {
             thrilling activities without breaking the bank.
           </p>
 
-          <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Off-Peak Travel Benefits</h3>
+          <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Why Do Off-Peak Travelers Save So Much More?</h3>
 
           <p className="text-lg leading-relaxed">
             The shoulder seasons—late spring (April to June) and early autumn (September to October)—offer a wealth of
-            benefits. During these months, you'll find fewer crowds, which means you can enjoy popular attractions and
+            benefits. During these months, you&apos;ll find fewer crowds, which means you can enjoy popular attractions and
             scenic trails without the hustle and bustle of peak tourist season. Many accommodations and local businesses
             offer discounts during these times to attract visitors.
           </p>
 
-          <h2 className="text-2xl font-bold mt-16 mb-6">Affordable Accommodation Options</h2>
+          <h2 className="text-2xl font-bold mt-16 mb-6">What Are the Most Affordable Accommodation Options in the Alps?</h2>
 
           <p className="text-lg leading-relaxed">
             Finding the right place to stay is crucial for experiencing the breathtaking beauty of the alpine regions
@@ -138,7 +198,7 @@ export default function BudgetFriendlyAlpineAdventuresPage() {
             you to immerse yourself in nature while keeping your wallet happy.
           </p>
 
-          <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Hostels and Guesthouses</h3>
+          <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Are Hostels and Guesthouses Really Worth It?</h3>
 
           <p className="text-lg leading-relaxed">
             Hostels and guesthouses not only offer affordable rates but also provide a unique opportunity to meet fellow
@@ -146,40 +206,39 @@ export default function BudgetFriendlyAlpineAdventuresPage() {
             meals and save even more on dining expenses.
           </p>
 
-          <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Camping Options</h3>
+          <h3 className="text-xl font-bold mt-12 mb-4 text-primary">How Does Camping Compare to Other Budget Options?</h3>
 
           <p className="text-lg leading-relaxed">
-            If you're looking to truly immerse yourself in nature, camping is an excellent option. Many alpine regions
+            If you&apos;re looking to truly immerse yourself in nature, camping is an excellent option. Many alpine regions
             boast stunning campsites that allow you to wake up to breathtaking mountain views. National parks often have
             designated camping areas that are both affordable and well-maintained.
           </p>
 
-          <h2 className="text-2xl font-bold mt-16 mb-6">Cost-Effective Transportation Methods</h2>
-
-          <p className="text-lg leading-relaxed">
-            Navigating the breathtaking Alps doesn't have to drain your wallet. With a little planning and the right
-            choices, you can enjoy a budget-friendly adventure while soaking in the stunning landscapes and vibrant
-            culture.
-          </p>
-
-          <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Public Transport Options</h3>
+          <h2 className="text-2xl font-bold mt-16 mb-6">Is Public Transport Really Cheaper Than Renting a Car in the Alps?</h2>
 
           <p className="text-lg leading-relaxed">
             One of the most cost-effective ways to explore the Alps is through its extensive public transport system.
             Trains and buses connect major towns and ski resorts, making it easy to hop from one picturesque village to
-            another. The Swiss Travel Pass offers unlimited travel on trains, buses, and boats, allowing you to explore
-            the stunning scenery without the hassle of driving.
+            another. We compared the full numbers in our{" "}
+            <Link href="/blog/transport-vs-car" className="text-primary underline underline-offset-4">
+              public transport vs. car rental showdown
+            </Link>
+            — the results may surprise you.
           </p>
 
-          <h2 className="text-2xl font-bold mt-16 mb-6">Free and Low-Cost Activities</h2>
+          <h2 className="text-2xl font-bold mt-16 mb-6">What Free and Low-Cost Activities Can You Do in the Alps?</h2>
 
           <p className="text-lg leading-relaxed">
-            You don't need to break the bank to create unforgettable memories in the Alps. With a little planning and a
+            You don&apos;t need to break the bank to create unforgettable memories in the Alps. With a little planning and a
             spirit of adventure, you can enjoy a wealth of free and low-cost activities that will leave you feeling
-            inspired and rejuvenated.
+            inspired and rejuvenated. Our guide to{" "}
+            <Link href="/blog/free-trails" className="text-primary underline underline-offset-4">
+              12 free Alpine hiking trails
+            </Link>{" "}
+            shows you exactly where to go without spending a cent on access.
           </p>
 
-          <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Hiking Trails: Nature's Playground</h3>
+          <h3 className="text-xl font-bold mt-12 mb-4 text-primary">Are All the Best Trails in the Alps Really Free?</h3>
 
           <p className="text-lg leading-relaxed">
             The Alps boast an extensive network of trails suitable for all skill levels, from leisurely strolls to
@@ -187,20 +246,20 @@ export default function BudgetFriendlyAlpineAdventuresPage() {
             tranquil lakes and cascading waterfalls.
           </p>
 
-          <h2 className="text-2xl font-bold mt-16 mb-6">Packing Smart for Your Alpine Adventure</h2>
+          <h2 className="text-2xl font-bold mt-16 mb-6">How Do You Pack Smart Without Overspending on Alpine Gear?</h2>
 
           <p className="text-lg leading-relaxed">
             When it comes to embarking on an unforgettable alpine experience, packing smart is key to both enhancing
-            your adventure and keeping your budget intact. The right gear can make all the difference, ensuring you're
+            your adventure and keeping your budget intact. The right gear can make all the difference, ensuring you&apos;re
             prepared for the stunning landscapes and unpredictable weather of the mountains.
           </p>
 
           <div className="my-8 p-6 border-l-4 bg-blue-50 border-blue-400 text-blue-900 rounded-r-lg">
-            <strong>💡 Pro Tip:</strong> Invest in quality waterproof hiking boots and layered clothing. Look for sales
+            <strong>Pro Tip:</strong> Invest in quality waterproof hiking boots and layered clothing. Look for sales
             on brands like Columbia or REI for affordable options that will last for years.
           </div>
 
-          <h2 className="text-2xl font-bold mt-16 mb-6">Safety Tips for Budget Travelers</h2>
+          <h2 className="text-2xl font-bold mt-16 mb-6">What Safety Tips Should Budget Alpine Travelers Always Follow?</h2>
 
           <p className="text-lg leading-relaxed">
             When embarking on a budget-friendly adventure in the breathtaking Alps, safety should always be a top
@@ -209,7 +268,7 @@ export default function BudgetFriendlyAlpineAdventuresPage() {
           </p>
 
           <div className="my-8 p-6 border-l-4 bg-red-50 border-red-400 text-red-900 rounded-r-lg">
-            <strong>⚠️ Safety Warning:</strong> Weather conditions in the Alps can change rapidly. Always check the
+            <strong>Safety Warning:</strong> Weather conditions in the Alps can change rapidly. Always check the
             forecast before heading out and carry emergency supplies including a first aid kit, extra layers, and
             emergency communication devices.
           </div>
