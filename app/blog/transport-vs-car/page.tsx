@@ -80,31 +80,12 @@ export default function TransportVsCarBlogPage() {
       logo: { "@type": "ImageObject", url: "https://wanderbase.com/wb-logo2.png" },
     },
     image: "https://wanderbase.com/alpine-railway-transport.jpg",
-    description:
-      "Complete cost analysis of public transport vs car rental for Alpine hiking across 50+ destinations.",
-  }
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: { "@type": "Answer", text: faq.answer },
-    })),
+    description: "Complete cost analysis: public transport vs car rental in the Alps with real numbers from 50+ destinations.",
   }
 
   return (
     <div className="min-h-screen bg-background">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <Navigation />
 
       <BlogHero post={post} />
