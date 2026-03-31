@@ -29,6 +29,34 @@ export const metadata: Metadata = {
   },
 }
 
+const faqData = [
+  {
+    question: "What are the main advantages of car camping over other camping styles?",
+    answer:
+      "Car camping allows you to carry more comfort items without weight restrictions, provides easy access to your vehicle for supplies and emergency exit, offers weather protection and secure storage, and is perfect for families with children or pets. It's also a great stepping stone to more advanced camping styles.",
+  },
+  {
+    question: "What type of vehicle do I need for car camping?",
+    answer:
+      "Any vehicle can work for car camping, from compact cars to full-size SUVs. The key is maximizing your available space and organizing gear efficiently. Even small cars can accommodate comfortable camping setups with proper planning, though SUVs and wagons with fold-down rear seats offer more sleeping space.",
+  },
+  {
+    question: "What essential gear should I bring for car camping?",
+    answer:
+      "Essential gear includes a comfortable sleeping pad or air mattress, sleeping bags or blankets, pillows, portable camp stove, large cooler, full-size cookware, water containers (5+ gallons), camp chairs, table, and weather protection like a tarp or canopy. Don't forget lighting, insect protection, and a first aid kit.",
+  },
+  {
+    question: "How do I choose a good car camping site?",
+    answer:
+      "Look for level ground for comfortable sleeping, adequate vehicle access and parking space, distance from water sources (200+ feet), wind protection from natural features, morning sun exposure, privacy from other campers, and an established fire ring if fires are permitted. Arrive early at popular spots, especially on weekends.",
+  },
+  {
+    question: "What safety precautions should I take when car camping?",
+    answer:
+      "Never run your vehicle engine or generator inside enclosed spaces due to carbon monoxide risk. Lock valuables in your vehicle when away, use window covers for privacy, keep keys accessible but secure while sleeping, inform someone of your location and return plans, and carry emergency communication devices for remote areas.",
+  },
+]
+
 export default function CarCampingGuidePage() {
   const post = {
     title: "Park, Pitch, Relax: Car Camping Made Simple",
@@ -40,34 +68,6 @@ export default function CarCampingGuidePage() {
     image: "/car-camping-vans.jpg",
     tags: ["Camping", "Car Camping", "Beginner Guide"],
   }
-
-  const faqData = [
-    {
-      question: "What are the main advantages of car camping over other camping styles?",
-      answer:
-        "Car camping allows you to carry more comfort items without weight restrictions, provides easy access to your vehicle for supplies and emergency exit, offers weather protection and secure storage, and is perfect for families with children or pets. It's also a great stepping stone to more advanced camping styles.",
-    },
-    {
-      question: "What type of vehicle do I need for car camping?",
-      answer:
-        "Any vehicle can work for car camping, from compact cars to full-size SUVs. The key is maximizing your available space and organizing gear efficiently. Even small cars can accommodate comfortable camping setups with proper planning, though SUVs and wagons with fold-down rear seats offer more sleeping space.",
-    },
-    {
-      question: "What essential gear should I bring for car camping?",
-      answer:
-        "Essential gear includes a comfortable sleeping pad or air mattress, sleeping bags or blankets, pillows, portable camp stove, large cooler, full-size cookware, water containers (5+ gallons), camp chairs, table, and weather protection like a tarp or canopy. Don't forget lighting, insect protection, and a first aid kit.",
-    },
-    {
-      question: "How do I choose a good car camping site?",
-      answer:
-        "Look for level ground for comfortable sleeping, adequate vehicle access and parking space, distance from water sources (200+ feet), wind protection from natural features, morning sun exposure, privacy from other campers, and an established fire ring if fires are permitted. Arrive early at popular spots, especially on weekends.",
-    },
-    {
-      question: "What safety precautions should I take when car camping?",
-      answer:
-        "Never run your vehicle engine or generator inside enclosed spaces due to carbon monoxide risk. Lock valuables in your vehicle when away, use window covers for privacy, keep keys accessible but secure while sleeping, inform someone of your location and return plans, and carry emergency communication devices for remote areas.",
-    },
-  ]
 
   const articleSchema = {
     "@context": "https://schema.org",
