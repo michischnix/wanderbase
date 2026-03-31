@@ -33,7 +33,7 @@ export function Navigation() {
               href="/guides"
               className="hover:text-primary transition-colors font-medium shadow-none px-3.5 text-base text-foreground"
             >
-              Guides
+              Hiking Guides
             </Link>
             <Link
               href="/blog"
